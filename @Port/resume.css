@@ -1,0 +1,181 @@
+:root {
+    --primary-color: #3182ce;
+    --secondary-color: #63b3ed;
+    --text-color: #2d3748;
+    --light-text: #718096;
+    --bg-color: #fff;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    display: flex;
+}
+
+.resume-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeIn 0.8s ease forwards 0.3s;
+}
+
+.resume-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+.resume-line {
+    flex: 1;
+    height: 2px;
+    background-color: #1e88e5;
+    width: 10px;
+}
+
+.resume-content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.resume-column {
+    flex: 1;
+}
+
+.resume-section {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.section-icon {
+    color: #1e88e5;
+}
+
+.resume {
+    position: relative;
+    transform: translateY(110px);
+}
+
+.resume-card {
+    background-color: #7fb3e3;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.resume-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-years {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #333;
+}
+
+.skills-section {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards 0.5s;
+}
+
+.skills-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.skill-tag {
+    background-color: #f5f7fa;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #1e88e5;
+    color: white;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .resume-content {
+        flex-direction: column;
+    }
+    
+    .resume-card {
+        width: 100%;
+    }
+}
