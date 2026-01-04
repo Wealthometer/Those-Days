@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+body{
+    margin: 0;
+    background-color: #F2F2F2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.item{
+    background-color: #E9E9E9;
+    width: 280px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #c9c6c655;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.item .question{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.item .question .text{
+    width: calc(100% - 10px);
+}
+.item .question .dropdown{
+    width: max-content;
+    font-size: x-large;
+    transform: rotate(90deg);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.item .answer{
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.5s;
+}
+.item.active{
+    background-color: #fff;
+    cursor: auto;
+}
+.item.active .question .text{
+    font-weight: bold;
+}
+.item.active .question .dropdown{
+    transform: rotate(270deg);
+}
+.item.item.active .answer{
+    max-height: 100px;
+}
