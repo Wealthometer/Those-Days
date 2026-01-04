@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="work.css">
+    <title>Medebem Obinna - Portfolio</title>
+</head>
+<body>
+    <div class="container">
+        <section class="sidebar-container">
+            <aside class="sidebar">
+                <div class="profile">
+                    <img src="/placeholder.svg?height=270&width=270" alt="Medebem Obinna" class="profile-img">
+                    <h1 class="name">Medebem Obinna</h1>
+                    <p class="title">
+                        <div class="typing">
+                            <span id="typed-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>
+                            <p class="contact-label">Phone</p>
+                            <p>+234 803 2296 371</p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <p>beatricewambuimbuguaa@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p class="contact-label">Location</p>
+                            <p>Niit surulere</p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </button>
+                </div>
+            </aside>
+        </section>
+        <div class="main-section">
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="resume.html" class="nav-link"><i class="fas fa-file-alt"></i> Resume</a></li>
+                    <li><a href="work.html" class="nav-link active"><i class="fas fa-briefcase"></i> Work</a></li>
+                </ul>
+            </nav>
+            <section class="portfolio-section">
+                <div class="section-header">
+                    <h1>Portfolio</h1>
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="app-development">App Development</button>
+                        <button class="filter-btn" data-filter="web-development">Web Development</button>
+                        <button class="filter-btn" data-filter="design">Design</button>
+                        <button class="filter-btn" data-filter="mentorship">Mentorship</button>
+                    </div>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="web-development">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Food Website">
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="category">Web Development</span>
+                            <h3>food website</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="app-development">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Interior App">
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="category">App Development</span>
+                            <h3>Interior app</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="web-development">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Rental Website">
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="category">Web Development</span>
+                            <h3>Rental</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="mentorship">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Wallet App">
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="category">Mentorship</span>
+                            <h3>wallet app</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="web-development">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Ideaflow">
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="category">Web Development</span>
+                            <h3>Ideaflow</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
