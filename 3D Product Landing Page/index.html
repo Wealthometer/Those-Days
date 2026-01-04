@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Brew - Premium Craft Beer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <h2>APEX BREW</h2>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#flavors">Flavors</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="cta-button">Order Now</button>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="title-line">PREMIUM</span>
+            <span class="title-line">CRAFT BEER</span>
+            <span class="title-line">EXPERIENCE</span>
+          </h1>
+          <p class="hero-subtitle">Handcrafted with passion, brewed to perfection. Experience the ultimate taste of premium craft beer that defines excellence.</p>
+          <div class="hero-buttons">
+            <button class="btn-primary">Discover More</button>
+            <button class="btn-secondary">Watch Story</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="beer-bottle-container">
+            <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=800&auto=format&fit=crop&q=60" alt="Premium Beer Bottle" class="beer-bottle main-bottle">
+            <div class="bottle-glow"></div>
+            <div class="floating-elements">
+              <div class="hop hop-1">🌿</div>
+              <div class="hop hop-2">🌿</div>
+              <div class="hop hop-3">🌿</div>
+              <div class="bubble bubble-1"></div>
+              <div class="bubble bubble-2"></div>
+              <div class="bubble bubble-3"></div>
+              <div class="bubble bubble-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">Crafted with Passion</h2>
+          <p class="section-subtitle">Every bottle tells a story of dedication, quality, and the pursuit of brewing perfection.</p>
+          <div class="about-features">
+            <div class="feature">
+              <div class="feature-icon">🍺</div>
+              <h3>Premium Ingredients</h3>
+              <p>Only the finest hops, malt, and pure water sourced from pristine locations.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">⚡</div>
+              <h3>Traditional Methods</h3>
+              <p>Time-honored brewing techniques passed down through generations.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🏆</div>
+              <h3>Award Winning</h3>
+              <p>Recognized globally for exceptional taste and quality standards.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-image-container">
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&auto=format&fit=crop&q=60" alt="Brewing Process" class="about-image">
+            <div class="image-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="process">
+    <div class="process-bg"></div>
+    <div class="process-container">
+      <h2 class="section-title center">Our Brewing Process</h2>
+      <p class="section-subtitle center">From grain to glass, every step is meticulously crafted</p>
+      
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Selection</h3>
+            <p>Premium malted barley and hops carefully selected from the finest farms.</p>
+            <div class="step-image">
+              <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&auto=format&fit=crop&q=60" alt="Ingredients">
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Brewing</h3>
+            <p>Traditional brewing methods combined with modern precision technology.</p>
+            <div class="step-image">
+              <img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=400&auto=format&fit=crop&q=60" alt="Brewing">
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Fermentation</h3>
+            <p>Carefully controlled fermentation process to develop complex flavors.</p>
+            <div class="step-image">
+              <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&auto=format&fit=crop&q=60" alt="Fermentation">
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Perfection</h3>
+            <p>Final quality checks and packaging to ensure every bottle meets our standards.</p>
+            <div class="step-image">
+              <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=400&auto=format&fit=crop&q=60" alt="Final Product">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flavors Section -->
+  <section id="flavors" class="flavors">
+    <div class="flavors-container">
+      <h2 class="section-title center">Signature Flavors</h2>
+      <p class="section-subtitle center">Discover our range of expertly crafted beer varieties</p>
+      
+      <div class="flavors-grid">
+        <div class="flavor-card">
+          <div class="flavor-image">
+            <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&auto=format&fit=crop&q=60" alt="Golden Ale">
+            <div class="flavor-overlay">
+              <button class="flavor-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="flavor-content">
+            <h3>Golden Ale</h3>
+            <p>Light, crisp, and refreshing with hints of citrus and honey.</p>
+            <div class="flavor-stats">
+              <span>ABV: 4.5%</span>
+              <span>IBU: 25</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flavor-card">
+          <div class="flavor-image">
+            <img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=600&auto=format&fit=crop&q=60" alt="Dark Stout">
+            <div class="flavor-overlay">
+              <button class="flavor-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="flavor-content">
+            <h3>Dark Stout</h3>
+            <p>Rich, bold flavor with notes of chocolate and roasted coffee.</p>
+            <div class="flavor-stats">
+              <span>ABV: 6.2%</span>
+              <span>IBU: 45</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flavor-card">
+          <div class="flavor-image">
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&auto=format&fit=crop&q=60" alt="IPA">
+            <div class="flavor-overlay">
+              <button class="flavor-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="flavor-content">
+            <h3>Hoppy IPA</h3>
+            <p>Bold hop character with tropical fruit and pine aromas.</p>
+            <div class="flavor-stats">
+              <span>ABV: 7.1%</span>
+              <span>IBU: 65</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <section class="parallax-section">
+    <div class="parallax-bg"></div>
+    <div class="parallax-content">
+      <h2>Experience the Difference</h2>
+      <p>Where tradition meets innovation in every sip</p>
+      <button class="btn-primary">Order Now</button>
+    </div>
+    <div class="parallax-bottles">
+      <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=400&auto=format&fit=crop&q=60" alt="Beer Bottle" class="parallax-bottle bottle-1">
+      <img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=400&auto=format&fit=crop&q=60" alt="Beer Bottle" class="parallax-bottle bottle-2">
+      <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&auto=format&fit=crop&q=60" alt="Beer Bottle" class="parallax-bottle bottle-3">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Ready to experience the finest craft beer? Contact us today.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <h4>Visit Us</h4>
+                <p>123 Brewery Street, Craft City, CC 12345</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <h4>Call Us</h4>
+                <p>+1 (555) 123-BREW</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <h4>Email Us</h4>
+                <p>hello@apexbrew.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>APEX BREW</h3>
+          <p>Crafting excellence since 1995</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#">Golden Ale</a></li>
+              <li><a href="#">Dark Stout</a></li>
+              <li><a href="#">Hoppy IPA</a></li>
+              <li><a href="#">Seasonal</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Apex Brew. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#">📘</a>
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+          <a href="#">📺</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
