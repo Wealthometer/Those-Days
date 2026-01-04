@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/Animated circular Progress Bar/bar.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="circle" data-degree="1" data-color="#ff4786">
+            <h2 class="number">1<span>%</span></h2>
+            <h4>JAVA</h4>
+        </div>
+        <div class="circle" data-degree="30" data-color="#00ffff">
+            <h2 class="number">30<span>%</span></h2>
+            <h4>HTML</h4>
+        </div>
+        <div class="circle" data-degree="50" data-color="#fee800">
+            <h2 class="number">50<span>%</span></h2>
+            <h4>CSS</h4>
+        </div>
+        <div class="circle" data-degree="75" data-color="#04fc43 ">
+            <h2 class="number">75<span>%</span></h2>
+            <h4>Javascript</h4>
+        </div>
+        <div class="circle" data-degree="100" data-color="#fff ">
+            <h2 class="number">100<span>%</span></h2>
+            <h4>PHP</h4>
+        </div>
+    </div>
+        <script>
+            document.addEventListener("DOMContentLoaded" , function(event){
+                let circle = document.querySelectorAll('.circle');
+                circle.forEach(function(progress){
+                    let degree = 0;
+                    var targetDegree = parseInt(progress.getAttribute('data-degree'));
+                    let color = progress.getAttribute('data-color');
+                    let number = progress.querySelector('.number');
+
+                    var interval = setInterval(function(){
+                        degree += 1;
+                        if (degree > targetDegree){
+                            clearInterval(interval)
+                            return;
+                        }
+                        progress.style.background = `conic-gradient(${color} ${degree}%,#222 0% )`;
+                        number.innerHTML = degree + '<span>%</span>'
+                        number.style.color = color;
+                    },50)
+                })
+            });
+        </script>
+</body>
+</html>
