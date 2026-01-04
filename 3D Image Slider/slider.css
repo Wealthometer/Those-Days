@@ -1,0 +1,51 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #002a26;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin: 50px auto;
+    perspective: 1000px;
+    padding-top: 120px;
+}
+
+.rotator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 55%;
+    height: 150px;
+    transform-style: preserve-3d;
+    animation: roter 17s linear infinite;
+}
+
+@keyframes roter {
+    from{transform: rotateY(0deg);}
+    to{transform: rotateY(360deg);}
+}
+
+.rotator:hover {
+    animation-play-state: paused;
+}
+
+.items {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.items img {
+    height: 100%;
+    width: 100%;
+    transition: all 3s ease;
+}
+
+.items:first-child {
+    transform: rotateY(calc(40deg * 1)) translateZ(300px);
+}
