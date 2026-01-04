@@ -1,0 +1,747 @@
+:root {
+    --primary-color: #3182ce;
+    --secondary-color: #63b3ed;
+    --text-color: #2d3748;
+    --light-text: #718096;
+    --bg-color: #fff;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.mobile-nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 15px;
+    background: #f0f4f8;
+    color: var(--light-text);
+    font-size: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 70px;
+}
+
+.mobile-nav-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.mobile-nav-btn i {
+    font-size: 16px;
+}
+
+/* Mobile Profile */
+.mobile-profile {
+    display: none;
+    text-align: center;
+    padding: 100px 20px 40px;
+}
+
+.mobile-profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.mobile-profile h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.mobile-title {
+    color: var(--light-text);
+    margin-bottom: 20px;
+}
+
+.mobile-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.mobile-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #F2F7FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.mobile-social-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Desktop Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 400px;
+    padding: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-img {
+    width: 270px;
+    height: 270px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid var(--bg-color);
+}
+
+.profile h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.title {
+    color: var(--light-text);
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.typing {
+    position: unset;
+    font-size: 20px;
+    font-family: "Raleway";
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: rgb(79, 77, 77);
+    animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #F2F7FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #F2F5F9;
+    padding: 15px 20px;
+    border-radius: 7px;
+    font-family: "Raleway";
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.line {
+    background: #E3E3E3;
+    width: 300px;
+    height: 2px;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+.contact-label {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #388AC2, #00246D);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-weight: 500;
+    margin-top: 5px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #2c5282;
+    transform: translateY(-2px);
+}
+
+.main-section {
+    flex: 1;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.navigation {
+    background-color: #F2F7FC;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 5px;
+    width: 390px;
+    box-shadow: var(--shadow);
+    margin-left: 250px;
+    transform: translateY(110px);
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    background: linear-gradient(45deg, #388AC2, #00246D);
+    color: white;
+    transition: 0.6s ease-in-out;
+}
+
+.nav-link.active {
+    background: linear-gradient(45deg, #388AC2, #00246D);
+    color: white;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    margin-top: 80px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transform: translateY(20px);
+    margin-left: 180px;
+}
+
+.abt {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.abt h4 {
+    font-size: x-large;
+}
+
+.about-content {
+    margin-bottom: 40px;
+    line-height: 1.8;
+    font-family: "Raleway";
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #F2F7FC;
+    border-radius: 12px;
+    padding-left: 15px;
+    transition: var(--transition);
+    width: 400px;
+    letter-spacing: 1px;
+}
+
+.service-card2 {
+    background-color: #75ACD3;
+    border-radius: 12px;
+    padding-left: 15px;
+    padding-bottom: 1px;
+    width: 400px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.service-card1 {
+    padding: 25px;
+}
+
+.service-card2 p {
+    font-size: 13px;
+}
+
+.service-card p {
+    font-size: 13px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 4px;
+}
+
+.service-card2 h4 {
+    font-size: 20px;
+    margin-bottom: 1px;
+}
+
+.service-card h4 {
+    font-size: 20px;
+}
+
+/* Mobile Sections */
+.mobile-section {
+    display: none;
+    padding: 20px;
+}
+
+.mobile-section.active {
+    display: block;
+}
+
+/* Mobile Resume Styles */
+.resume-content-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.resume-section-mobile {
+    margin-bottom: 20px;
+}
+
+.section-header-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.section-header-mobile i {
+    color: var(--primary-color);
+}
+
+.resume-card-mobile {
+    background-color: #7fb3e3;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card-years {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #333;
+}
+
+.skills-section-mobile {
+    margin-bottom: 30px;
+}
+
+.skills-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: #f5f7fa;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Mobile Portfolio Styles */
+.filter-tabs-mobile {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: none;
+    background: #f7fafc;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #718096;
+    transition: var(--transition);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.portfolio-grid-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.portfolio-item-mobile {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item-mobile:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-image-mobile {
+    height: 150px;
+    overflow: hidden;
+}
+
+.portfolio-image-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-info-mobile {
+    padding: 15px;
+}
+
+.portfolio-info-mobile .category {
+    display: inline-block;
+    background: #e6fffa;
+    color: #319795;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.portfolio-info-mobile h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    text-transform: capitalize;
+}
+
+/* Mobile Contact Styles */
+.mobile-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #F2F5F9;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-contact-item i {
+    color: var(--primary-color);
+    font-size: 18px;
+    width: 20px;
+}
+
+.mobile-download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #388AC2, #00246D);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 20px;
+}
+
+.mobile-download-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Hidden class for filtering */
+.portfolio-item-mobile.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 300px;
+        padding: 60px;
+        margin-left: 50px;
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .main-section {
+        margin-left: 20px;
+    }
+    
+    .navigation {
+        width: 300px;
+        margin-left: 150px;
+    }
+    
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card,
+    .service-card2 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar-container,
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-nav,
+    .mobile-profile {
+        display: block;
+    }
+    
+    .mobile-section {
+        display: none;
+        padding: 20px;
+        padding-top: 40px;
+    }
+    
+    .mobile-section.active {
+        display: block;
+    }
+    
+    .main-section {
+        margin-left: 0;
+        padding-top: 0;
+    }
+    
+    .page-title::after {
+        width: 200px;
+        margin-left: 50px;
+    }
+    
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-card,
+    .service-card2 {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-nav-container {
+        gap: 5px;
+    }
+    
+    .mobile-nav-btn {
+        min-width: 60px;
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+    
+    .mobile-profile {
+        padding: 80px 15px 30px;
+    }
+    
+    .mobile-profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .mobile-section {
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 24px;
+    }
+    
+    .page-title::after {
+        width: 150px;
+        margin-left: 30px;
+    }
+}
