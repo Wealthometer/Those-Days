@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medebem Obinna - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-container">
+            <button class="mobile-nav-btn active" data-section="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="resume">
+                <i class="fas fa-file-alt"></i>
+                <span>Resume</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="work">
+                <i class="fas fa-briefcase"></i>
+                <span>Work</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="contact">
+                <i class="fas fa-user"></i>
+                <span>Contact</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Desktop Sidebar -->
+        <section class="sidebar-container">
+            <aside class="sidebar">
+                <div class="profile">
+                    <img src="/placeholder.svg?height=270&width=270" alt="Medebem Obinna" class="profile-img">
+                    <h1>Medebem Obinna</h1>
+                    <p class="title">
+                        <div class="typing">
+                            <span id="typed-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>
+                            <p class="contact-label">Phone</p>
+                            <p>+234 803 2296 371</p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <p>beatricewambuimbuguaa@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p class="contact-label">Location</p>
+                            <p>Niit surulere</p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </button>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Main Content -->
+        <div class="main-section">
+            <!-- Desktop Navigation -->
+            <nav class="navigation desktop-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="resume.html" class="nav-link"><i class="fas fa-file-alt"></i> Resume</a></li>
+                    <li><a href="work.html" class="nav-link"><i class="fas fa-briefcase"></i> Work</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Profile Section -->
+            <div class="mobile-profile">
+                <img src="/placeholder.svg?height=150&width=150" alt="Medebem Obinna" class="mobile-profile-img">
+                <h1>Medebem Obinna</h1>
+                <p class="mobile-title">FullStack Developer</p>
+                <div class="mobile-social-links">
+                    <a href="#" class="mobile-social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="mobile-social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="mobile-social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="mobile-social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- Home Section -->
+            <section id="home" class="page active mobile-section">
+                <h2 class="page-title">ABOUT ME</h2>
+                <div class="about-content">
+                    <p>Hello there! I'm thrilled to welcome you to my portfolio. I am a passionate and versatile full-stack developer with a keen interest in exploring the latest cutting-edge technologies. My journey in the world of web development has been nothing short of exhilarating, and I constantly strive to enhance my skills and embrace emerging trends in the industry.</p>
+                </div>
+                <h3 class="section-title">What I do!</h3>
+                <div class="services-container">
+                    <div class="service-card2">
+                        <div class="abt">
+                            <div class="service-icon web-icon">
+                                <img src="/placeholder.svg?height=40&width=40" alt="Web Development">
+                            </div>
+                            <h4>Web Development</h4>
+                        </div>
+                        <p>As a developer, I find myself most captivated by the power and flexibility of NEXT.js. I'm always eager to dive into new projects that leverage NEXT.js and discover innovative ways to create fast, scalable, and user-friendly applications.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="abt">
+                            <div class="service-icon app-icon">
+                                <img src="/placeholder.svg?height=40&width=40" alt="App Development">
+                            </div>
+                            <h4>App Development</h4>
+                        </div>
+                        <p>With a focus on user-centric design and cutting-edge technologies, I thrive on building intuitive and efficient apps that make a positive impact on people's lives. Let's turn ideas into reality and shape the future together.</p>
+                    </div>
+                    <div class="service-card1"></div>
+                    <div class="service-card2">
+                        <div class="abt">
+                            <div class="service-icon pm-icon">
+                                <img src="/placeholder.svg?height=40&width=40" alt="Project Manager">
+                            </div>
+                            <h4>Project Manager</h4>
+                        </div>
+                        <p>I have also found great joy in sharing my knowledge with others. Being a technical mentor allows me to give back to the community that has supported me throughout my career.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Resume Section -->
+            <section id="resume" class="mobile-section">
+                <h2 class="page-title">Resume</h2>
+                <div class="resume-content-mobile">
+                    <div class="resume-section-mobile">
+                        <div class="section-header-mobile">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </div>
+                        <div class="resume-card-mobile">
+                            <p class="card-years">2020-2021</p>
+                            <h3 class="card-title">Software Development</h3>
+                            <p class="card-subtitle">Moringa School</p>
+                        </div>
+                        <div class="resume-card-mobile">
+                            <p class="card-years">2013-2016</p>
+                            <h3 class="card-title">Disaster Management</h3>
+                            <p class="card-subtitle">Masinde Muliro University</p>
+                        </div>
+                    </div>
+                    <div class="resume-section-mobile">
+                        <div class="section-header-mobile">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Experience</span>
+                        </div>
+                        <div class="resume-card-mobile">
+                            <p class="card-years">2022 - Present</p>
+                            <h3 class="card-title">Technical Mentor</h3>
+                            <p class="card-subtitle">Moringa School</p>
+                        </div>
+                        <div class="resume-card-mobile">
+                            <p class="card-years">2021-2022</p>
+                            <h3 class="card-title">Website Development</h3>
+                            <p class="card-subtitle">Village 2 Nation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-section-mobile">
+                    <h3 class="skills-title">Work Skills</h3>
+                    <div class="skills-container">
+                        <div class="skill-tag">HTML</div>
+                        <div class="skill-tag">CSS</div>
+                        <div class="skill-tag">JavaScript</div>
+                        <div class="skill-tag">Java</div>
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">Advanced Excel</div>
+                        <div class="skill-tag">Database</div>
+                        <div class="skill-tag">MongoDB</div>
+                        <div class="skill-tag">MSSQL</div>
+                        <div class="skill-tag">MYSQL</div>
+                    </div>
+                </div>
+                <div class="skills-section-mobile">
+                    <h3 class="skills-title">Soft Skills</h3>
+                    <div class="skills-container">
+                        <div class="skill-tag">Time Management</div>
+                        <div class="skill-tag">Mentorship</div>
+                        <div class="skill-tag">Impeccable Communication</div>
+                        <div class="skill-tag">Flexibility</div>
+                        <div class="skill-tag">Research</div>
+                        <div class="skill-tag">Writing</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Portfolio Section -->
+            <section id="work" class="mobile-section">
+                <h2 class="page-title">Portfolio</h2>
+                <div class="filter-tabs-mobile">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="app-development">App Development</button>
+                    <button class="filter-btn" data-filter="web-development">Web Development</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="mentorship">Mentorship</button>
+                </div>
+                <div class="portfolio-grid-mobile">
+                    <div class="portfolio-item-mobile" data-category="web-development">
+                        <div class="portfolio-image-mobile">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Food Website">
+                        </div>
+                        <div class="portfolio-info-mobile">
+                            <span class="category">Web Development</span>
+                            <h3>food website</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-mobile" data-category="app-development">
+                        <div class="portfolio-image-mobile">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Interior App">
+                        </div>
+                        <div class="portfolio-info-mobile">
+                            <span class="category">App Development</span>
+                            <h3>Interior app</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-mobile" data-category="web-development">
+                        <div class="portfolio-image-mobile">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Rental">
+                        </div>
+                        <div class="portfolio-info-mobile">
+                            <span class="category">Web Development</span>
+                            <h3>Rental</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-mobile" data-category="mentorship">
+                        <div class="portfolio-image-mobile">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Wallet App">
+                        </div>
+                        <div class="portfolio-info-mobile">
+                            <span class="category">Mentorship</span>
+                            <h3>wallet app</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-mobile" data-category="web-development">
+                        <div class="portfolio-image-mobile">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Ideaflow">
+                        </div>
+                        <div class="portfolio-info-mobile">
+                            <span class="category">Web Development</span>
+                            <h3>Ideaflow</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Contact Section -->
+            <section id="contact" class="mobile-section">
+                <h2 class="page-title">Contact</h2>
+                <div class="mobile-contact-info">
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>
+                            <p class="contact-label">Phone</p>
+                            <p>+234 803 2296 371</p>
+                        </div>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <p>beatricewambuimbuguaa@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p class="contact-label">Location</p>
+                            <p>Niit surulere</p>
+                        </div>
+                    </div>
+                    <button class="mobile-download-btn" id="mobileDownloadBtn">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
