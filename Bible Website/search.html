@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Word | Search the Bible</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-book-bible"></i>
+                    <span>Divine Word</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="read.html">Read</a></li>
+                    <li><a href="study.html">Study</a></li>
+                    <li><a href="search.html" class="active">Search</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="read.html">Read</a></li>
+            <li><a href="study.html">Study</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="search-hero">
+            <div class="container">
+                <h1>Search the Bible</h1>
+                <p>Find verses, passages, and topics throughout scripture</p>
+                
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="search-input" placeholder="Enter a word, phrase, or reference...">
+                        <button id="search-button" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    
+                    <div class="search-options">
+                        <div class="option-group">
+                            <label>Translation:</label>
+                            <select id="search-translation">
+                                <option value="kjv">King James Version (KJV)</option>
+                                <option value="esv">English Standard Version (ESV)</option>
+                                <option value="niv">New International Version (NIV)</option>
+                                <option value="nlt">New Living Translation (NLT)</option>
+                                <option value="nasb">New American Standard Bible (NASB)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>Search in:</label>
+                            <div class="radio-options">
+                                <label>
+                                    <input type="radio" name="search-scope" value="all" checked>
+                                    Entire Bible
+                                </label>
+                                <label>
+                                    <input type="radio" name="search-scope" value="ot">
+                                    Old Testament
+                                </label>
+                                <label>
+                                    <input type="radio" name="search-scope" value="nt">
+                                    New Testament
+                                </label>
+                                <label>
+                                    <input type="radio" name="search-scope" value="custom">
+                                    Custom
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group custom-scope hidden">
+                            <label>Select books:</label>
+                            <button id="select-books" class="btn btn-sm">Choose Books</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-results">
+            <div class="container">
+                <div class="results-header">
+                    <h2>Search Results</h2>
+                    <div class="results-meta">
+                        <span id="results-count">0 results</span>
+                        <div class="results-actions">
+                            <button id="sort-results" class="btn btn-sm">
+                                <i class="fas fa-sort"></i> Sort
+                            </button>
+                            <div class="sort-dropdown">
+                                <button data-sort="relevance" class="active">Relevance</button>
+                                <button data-sort="book">Book Order</button>
+                                <button data-sort="reference">Reference</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="search-results-container">
+                    <div class="initial-state">
+                        <i class="fas fa-search"></i>
+                        <p>Enter a search term above to find verses in the Bible.</p>
+                        <div class="popular-searches">
+                            <h3>Popular Searches</h3>
+                            <div class="search-tags">
+                                <a href="#" class="search-tag" data-search="love">love</a>
+                                <a href="#" class="search-tag" data-search="faith">faith</a>
+                                <a href="#" class="search-tag" data-search="hope">hope</a>
+                                <a href="#" class="search-tag" data-search="grace">grace</a>
+                                <a href="#" class="search-tag" data-search="forgiveness">forgiveness</a>
+                                <a href="#" class="search-tag" data-search="salvation">salvation</a>
+                                <a href="#" class="search-tag" data-search="prayer">prayer</a>
+                                <a href="#" class="search-tag" data-search="peace">peace</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="loading-state hidden">
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Searching...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="results-list hidden">
+                        <!-- Search results will be added here -->
+                    </div>
+                    
+                    <div class="no-results hidden">
+                        <i class="fas fa-search-minus"></i>
+                        <p>No results found for "<span id="no-results-term"></span>".</p>
+                        <p>Try different keywords or check your spelling.</p>
+                    </div>
+                </div>
+                
+                <div class="pagination hidden">
+                    <button id="prev-page" class="btn btn-sm" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <div class="page-numbers">
+                        <span id="current-page">1</span> of <span id="total-pages">1</span>
+                    </div>
+                    <button id="next-page" class="btn btn-sm" disabled>
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div id="book-selection-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Select Books to Search</h3>
+                    <button id="close-modal" class="close-button">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="book-selection-tabs">
+                        <button class="book-tab active" data-testament="old">Old Testament</button>
+                        <button class="book-tab" data-testament="new">New Testament</button>
+                    </div>
+                    
+                    <div class="book-selection-container">
+                        <div id="old-testament-books" class="testament-books active">
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="pentateuch">
+                                        Pentateuch
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Genesis"> Genesis</label>
+                                    <label><input type="checkbox" name="book" value="Exodus"> Exodus</label>
+                                    <label><input type="checkbox" name="book" value="Leviticus"> Leviticus</label>
+                                    <label><input type="checkbox" name="book" value="Numbers"> Numbers</label>
+                                    <label><input type="checkbox" name="book" value="Deuteronomy"> Deuteronomy</label>
+                                </div>
+                            </div>
+                            
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="historical">
+                                        Historical Books
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Joshua"> Joshua</label>
+                                    <label><input type="checkbox" name="book" value="Judges"> Judges</label>
+                                    <label><input type="checkbox" name="book" value="Ruth"> Ruth</label>
+                                    <label><input type="checkbox" name="book" value="1 Samuel"> 1 Samuel</label>
+                                    <label><input type="checkbox" name="book" value="2 Samuel"> 2 Samuel</label>
+                                    <label><input type="checkbox" name="book" value="1 Kings"> 1 Kings</label>
+                                    <label><input type="checkbox" name="book" value="2 Kings"> 2 Kings</label>
+                                    <label><input type="checkbox" name="book" value="1 Chronicles"> 1 Chronicles</label>
+                                    <label><input type="checkbox" name="book" value="2 Chronicles"> 2 Chronicles</label>
+                                    <label><input type="checkbox" name="book" value="Ezra"> Ezra</label>
+                                    <label><input type="checkbox" name="book" value="Nehemiah"> Nehemiah</label>
+                                    <label><input type="checkbox" name="book" value="Esther"> Esther</label>
+                                </div>
+                            </div>
+                            
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="wisdom">
+                                        Wisdom Literature
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Job"> Job</label>
+                                    <label><input type="checkbox" name="book" value="Psalms"> Psalms</label>
+                                    <label><input type="checkbox" name="book" value="Proverbs"> Proverbs</label>
+                                    <label><input type="checkbox" name="book" value="Ecclesiastes"> Ecclesiastes</label>
+                                    <label><input type="checkbox" name="book" value="Song of Solomon"> Song of Solomon</label>
+                                </div>
+                            </div>
+                            
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="major-prophets">
+                                        Major Prophets
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Isaiah"> Isaiah</label>
+                                    <label><input type="checkbox" name="book" value="Jeremiah"> Jeremiah</label>
+                                    <label><input type="checkbox" name="book" value="Lamentations"> Lamentations</label>
+                                    <label><input type="checkbox" name="book" value="Ezekiel"> Ezekiel</label>
+                                    <label><input type="checkbox" name="book" value="Daniel"> Daniel</label>
+                                </div>
+                            </div>
+                            
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="minor-prophets">
+                                        Minor Prophets
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Hosea"> Hosea</label>
+                                    <label><input type="checkbox" name="book" value="Joel"> Joel</label>
+                                    <label><input type="checkbox" name="book" value="Amos"> Amos</label>
+                                    <label><input type="checkbox" name="book" value="Obadiah"> Obadiah</label>
+                                    <label><input type="checkbox" name="book" value="Jonah"> Jonah</label>
+                                    <label><input type="checkbox" name="book" value="Micah"> Micah</label>
+                                    <label><input type="checkbox" name="book" value="Nahum"> Nahum</label>
+                                    <label><input type="checkbox" name="book" value="Habakkuk"> Habakkuk</label>
+                                    <label><input type="checkbox" name="book" value="Zephaniah"> Zephaniah</label>
+                                    <label><input type="checkbox" name="book" value="Haggai"> Haggai</label>
+                                    <label><input type="checkbox" name="book" value="Zechariah"> Zechariah</label>
+                                    <label><input type="checkbox" name="book" value="Malachi"> Malachi</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="new-testament-books" class="testament-books">
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="gospels">
+                                        Gospels
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Matthew"> Matthew</label>
+                                    <label><input type="checkbox" name="book" value="Mark"> Mark</label>
+                                    <label><input type="checkbox" name="book" value="Luke"> Luke</label>
+                                    <label><input type="checkbox" name="book" value="John"> John</label>
+                                </div>
+                            </div>
+                            
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="history">
+                                        History
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Acts"> Acts</label>
+                                </div>
+                            </div>
+                            
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="pauline">
+                                        Pauline Epistles
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Romans"> Romans</label>
+                                    <label><input type="checkbox" name="book" value="1 Corinthians"> 1 Corinthians</label>
+                                    <label><input type="checkbox" name="book" value="2 Corinthians"> 2 Corinthians</label>
+                                    <label><input type="checkbox" name="book" value="Galatians"> Galatians</label>
+                                    <label><input type="checkbox" name="book" value="Ephesians"> Ephesians</label>
+                                    <label><input type="checkbox" name="book" value="Philippians"> Philippians</label>
+                                    <label><input type="checkbox" name="book" value="Colossians"> Colossians</label>
+                                    <label><input type="checkbox" name="book" value="1 Thessalonians"> 1 Thessalonians</label>
+                                    <label><input type="checkbox" name="book" value="2 Thessalonians"> 2 Thessalonians</label>
+                                    <label><input type="checkbox" name="book" value="1 Timothy"> 1 Timothy</label>
+                                    <label><input type="checkbox" name="book" value="2 Timothy"> 2 Timothy</label>
+                                    <label><input type="checkbox" name="book" value="Titus"> Titus</label>
+                                    <label><input type="checkbox" name="book" value="Philemon"> Philemon</label>
+                                </div>
+                            </div>
+                            
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="general">
+                                        General Epistles
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Hebrews"> Hebrews</label>
+                                    <label><input type="checkbox" name="book" value="James"> James</label>
+                                    <label><input type="checkbox" name="book" value="1 Peter"> 1 Peter</label>
+                                    <label><input type="checkbox" name="book" value="2 Peter"> 2 Peter</label>
+                                    <label><input type="checkbox" name="book" value="1 John"> 1 John</label>
+                                    <label><input type="checkbox" name="book" value="2 John"> 2 John</label>
+                                    <label><input type="checkbox" name="book" value="3 John"> 3 John</label>
+                                    <label><input type="checkbox" name="book" value="Jude"> Jude</label>
+                                </div>
+                            </div>
+                            
+                            <div class="book-category">
+                                <h4>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-category="apocalyptic">
+                                        Apocalyptic
+                                    </label>
+                                </h4>
+                                <div class="book-list">
+                                    <label><input type="checkbox" name="book" value="Revelation"> Revelation</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="selection-summary">
+                        <span id="selected-books-count">0</span> books selected
+                    </div>
+                    <div class="modal-actions">
+                        <button id="select-all-books" class="btn btn-sm">Select All</button>
+                        <button id="clear-selection" class="btn btn-sm btn-secondary">Clear All</button>
+                        <button id="apply-selection" class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-book-bible"></i>
+                    <span>Divine Word</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="read.html">Read</a></li>
+                            <li><a href="study.html">Study</a></li>
+                            <li><a href="search.html">Search</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Reading Plans</a></li>
+                            <li><a href="#">Devotionals</a></li>
+                            <li><a href="#">Study Guides</a></li>
+                            <li><a href="#">Commentaries</a></li>
+                            <li><a href="#">Concordance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Divine Word Bible. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
