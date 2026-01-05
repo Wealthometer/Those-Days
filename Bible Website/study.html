@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Word | Bible Study</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/study.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-book-bible"></i>
+                    <span>Divine Word</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="read.html">Read</a></li>
+                    <li><a href="study.html" class="active">Study</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="read.html">Read</a></li>
+            <li><a href="study.html">Study</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="study-hero">
+            <div class="container">
+                <h1>Bible Study Tools</h1>
+                <p>Deepen your understanding of scripture with our comprehensive study resources</p>
+            </div>
+        </section>
+
+        <section class="study-dashboard">
+            <div class="container">
+                <div class="dashboard-tabs">
+                    <button class="dashboard-tab active" data-tab="notes">My Notes</button>
+                    <button class="dashboard-tab" data-tab="highlights">My Highlights</button>
+                    <button class="dashboard-tab" data-tab="bookmarks">My Bookmarks</button>
+                    <button class="dashboard-tab" data-tab="plans">Reading Plans</button>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="tab-content active" id="notes-content">
+                        <div class="content-header">
+                            <h2>My Notes</h2>
+                            <div class="content-actions">
+                                <div class="search-notes">
+                                    <input type="text" placeholder="Search notes...">
+                                    <button><i class="fas fa-search"></i></button>
+                                </div>
+                                <button class="btn btn-primary" id="create-note">
+                                    <i class="fas fa-plus"></i> New Note
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="notes-container" id="notes-list">
+                            <div class="empty-state" id="notes-empty-state">
+                                <i class="fas fa-sticky-note"></i>
+                                <h3>No Notes Yet</h3>
+                                <p>Create your first note to start your study journey.</p>
+                                <button class="btn btn-primary">Create Note</button>
+                            </div>
+                            
+                            <!-- Notes will be loaded here -->
+                            <div class="note-card">
+                                <div class="note-header">
+                                    <h3>Sermon on the Mount</h3>
+                                    <div class="note-meta">
+                                        <span class="note-reference">Matthew 5:1-12</span>
+                                        <span class="note-date">May 15, 2023</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="note-content">
+                                    <p>The Beatitudes describe the character of those who belong to God's kingdom. Jesus begins with "Blessed are the poor in spirit" - those who recognize their spiritual poverty and need for God.</p>
+                                </div>
+                                <div class="note-actions">
+                                    <button class="btn btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                            
+                            <div class="note-card">
+                                <div class="note-header">
+                                    <h3>Fruit of the Spirit</h3>
+                                    <div class="note-meta">
+                                        <span class="note-reference">Galatians 5:22-23</span>
+                                        <span class="note-date">April 28, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="note-content">
+                                    <p>Paul lists nine attributes of the fruit of the Spirit: love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control. These are not separate fruits but different aspects of the same fruit.</p>
+                                </div>
+                                <div class="note-actions">
+                                    <button class="btn btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="highlights-content">
+                        <div class="content-header">
+                            <h2>My Highlights</h2>
+                            <div class="content-actions">
+                                <div class="search-highlights">
+                                    <input type="text" placeholder="Search highlights...">
+                                    <button><i class="fas fa-search"></i></button>
+                                </div>
+                                <div class="filter-dropdown">
+                                    <button class="btn btn-secondary">
+                                        <i class="fas fa-filter"></i> Filter
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <button data-filter="all" class="active">All Colors</button>
+                                        <button data-filter="yellow">Yellow</button>
+                                        <button data-filter="green">Green</button>
+                                        <button data-filter="blue">Blue</button>
+                                        <button data-filter="purple">Purple</button>
+                                        <button data-filter="pink">Pink</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="highlights-container" id="highlights-list">
+                            <div class="empty-state" id="highlights-empty-state">
+                                <i class="fas fa-highlighter"></i>
+                                <h3>No Highlights Yet</h3>
+                                <p>Highlight verses while reading to save them here.</p>
+                                <a href="read.html" class="btn btn-primary">Go to Reader</a>
+                            </div>
+                            
+                            <!-- Highlights will be loaded here -->
+                            <div class="highlight-card">
+                                <div class="highlight-color" style="background-color: #ffeb3b;"></div>
+                                <div class="highlight-content">
+                                    <p class="highlight-text">"For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."</p>
+                                    <div class="highlight-meta">
+                                        <span class="highlight-reference">John 3:16 (ESV)</span>
+                                        <span class="highlight-date">June 2, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="highlight-actions">
+                                    <button class="btn btn-sm"><i class="fas fa-book-open"></i> Read</button>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="highlight-card">
+                                <div class="highlight-color" style="background-color: #a5d6a7;"></div>
+                                <div class="highlight-content">
+                                    <p class="highlight-text">"Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths."</p>
+                                    <div class="highlight-meta">
+                                        <span class="highlight-reference">Proverbs 3:5-6 (ESV)</span>
+                                        <span class="highlight-date">May 20, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="highlight-actions">
+                                    <button class="btn btn-sm"><i class="fas fa-book-open"></i> Read</button>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="bookmarks-content">
+                        <div class="content-header">
+                            <h2>My Bookmarks</h2>
+                            <div class="content-actions">
+                                <div class="search-bookmarks">
+                                    <input type="text" placeholder="Search bookmarks...">
+                                    <button><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bookmarks-container" id="bookmarks-list">
+                            <div class="empty-state" id="bookmarks-empty-state">
+                                <i class="fas fa-bookmark"></i>
+                                <h3>No Bookmarks Yet</h3>
+                                <p>Bookmark chapters while reading to save them here.</p>
+                                <a href="read.html" class="btn btn-primary">Go to Reader</a>
+                            </div>
+                            
+                            <!-- Bookmarks will be loaded here -->
+                            <div class="bookmark-card">
+                                <div class="bookmark-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </div>
+                                <div class="bookmark-content">
+                                    <h3>Psalm 23</h3>
+                                    <p class="bookmark-preview">The LORD is my shepherd; I shall not want. He makes me lie down in green pastures...</p>
+                                    <div class="bookmark-meta">
+                                        <span class="bookmark-translation">ESV</span>
+                                        <span class="bookmark-date">June 10, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="bookmark-actions">
+                                    <a href="read.html?book=Psalms&chapter=23" class="btn btn-sm"><i class="fas fa-book-open"></i> Read</a>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="bookmark-card">
+                                <div class="bookmark-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </div>
+                                <div class="bookmark-content">
+                                    <h3>Romans 8</h3>
+                                    <p class="bookmark-preview">There is therefore now no condemnation for those who are in Christ Jesus...</p>
+                                    <div class="bookmark-meta">
+                                        <span class="bookmark-translation">ESV</span>
+                                        <span class="bookmark-date">May 25, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="bookmark-actions">
+                                    <a href="read.html?book=Romans&chapter=8" class="btn btn-sm"><i class="fas fa-book-open"></i> Read</a>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="plans-content">
+                        <div class="content-header">
+                            <h2>Reading Plans</h2>
+                            <div class="content-actions">
+                                <div class="plans-filter">
+                                    <select id="plans-filter-select">
+                                        <option value="all">All Plans</option>
+                                        <option value="active">Active Plans</option>
+                                        <option value="completed">Completed Plans</option>
+                                        <option value="available">Available Plans</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="plans-container">
+                            <div class="active-plans">
+                                <h3>My Active Plans</h3>
+                                <div class="plans-list" id="active-plans-list">
+                                    <div class="empty-state" id="active-plans-empty-state">
+                                        <i class="fas fa-book"></i>
+                                        <h3>No Active Plans</h3>
+                                        <p>Start a reading plan to track your progress.</p>
+                                    </div>
+                                    
+                                    <!-- Active plans will be loaded here -->
+                                    <div class="plan-card active-plan">
+                                        <div class="plan-header">
+                                            <h4>New Testament in 90 Days</h4>
+                                            <div class="plan-progress">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: 35%;"></div>
+                                                </div>
+                                                <span class="progress-text">35% Complete</span>
+                                            </div>
+                                        </div>
+                                        <div class="plan-details">
+                                            <div class="plan-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">32</span>
+                                                    <span class="stat-label">Days Completed</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">58</span>
+                                                    <span class="stat-label">Days Remaining</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">10</span>
+                                                    <span class="stat-label">Current Streak</span>
+                                                </div>
+                                            </div>
+                                            <div class="plan-actions">
+                                                <a href="#" class="btn btn-sm">Today's Reading</a>
+                                                <button class="btn btn-sm btn-secondary">View Plan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="available-plans">
+                                <h3>Available Plans</h3>
+                                <div class="plans-grid">
+                                    <div class="plan-card available-plan">
+                                        <div class="plan-image">
+                                            <img src="/placeholder.svg?height=150&width=250" alt="Bible in a Year">
+                                        </div>
+                                        <div class="plan-content">
+                                            <h4>Bible in a Year</h4>
+                                            <p>Read through the entire Bible in 365 days with daily readings from the Old Testament, New Testament, Psalms, and Proverbs.</p>
+                                            <div class="plan-meta">
+                                                <span><i class="far fa-calendar-alt"></i> 365 days</span>
+                                                <button class="btn btn-sm">Start Plan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="plan-card available-plan">
+                                        <div class="plan-image">
+                                            <img src="/placeholder.svg?height=150&width=250" alt="Wisdom Literature">
+                                        </div>
+                                        <div class="plan-content">
+                                            <h4>Wisdom Literature</h4>
+                                            <p>Explore the wisdom books of the Bible including Proverbs, Ecclesiastes, and Job to gain practical insights for daily living.</p>
+                                            <div class="plan-meta">
+                                                <span><i class="far fa-calendar-alt"></i> 30 days</span>
+                                                <button class="btn btn-sm">Start Plan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="plan-card available-plan">
+                                        <div class="plan-image">
+                                            <img src="/placeholder.svg?height=150&width=250" alt="Gospels in 40 Days">
+                                        </div>
+                                        <div class="plan-content">
+                                            <h4>Gospels in 40 Days</h4>
+                                            <p>Focus on the life and teachings of Jesus Christ through a 40-day journey through Matthew, Mark, Luke, and John.</p>
+                                            <div class="plan-meta">
+                                                <span><i class="far fa-calendar-alt"></i> 40 days</span>
+                                                <button class="btn btn-sm">Start Plan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="plan-card available-plan">
+                                        <div class="plan-image">
+                                            <img src="/placeholder.svg?height=150&width=250" alt="Psalms & Proverbs">
+                                        </div>
+                                        <div class="plan-content">
+                                            <h4>Psalms & Proverbs</h4>
+                                            <p>Immerse yourself in the poetry, prayers, and wisdom of Psalms and Proverbs over 60 days of daily readings.</p>
+                                            <div class="plan-meta">
+                                                <span><i class="far fa-calendar-alt"></i> 60 days</span>
+                                                <button class="btn btn-sm">Start Plan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="view-more-plans">
+                                    <a href="#" class="btn btn-secondary">View All Plans <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-book-bible"></i>
+                    <span>Divine Word</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="read.html">Read</a></li>
+                            <li><a href="study.html">Study</a></li>
+                            <li><a href="search.html">Search</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Reading Plans</a></li>
+                            <li><a href="#">Devotionals</a></li>
+                            <li><a href="#">Study Guides</a></li>
+                            <li><a href="#">Commentaries</a></li>
+                            <li><a href="#">Concordance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Divine Word Bible. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/study.js"></script>
+</body>
+</html>
