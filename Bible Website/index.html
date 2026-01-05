@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Word | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-book-bible"></i>
+                    <span>Divine Word</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="read.html">Read</a></li>
+                    <li><a href="study.html">Study</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="read.html">Read</a></li>
+            <li><a href="study.html">Study</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Explore the Word of God</h1>
+                    <p>Read, study, and search the Bible in multiple translations to enrich your spiritual journey.</p>
+                    <div class="hero-buttons">
+                        <a href="read.html" class="btn btn-primary">Start Reading</a>
+                        <a href="search.html" class="btn btn-secondary">Search Scripture</a>
+                    </div>
+                </div>
+                <div class="daily-verse">
+                    <div class="daily-verse-header">
+                        <h3>Verse of the Day</h3>
+                        <button id="share-verse" aria-label="Share verse">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                    <div class="verse-content">
+                        <p id="verse-text">"For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."</p>
+                        <p id="verse-reference">John 3:16 (ESV)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Discover the Bible</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Multiple Translations</h3>
+                        <p>Access various Bible translations including KJV, NIV, ESV, NASB, and more to deepen your understanding.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Advanced Search</h3>
+                        <p>Find specific verses, topics, or words throughout the entire Bible with our powerful search tools.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-highlighter"></i>
+                        </div>
+                        <h3>Study Tools</h3>
+                        <p>Highlight passages, take notes, and create bookmarks to enhance your Bible study experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Access the Bible anytime, anywhere with our responsive design that works on all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-access">
+            <div class="container">
+                <h2>Quick Access</h2>
+                <div class="testament-sections">
+                    <div class="testament">
+                        <h3>Old Testament</h3>
+                        <div class="book-grid">
+                            <a href="read.html?book=Genesis&chapter=1" class="book-link">Genesis</a>
+                            <a href="read.html?book=Exodus&chapter=1" class="book-link">Exodus</a>
+                            <a href="read.html?book=Psalms&chapter=1" class="book-link">Psalms</a>
+                            <a href="read.html?book=Isaiah&chapter=1" class="book-link">Isaiah</a>
+                            <a href="read.html?book=Daniel&chapter=1" class="book-link">Daniel</a>
+                            <a href="read.html" class="book-link view-all">View All <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="testament">
+                        <h3>New Testament</h3>
+                        <div class="book-grid">
+                            <a href="read.html?book=Matthew&chapter=1" class="book-link">Matthew</a>
+                            <a href="read.html?book=John&chapter=1" class="book-link">John</a>
+                            <a href="read.html?book=Romans&chapter=1" class="book-link">Romans</a>
+                            <a href="read.html?book=Revelation&chapter=1" class="book-link">Revelation</a>
+                            <a href="read.html?book=Hebrews&chapter=1" class="book-link">Hebrews</a>
+                            <a href="read.html" class="book-link view-all">View All <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reading-plans">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Reading Plans</h2>
+                    <a href="#" class="view-all-link">View All Plans <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <div class="plan-image">
+                            <img src="./images/Bible.jpeg" alt="Bible in a Year">
+                        </div>
+                        <div class="plan-content">
+                            <h3>Bible in a Year</h3>
+                            <p>Read through the entire Bible in 365 days with daily readings from the Old Testament, New Testament, Psalms, and Proverbs.</p>
+                            <div class="plan-meta">
+                                <span><i class="far fa-calendar-alt"></i> 365 days</span>
+                                <a href="#" class="btn btn-sm">Start Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plan-card">
+                        <div class="plan-image">
+                            <img src="./images/new testament.jpeg" alt="New Testament in 90 Days">
+                        </div>
+                        <div class="plan-content">
+                            <h3>New Testament in 90 Days</h3>
+                            <p>Focus on the teachings of Jesus and the early church with this 90-day reading plan through the entire New Testament.</p>
+                            <div class="plan-meta">
+                                <span><i class="far fa-calendar-alt"></i> 90 days</span>
+                                <a href="#" class="btn btn-sm">Start Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plan-card">
+                        <div class="plan-image">
+                            <img src="./images/wisdom literatures.jpeg" alt="Wisdom Literature">
+                        </div>
+                        <div class="plan-content">
+                            <h3>Wisdom Literature</h3>
+                            <p>Explore the wisdom books of the Bible including Proverbs, Ecclesiastes, and Job to gain practical insights for daily living.</p>
+                            <div class="plan-meta">
+                                <span><i class="far fa-calendar-alt"></i> 30 days</span>
+                                <a href="#" class="btn btn-sm">Start Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Begin Your Spiritual Journey Today</h2>
+                <p>Dive into the scriptures and discover the timeless wisdom and guidance of the Bible.</p>
+                <a href="read.html" class="btn btn-primary">Start Reading Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-book-bible"></i>
+                    <span>Divine Word</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="read.html">Read</a></li>
+                            <li><a href="study.html">Study</a></li>
+                            <li><a href="search.html">Search</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Reading Plans</a></li>
+                            <li><a href="#">Devotionals</a></li>
+                            <li><a href="#">Study Guides</a></li>
+                            <li><a href="#">Commentaries</a></li>
+                            <li><a href="#">Concordance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Divine Word Bible. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/daily-verse.js"></script>
+</body>
+</html>
