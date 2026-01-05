@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Word | Read the Bible</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/read.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-book-bible"></i>
+                    <span>Divine Word</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="read.html" class="active">Read</a></li>
+                    <li><a href="study.html">Study</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="read.html">Read</a></li>
+            <li><a href="study.html">Study</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <main class="bible-reader">
+        <div class="container">
+            <div class="reader-layout">
+                <aside class="bible-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Bible</h2>
+                        <button id="sidebar-close" class="sidebar-toggle" aria-label="Close sidebar">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="translation-selector">
+                        <select id="translation-select">
+                            <option value="kjv">King James Version (KJV)</option>
+                            <option value="esv">English Standard Version (ESV)</option>
+                            <option value="niv">New International Version (NIV)</option>
+                            <option value="nlt">New Living Translation (NLT)</option>
+                            <option value="nasb">New American Standard Bible (NASB)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="testament-tabs">
+                        <button class="testament-tab active" data-testament="old">Old Testament</button>
+                        <button class="testament-tab" data-testament="new">New Testament</button>
+                    </div>
+                    
+                    <div class="books-list" id="old-testament">
+                        <div class="book-category">
+                            <h3>Pentateuch</h3>
+                            <ul>
+                                <li><a href="#" data-book="Genesis">Genesis</a></li>
+                                <li><a href="#" data-book="Exodus">Exodus</a></li>
+                                <li><a href="#" data-book="Leviticus">Leviticus</a></li>
+                                <li><a href="#" data-book="Numbers">Numbers</a></li>
+                                <li><a href="#" data-book="Deuteronomy">Deuteronomy</a></li>
+                            </ul>
+                        </div>
+                        <div class="book-category">
+                            <h3>Historical Books</h3>
+                            <ul>
+                                <li><a href="#" data-book="Joshua">Joshua</a></li>
+                                <li><a href="#" data-book="Judges">Judges</a></li>
+                                <li><a href="#" data-book="Ruth">Ruth</a></li>
+                                <li><a href="#" data-book="1 Samuel">1 Samuel</a></li>
+                                <li><a href="#" data-book="2 Samuel">2 Samuel</a></li>
+                                <li><a href="#" data-book="1 Kings">1 Kings</a></li>
+                                <li><a href="#" data-book="2 Kings">2 Kings</a></li>
+                                <li><a href="#" data-book="1 Chronicles">1 Chronicles</a></li>
+                                <li><a href="#" data-book="2 Chronicles">2 Chronicles</a></li>
+                                <li><a href="#" data-book="Ezra">Ezra</a></li>
+                                <li><a href="#" data-book="Nehemiah">Nehemiah</a></li>
+                                <li><a href="#" data-book="Esther">Esther</a></li>
+                            </ul>
+                        </div>
+                        <div class="book-category">
+                            <h3>Wisdom Literature</h3>
+                            <ul>
+                                <li><a href="#" data-book="Job">Job</a></li>
+                                <li><a href="#" data-book="Psalms">Psalms</a></li>
+                                <li><a href="#" data-book="Proverbs">Proverbs</a></li>
+                                <li><a href="#" data-book="Ecclesiastes">Ecclesiastes</a></li>
+                                <li><a href="#" data-book="Song of Solomon">Song of Solomon</a></li>
+                            </ul>
+                        </div>
+                        <div class="book-category">
+                            <h3>Major Prophets</h3>
+                            <ul>
+                                <li><a href="#" data-book="Isaiah">Isaiah</a></li>
+                                <li><a href="#" data-book="Jeremiah">Jeremiah</a></li>
+                                <li><a href="#" data-book="Lamentations">Lamentations</a></li>
+                                <li><a href="#" data-book="Ezekiel">Ezekiel</a></li>
+                                <li><a href="#" data-book="Daniel">Daniel</a></li>
+                            </ul>
+                        </div>
+                        <div class="book-category">
+                            <h3>Minor Prophets</h3>
+                            <ul>
+                                <li><a href="#" data-book="Hosea">Hosea</a></li>
+                                <li><a href="#" data-book="Joel">Joel</a></li>
+                                <li><a href="#" data-book="Amos">Amos</a></li>
+                                <li><a href="#" data-book="Obadiah">Obadiah</a></li>
+                                <li><a href="#" data-book="Jonah">Jonah</a></li>
+                                <li><a href="#" data-book="Micah">Micah</a></li>
+                                <li><a href="#" data-book="Nahum">Nahum</a></li>
+                                <li><a href="#" data-book="Habakkuk">Habakkuk</a></li>
+                                <li><a href="#" data-book="Zephaniah">Zephaniah</a></li>
+                                <li><a href="#" data-book="Haggai">Haggai</a></li>
+                                <li><a href="#" data-book="Zechariah">Zechariah</a></li>
+                                <li><a href="#" data-book="Malachi">Malachi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="books-list hidden" id="new-testament">
+                        <div class="book-category">
+                            <h3>Gospels</h3>
+                            <ul>
+                                <li><a href="#" data-book="Matthew">Matthew</a></li>
+                                <li><a href="#" data-book="Mark">Mark</a></li>
+                                <li><a href="#" data-book="Luke">Luke</a></li>
+                                <li><a href="#" data-book="John">John</a></li>
+                            </ul>
+                        </div>
+                        <div class="book-category">
+                            <h3>History</h3>
+                            <ul>
+                                <li><a href="#" data-book="Acts">Acts</a></li>
+                            </ul>
+                        </div>
+                        <div class="book-category">
+                            <h3>Pauline Epistles</h3>
+                            <ul>
+                                <li><a href="#" data-book="Romans">Romans</a></li>
+                                <li><a href="#" data-book="1 Corinthians">1 Corinthians</a></li>
+                                <li><a href="#" data-book="2 Corinthians">2 Corinthians</a></li>
+                                <li><a href="#" data-book="Galatians">Galatians</a></li>
+                                <li><a href="#" data-book="Ephesians">Ephesians</a></li>
+                                <li><a href="#" data-book="Philippians">Philippians</a></li>
+                                <li><a href="#" data-book="Colossians">Colossians</a></li>
+                                <li><a href="#" data-book="1 Thessalonians">1 Thessalonians</a></li>
+                                <li><a href="#" data-book="2 Thessalonians">2 Thessalonians</a></li>
+                                <li><a href="#" data-book="1 Timothy">1 Timothy</a></li>
+                                <li><a href="#" data-book="2 Timothy">2 Timothy</a></li>
+                                <li><a href="#" data-book="Titus">Titus</a></li>
+                                <li><a href="#" data-book="Philemon">Philemon</a></li>
+                            </ul>
+                        </div>
+                        <div class="book-category">
+                            <h3>General Epistles</h3>
+                            <ul>
+                                <li><a href="#" data-book="Hebrews">Hebrews</a></li>
+                                <li><a href="#" data-book="James">James</a></li>
+                                <li><a href="#" data-book="1 Peter">1 Peter</a></li>
+                                <li><a href="#" data-book="2 Peter">2 Peter</a></li>
+                                <li><a href="#" data-book="1 John">1 John</a></li>
+                                <li><a href="#" data-book="2 John">2 John</a></li>
+                                <li><a href="#" data-book="3 John">3 John</a></li>
+                                <li><a href="#" data-book="Jude">Jude</a></li>
+                            </ul>
+                        </div>
+                        <div class="book-category">
+                            <h3>Apocalyptic</h3>
+                            <ul>
+                                <li><a href="#" data-book="Revelation">Revelation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="bible-content">
+                    <div class="content-header">
+                        <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="current-reference">
+                            <h1 id="current-book">Genesis</h1>
+                            <div class="chapter-navigation">
+                                <button id="prev-chapter" class="nav-button" aria-label="Previous chapter">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <select id="chapter-select">
+                                    <option value="1">Chapter 1</option>
+                                    <option value="2">Chapter 2</option>
+                                    <option value="3">Chapter 3</option>
+                                    <!-- More chapters will be added dynamically -->
+                                </select>
+                                <button id="next-chapter" class="nav-button" aria-label="Next chapter">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="content-actions">
+                            <button id="font-size-toggle" aria-label="Adjust font size">
+                                <i class="fas fa-font"></i>
+                            </button>
+                            <div class="font-size-dropdown">
+                                <button data-size="small">Small</button>
+                                <button data-size="medium" class="active">Medium</button>
+                                <button data-size="large">Large</button>
+                            </div>
+                            <button id="bookmark-chapter" aria-label="Bookmark this chapter">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                            <button id="share-chapter" aria-label="Share this chapter">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="scripture-container">
+                        <div class="scripture-text" id="scripture-content">
+                            <div class="loading-spinner">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span>Loading scripture...</span>
+                            </div>
+                            <!-- Scripture content will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="content-footer">
+                        <div class="chapter-navigation">
+                            <button id="prev-chapter-bottom" class="btn btn-secondary">
+                                <i class="fas fa-chevron-left"></i> Previous Chapter
+                            </button>
+                            <button id="next-chapter-bottom" class="btn btn-secondary">
+                                Next Chapter <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="study-tools">
+                    <div class="tools-header">
+                        <h2>Study Tools</h2>
+                        <button id="tools-close" aria-label="Close tools panel">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="tools-tabs">
+                        <button class="tool-tab active" data-tool="notes">Notes</button>
+                        <button class="tool-tab" data-tool="highlights">Highlights</button>
+                        <button class="tool-tab" data-tool="bookmarks">Bookmarks</button>
+                    </div>
+                    
+                    <div class="tool-content active" id="notes-tool">
+                        <div class="tool-header">
+                            <h3>My Notes</h3>
+                            <button id="add-note" class="btn btn-sm">
+                                <i class="fas fa-plus"></i> Add Note
+                            </button>
+                        </div>
+                        
+                        <div class="notes-list" id="notes-container">
+                            <div class="empty-state">
+                                <i class="fas fa-sticky-note"></i>
+                                <p>You haven't added any notes yet.</p>
+                                <button class="btn btn-sm">Add Your First Note</button>
+                            </div>
+                            <!-- Notes will be added here -->
+                        </div>
+                        
+                        <div class="note-editor hidden">
+                            <textarea id="note-text" placeholder="Write your note here..."></textarea>
+                            <div class="note-actions">
+                                <button id="save-note" class="btn btn-sm">Save Note</button>
+                                <button id="cancel-note" class="btn btn-sm btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-content" id="highlights-tool">
+                        <div class="tool-header">
+                            <h3>My Highlights</h3>
+                        </div>
+                        
+                        <div class="highlight-colors">
+                            <button class="color-option" data-color="yellow" style="background-color: #ffeb3b;"></button>
+                            <button class="color-option" data-color="green" style="background-color: #a5d6a7;"></button>
+                            <button class="color-option" data-color="blue" style="background-color: #90caf9;"></button>
+                            <button class="color-option" data-color="purple" style="background-color: #ce93d8;"></button>
+                            <button class="color-option" data-color="pink" style="background-color: #f48fb1;"></button>
+                        </div>
+                        
+                        <p class="highlight-instruction">Select text in the scripture to highlight it.</p>
+                        
+                        <div class="highlights-list" id="highlights-container">
+                            <div class="empty-state">
+                                <i class="fas fa-highlighter"></i>
+                                <p>You haven't highlighted any verses yet.</p>
+                            </div>
+                            <!-- Highlights will be added here -->
+                        </div>
+                    </div>
+                    
+                    <div class="tool-content" id="bookmarks-tool">
+                        <div class="tool-header">
+                            <h3>My Bookmarks</h3>
+                        </div>
+                        
+                        <div class="bookmarks-list" id="bookmarks-container">
+                            <div class="empty-state">
+                                <i class="fas fa-bookmark"></i>
+                                <p>You haven't bookmarked any chapters yet.</p>
+                            </div>
+                            <!-- Bookmarks will be added here -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-book-bible"></i>
+                    <span>Divine Word</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="read.html">Read</a></li>
+                            <li><a href="study.html">Study</a></li>
+                            <li><a href="search.html">Search</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Reading Plans</a></li>
+                            <li><a href="#">Devotionals</a></li>
+                            <li><a href="#">Study Guides</a></li>
+                            <li><a href="#">Commentaries</a></li>
+                            <li><a href="#">Concordance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Divine Word Bible. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/bible-reader.js"></script>
+</body>
+</html>
