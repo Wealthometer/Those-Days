@@ -1,0 +1,555 @@
+/* Bible Reader Styles */
+.bible-reader {
+  min-height: calc(100vh - 80px);
+  padding: 40px 0;
+}
+
+.reader-layout {
+  display: flex;
+  gap: 30px;
+  position: relative;
+  min-height: calc(100vh - 240px);
+}
+
+/* Sidebar Styles */
+.bible-sidebar {
+  width: 300px;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow-y: auto;
+  height: calc(100vh - 160px);
+  position: sticky;
+  top: 100px;
+  transition: var(--transition);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header h2 {
+  margin-bottom: 0;
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sidebar-toggle:hover {
+  color: var(--primary-color);
+}
+
+.translation-selector {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.translation-selector select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2390A3BF' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.testament-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.testament-tab {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.testament-tab:hover {
+  color: var(--primary-color);
+}
+
+.testament-tab.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.books-list {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(100vh - 350px);
+}
+
+.books-list.hidden {
+  display: none;
+}
+
+.book-category {
+  margin-bottom: 20px;
+}
+
+.book-category h3 {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.book-category ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.book-category ul li a {
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.book-category ul li a:hover {
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+}
+
+.book-category ul li a.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Bible Content Styles */
+.bible-content {
+  flex: 1;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.content-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.current-reference {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.current-reference h1 {
+  margin-bottom: 0;
+  font-size: 1.75rem;
+}
+
+.chapter-navigation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-light);
+  border: none;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.nav-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chapter-navigation select {
+  padding: 8px 30px 8px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2390A3BF' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.content-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.content-actions button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-light);
+  border: none;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.content-actions button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.font-size-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  display: none;
+  z-index: 10;
+}
+
+.font-size-dropdown.active {
+  display: block;
+}
+
+.font-size-dropdown button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 15px;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.font-size-dropdown button:hover {
+  background-color: var(--bg-light);
+}
+
+.font-size-dropdown button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.scripture-container {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.scripture-text {
+  font-family: var(--font-serif);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.scripture-text.font-small {
+  font-size: 0.9rem;
+}
+
+.scripture-text.font-large {
+  font-size: 1.3rem;
+}
+
+.verse {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.verse-number {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.9em;
+  margin-right: 5px;
+  user-select: none;
+}
+
+.verse-text {
+  position: relative;
+}
+
+.verse-text.highlighted {
+  background-color: rgba(255, 235, 59, 0.3);
+  border-radius: 3px;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--text-muted);
+}
+
+.loading-spinner i {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.content-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.content-footer .chapter-navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Study Tools Styles */
+.study-tools {
+  width: 300px;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow-y: auto;
+  height: calc(100vh - 160px);
+  position: sticky;
+  top: 100px;
+  transition: var(--transition);
+}
+
+.tools-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tools-header h2 {
+  margin-bottom: 0;
+}
+
+.tools-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tool-tab {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tool-tab:hover {
+  color: var(--primary-color);
+}
+
+.tool-tab.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.tool-content {
+  padding: 20px;
+  display: none;
+}
+
+.tool-content.active {
+  display: block;
+}
+
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tool-header h3 {
+  margin-bottom: 0;
+}
+
+.notes-list, .highlights-list, .bookmarks-list {
+  max-height: calc(100vh - 350px);
+  overflow-y: auto;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.empty-state i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+}
+
+.note-editor {
+  margin-top: 20px;
+}
+
+.note-editor textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  resize: none;
+  margin-bottom: 15px;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.highlight-colors {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.color-option:hover, .color-option.active {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px var(--bg-color), 0 0 0 4px currentColor;
+}
+
+.highlight-instruction {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .reader-layout {
+    flex-direction: column;
+  }
+  
+  .bible-sidebar, .study-tools {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+  }
+  
+  .books-list {
+    max-height: 400px;
+  }
+  
+  .notes-list, .highlights-list, .bookmarks-list {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .current-reference {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .content-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .book-category ul {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .testament-tabs, .tools-tabs {
+    flex-direction: column;
+  }
+  
+  .testament-tab, .tool-tab {
+    padding: 10px;
+  }
+  
+  .scripture-container {
+    padding: 20px 15px;
+  }
+  
+  .content-footer .chapter-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .content-footer .btn {
+    width: 100%;
+  }
+}
