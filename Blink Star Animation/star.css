@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sec {
+    position: relative;
+    background: #111;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.box {
+    position: absolute;
+    color: #0005;
+}
+
+.box::before {
+    content: '\f005';
+    font-family: fontAwesome;
+}
+
+.box.animate {
+    color: #ff0;
+    text-shadow: 0 0 5px #ff0,
+                 0 0 20px #ff0,
+                 0 0 50px #ff0;
+}
+
+h1,h2,h3,h4 {
+    /* position: fixed; */
+    color: rgb(209, 232, 252);
+    font-family: "Poppins";
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    line-height: 3rem;
+    margin-top: 400px;
+    font-size: 12em;
+    z-index: 100;
+    position: absolute;
+    margin-left: 300px;
+}
