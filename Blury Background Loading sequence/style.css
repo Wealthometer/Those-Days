@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.bg {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: calc(100vw + 120px);
+    height: calc(100vh + 120px);
+    z-index: -1;
+    filter: blur(0px);
+    background: url('./img/img2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.loading-text {
+    font-size: 50px;
+    color: #fff;
+}
