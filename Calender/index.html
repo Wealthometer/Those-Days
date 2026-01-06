@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProPlan - Smart Calendar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+</head>
+<body class="light-theme">
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <div class="logo-icon"><i class="fa-solid fa-calendar-days"></i></div>
+        <h1>ProPlan</h1>
+      </div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <p>Loading your smart calendar...</p>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <h1>ProPlan</h1>
+        </div>
+        <div class="view-controls">
+          <button class="view-btn active" data-view="month">Month</button>
+          <button class="view-btn" data-view="week">Week</button>
+          <button class="view-btn" data-view="day">Day</button>
+        </div>
+      </div>
+      
+      <div class="header-center">
+        <div class="navigation">
+          <button id="prev-btn" class="nav-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+          
+          <div class="date-selector">
+            <button id="month-year-btn" class="month-year-btn">
+              <span id="current-month-year">January 2024</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,9 12,15 18,9"></polyline>
+              </svg>
+            </button>
+          </div>
+          
+          <button id="next-btn" class="nav-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+        </div>
+        
+        <button id="today-btn" class="today-btn">Today</button>
+      </div>
+      
+      <div class="header-right">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search events..." class="search-input">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </div>
+        
+        <button id="add-event-btn" class="add-event-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add Event
+        </button>
+        
+        <div class="theme-controls">
+          <button id="theme-toggle" class="theme-toggle">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3>Quick Actions</h3>
+          <div class="quick-actions">
+            <button class="quick-action-btn" data-action="meeting">
+              <div class="action-icon"><i class="fa-solid fa-suitcase"></i></div>
+              <span>Meeting</span>
+            </button>
+            <button class="quick-action-btn" data-action="reminder">
+              <div class="action-icon"><i class="fa-solid fa-bell"></i></div>
+              <span>Reminder</span>
+            </button>
+            <button class="quick-action-btn" data-action="task">
+              <div class="action-icon"><i class="fa-solid fa-square-check"></i></div>
+              <span>Task</span>
+            </button>
+            <button class="quick-action-btn" data-action="event">
+              <div class="action-icon"><i class="fa-solid fa-calendar-plus"></i></div>
+              <span>Event</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Event Categories</h3>
+          <div class="category-filters">
+            <label class="category-filter">
+              <input type="checkbox" checked data-category="work">
+              <span class="category-color work"></span>
+              <span class="category-name">Work</span>
+              <span class="category-count" id="work-count">0</span>
+            </label>
+            <label class="category-filter">
+              <input type="checkbox" checked data-category="personal">
+              <span class="category-color personal"></span>
+              <span class="category-name">Personal</span>
+              <span class="category-count" id="personal-count">0</span>
+            </label>
+            <label class="category-filter">
+              <input type="checkbox" checked data-category="health">
+              <span class="category-color health"></span>
+              <span class="category-name">Health</span>
+              <span class="category-count" id="health-count">0</span>
+            </label>
+            <label class="category-filter">
+              <input type="checkbox" checked data-category="social">
+              <span class="category-color social"></span>
+              <span class="category-name">Social</span>
+              <span class="category-count" id="social-count">0</span>
+            </label>
+            <label class="category-filter">
+              <input type="checkbox" checked data-category="travel">
+              <span class="category-color travel"></span>
+              <span class="category-name">Travel</span>
+              <span class="category-count" id="travel-count">0</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Upcoming Events</h3>
+          <div id="upcoming-events" class="upcoming-events">
+            <!-- Upcoming events will be populated here -->
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Calendar Stats</h3>
+          <div class="stats">
+            <div class="stat-item">
+              <div class="stat-value" id="total-events">0</div>
+              <div class="stat-label">Total Events</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="this-month-events">0</div>
+              <div class="stat-label">This Month</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="completed-tasks">0</div>
+              <div class="stat-label">Completed</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Calendar Container -->
+      <div class="calendar-container">
+        <!-- Month View -->
+        <div id="month-view" class="calendar-view active">
+          <div class="calendar-header">
+            <div class="weekday-header">
+              <div class="weekday">Sun</div>
+              <div class="weekday">Mon</div>
+              <div class="weekday">Tue</div>
+              <div class="weekday">Wed</div>
+              <div class="weekday">Thu</div>
+              <div class="weekday">Fri</div>
+              <div class="weekday">Sat</div>
+            </div>
+          </div>
+          <div id="calendar-grid" class="calendar-grid">
+            <!-- Calendar days will be generated here -->
+          </div>
+        </div>
+
+        <!-- Week View -->
+        <div id="week-view" class="calendar-view">
+          <div class="week-header">
+            <div class="time-column"></div>
+            <div class="week-days" id="week-days">
+              <!-- Week days will be generated here -->
+            </div>
+          </div>
+          <div class="week-content">
+            <div class="time-slots" id="time-slots">
+              <!-- Time slots will be generated here -->
+            </div>
+            <div class="week-events" id="week-events">
+              <!-- Week events will be generated here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Day View -->
+        <div id="day-view" class="calendar-view">
+          <div class="day-header">
+            <h2 id="day-title">Today</h2>
+            <div class="day-date" id="day-date">January 15, 2024</div>
+          </div>
+          <div class="day-content">
+            <div class="day-time-slots" id="day-time-slots">
+              <!-- Day time slots will be generated here -->
+            </div>
+            <div class="day-events" id="day-events">
+              <!-- Day events will be generated here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Month/Year Picker Modal -->
+  <div id="date-picker-modal" class="modal">
+    <div class="modal-content date-picker-content">
+      <div class="modal-header">
+        <h3>Select Date</h3>
+        <button class="close-modal" data-modal="date-picker-modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="date-picker-body">
+        <div class="year-selector">
+          <button id="prev-year" class="year-nav">‹</button>
+          <span id="selected-year">2024</span>
+          <button id="next-year" class="year-nav">›</button>
+        </div>
+        <div class="month-grid" id="month-grid">
+          <!-- Months will be generated here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event Modal -->
+  <div id="event-modal" class="modal">
+    <div class="modal-content event-modal-content">
+      <div class="modal-header">
+        <h3 id="event-modal-title">Add Event</h3>
+        <button class="close-modal" data-modal="event-modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <form id="event-form" class="event-form">
+        <div class="form-group">
+          <label for="event-title">Event Title</label>
+          <input type="text" id="event-title" required placeholder="Enter event title...">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="event-date">Date</label>
+            <input type="date" id="event-date" required>
+          </div>
+          <div class="form-group">
+            <label for="event-category">Category</label>
+            <select id="event-category" required>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="health">Health</option>
+              <option value="social">Social</option>
+              <option value="travel">Travel</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="event-start-time">Start Time</label>
+            <input type="time" id="event-start-time">
+          </div>
+          <div class="form-group">
+            <label for="event-end-time">End Time</label>
+            <input type="time" id="event-end-time">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="event-description">Description</label>
+          <textarea id="event-description" rows="3" placeholder="Add event description..."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="event-location">Location</label>
+          <input type="text" id="event-location" placeholder="Add location...">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="event-reminder">Reminder</label>
+            <select id="event-reminder">
+              <option value="">No reminder</option>
+              <option value="5">5 minutes before</option>
+              <option value="15">15 minutes before</option>
+              <option value="30">30 minutes before</option>
+              <option value="60">1 hour before</option>
+              <option value="1440">1 day before</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="event-priority">Priority</label>
+            <select id="event-priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" data-action="cancel">Cancel</button>
+          <button type="button" id="delete-event-btn" class="btn-danger" style="display: none;">Delete</button>
+          <button type="submit" class="btn-primary">Save Event</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Event Details Modal -->
+  <div id="event-details-modal" class="modal">
+    <div class="modal-content event-details-content">
+      <div class="modal-header">
+        <h3 id="event-details-title">Event Details</h3>
+        <div class="event-actions">
+          <button id="edit-event-btn" class="icon-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="m18.5 2.5 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+          </button>
+          <button class="close-modal" data-modal="event-details-modal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="event-details-body">
+        <div class="event-detail-item">
+          <div class="detail-icon">📅</div>
+          <div class="detail-content">
+            <div class="detail-label">Date & Time</div>
+            <div class="detail-value" id="event-details-datetime">January 15, 2024 at 2:00 PM</div>
+          </div>
+        </div>
+        <div class="event-detail-item">
+          <div class="detail-icon">📍</div>
+          <div class="detail-content">
+            <div class="detail-label">Location</div>
+            <div class="detail-value" id="event-details-location">No location specified</div>
+          </div>
+        </div>
+        <div class="event-detail-item">
+          <div class="detail-icon">📝</div>
+          <div class="detail-content">
+            <div class="detail-label">Description</div>
+            <div class="detail-value" id="event-details-description">No description</div>
+          </div>
+        </div>
+        <div class="event-detail-item">
+          <div class="detail-icon">🏷️</div>
+          <div class="detail-content">
+            <div class="detail-label">Category</div>
+            <div class="detail-value" id="event-details-category">Work</div>
+          </div>
+        </div>
+        <div class="event-detail-item">
+          <div class="detail-icon">⚡</div>
+          <div class="detail-content">
+            <div class="detail-label">Priority</div>
+            <div class="detail-value" id="event-details-priority">Medium</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+
+  <div id="notification-container" class="notification-container">
+    
+  </div>    
+
+  <script src="script.js"></script>
+</body>
+</html>
