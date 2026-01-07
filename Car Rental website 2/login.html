@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MORENT Car Rental</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="car.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="welcome.html"><h1>MORENT</h1></a>
+            </div>
+            <div class="auth-nav">
+                <span>Don't have an account?</span>
+                <a href="signup.html" class="btn-outline">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-image">
+                    <img src="./img/premium car selection.jpeg" alt="Car Rental">
+                    <div class="image-overlay">
+                        <h2>Drive Your Dreams</h2>
+                        <p>Access premium cars and exclusive offers with your MORENT account.</p>
+                    </div>
+                </div>
+                <div class="auth-form-container">
+                    <div class="auth-form-header">
+                        <h2>Welcome Back!</h2>
+                        <p>Please log in to access your account</p>
+                    </div>
+                    <form class="auth-form" action="car.html" method="get">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-with-icon">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" id="password" placeholder="Enter your password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-block">Login</button>
+                    </form>
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+                    <div class="social-auth">
+                        <button class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </button>
+                        <button class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </button>
+                        <button class="social-btn apple">
+                            <i class="fab fa-apple"></i>
+                            <span>Apple</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer footer-simple">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>©2022 MORENT. All rights reserved</p>
+                </div>
+                <div class="links">
+                    <a href="privacy-policy.html">Privacy & Policy</a>
+                    <a href="terms and condition page.html">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle password visibility
+        const togglePassword = document.querySelector('.toggle-password');
+        const passwordInput = document.querySelector('#password');
+        
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Toggle eye icon
+                const eyeIcon = this.querySelector('i');
+                eyeIcon.classList.toggle('fa-eye');
+                eyeIcon.classList.toggle('fa-eye-slash');
+            });
+        }
+    </script>
+</body>
+</html>

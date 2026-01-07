@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MORENT - Car Rental Service</title>
+    <link rel="stylesheet" href="./car.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+               <a href="./welcome.html"><h1>MORENT</h1></a>
+            </div>
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search something here...">
+            </div>
+            <div class="icons">
+                <a href="./favourites.html" class="icon"><i class="fa fa-heart"></i></a>
+                <a href="./notifications.html" class="icon"><i class="fa fa-bell"></i></a>
+                <a href="./setting.html" class="icon"><i class="fa fa-cog"></i></a>
+                <a href="#" class="user">
+                    <img src="./img/avatar-1.png" alt="User">
+                </a>
+            </div>
+            <a href="./dashboard.html" class="dashboard"><i class="fas fa-th-large"></i>Dashboard</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="banner left">
+                <div class="content">
+                    <h2>The Best Platform for Car Rental</h2>
+                    <p>Ease of doing a car rental safely and reliably. Of course at a low price.</p>
+                    <a href="#" class="btn" id="btn">Rental Car</a>
+                </div>
+                <div class="img">
+                    <!-- <img src="./img/BG.png" alt="White Sports Car"> -->
+                </div>
+            </div>
+            <div class="banner right">
+                <div class="content">
+                    <h2>Easy way to rent a car at a low price</h2>
+                    <p>Providing cheap car rental services and safe and comfortable facilities.</p>
+                    <a href="#" class="btn" id="btn">Rental Car</a>
+                </div>
+                <div class="img">
+                    <!-- <img src="" alt="Silver Sports Car"> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-sec">
+        <div class="container">
+            <div class="search-box">
+                <div class="search-col">
+                    <div class="radio">
+                        <input type="radio" id="pickup" name="type" checked>
+                        <label for="pickup">Pick-Up</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Locations</label>
+                        <input type="text" placeholder="Select your city">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Time</label>
+                            <input type="time">
+                        </div>
+                    </div>
+                </div>
+                <div class="swap-btn">
+                    <button id="btn"><i class="fa fa-exchange-alt"></i></button>
+                </div>
+                <div class="search-col">
+                    <div class="radio">
+                        <input type="radio" id="dropoff" name="type">
+                        <label for="dropoff">Drop-Off</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Locations</label>
+                        <input type="text" placeholder="Select your city">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Time</label>
+                            <input type="time">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="cars">
+        <div class="container">
+            <div class="top-bar">
+                <h2>Popular Cars</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="car-grid">
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>Koenigsegg</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">Sport</p>
+                    <div class="car-img">
+                        <img src="./img/Koenigsegg.png" alt="Koenigsegg" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>90L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>2 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$99.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn" id="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>Nissan GT-R</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                    </div>
+                    <p class="type">Sport</p>
+                    <div class="car-img">
+                        <img src="./img/Nissan GT-R.png" alt="Nissan GT-R" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>2 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$80.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn" id="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>Rolls-Royce</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">Sedan</p>
+                    <div class="car-img">
+                        <img src="./img/Rols-Royce.png" alt="Rolls-Royce" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>70L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>4 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$96.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn" id="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>Nissan GT-R</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                    </div>
+                    <p class="type">Sport</p>
+                    <div class="car-img">
+                        <img src="./img/Nissan GT-R.png" alt="Nissan GT-R" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>2 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$80.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn" id="btn">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="cars rec">
+        <div class="container">
+            <div class="top-bar">
+                <h2>Recommendation Cars</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="car-grid">
+                <!-- Car 1 -->
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>All New Rush</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                    </div>
+                    <p class="type">SUV</p>
+                    <div class="car-img">
+                        <img src="./img/All New Rush.png" alt="All New Rush" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>70L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>6 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$72.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn" id="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>CR - V</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">SUV</p>
+                    <div class="car-img">
+                        <img src="./img/CR-V.png" alt="CR - V" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>6 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$80.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn" id="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>All New Terios</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                    </div>
+                    <p class="type">SUV</p>
+                    <div class="car-img">
+                        <img src="./img/All New Terios.png" alt="All New Terios" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>90L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>6 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$74.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn" id="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>CR - V</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                    </div>
+                    <p class="type">SUV</p>
+                    <div class="car-img">
+                        <img src="./img/CR-V 2.png" alt="CR - V" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>6 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$80.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn" id="btn">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="cars">
+        <div class="container">
+            <div class="car-grid">
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>MG ZS Exclusive</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">Hatchback</p>
+                    <div class="car-img">
+                        <img src="./img/MG ZX Exclusive.png" alt="MG ZS Exclusive" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>5 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$76.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>New MG ZS</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                    </div>
+                    <p class="type">SUV</p>
+                    <div class="car-img">
+                        <img src="./img/New MG ZS.png" alt="New MG ZS" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>5 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$80.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>MG ZS Excite</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">Hatchback</p>
+                    <div class="car-img">
+                        <img src="./img/MG ZS Excite.png" alt="MG ZS Excite" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>5 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$74.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>New MG ZS</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                    </div>
+                    <p class="type">SUV</p>
+                    <div class="car-img">
+                        <img src="./img/New MG ZS 2.png" alt="New MG ZS" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>5 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$80.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="./payment.html" class="btn">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="show-more">
+        <a href="./details.html" class="btn-outline">Show More Car</a>
+        <a href="#" class="top-btn">
+            <i class="fa fa-arrow-up"></i>
+        </a>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="foot-col">
+                    <div class="logo">
+                        <h2>MORENT</h2>
+                    </div>
+                    <p>Our vision is to provide convenience and help increase your sales business.</p>
+                </div>
+                 <div class="foot-col">
+                    <h3><a href="./about.html">About</a></h3>
+                    <ul>
+                        <li><a href="about.html#how-it-works">How it works</a></li>
+                        <li><a href="about.html#featured">Featured</a></li>
+                        <li><a href="about.html#partnership">Partnership</a></li>
+                        <li><a href="about.html#business-relation">Business Relation</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3><a href="./community.html">Community</a></h3>
+                    <ul>
+                        <li><a href="community.html#events">Events</a></li>
+                        <li><a href="community.html#blog">Blog</a></li>
+                        <li><a href="community.html#podcast">Podcast</a></li>
+                        <li><a href="community.html#invite">Invite a friend</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3>Socials</h3>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>©2022 MORENT. All rights reserved</p>
+                </div>
+                <div class="links">
+                    <a href="privacy-policy.html">Privacy & Policy</a>
+                    <a href="terms and condition page.html">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./car.js">
+        // Toggle favorite cars
+const favButtons = document.querySelectorAll('.fav i');
+
+favButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        
+        // Add a little bounce animation when toggled
+        if (this.classList.contains('active')) {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'pulse 1s infinite';
+            }, 10);
+        } else {
+            this.style.animation = 'none';
+        }
+    });
+});
+
+// Swap pick-up and drop-off locations
+const swapBtn = document.querySelector('.swap-btn button');
+const pickupLocation = document.querySelector('.search-col:first-child .form-group:nth-child(2) input');
+const dropoffLocation = document.querySelector('.search-col:last-child .form-group:nth-child(2) input');
+
+if (swapBtn && pickupLocation && dropoffLocation) {
+    swapBtn.addEventListener('click', function() {
+        const temp = pickupLocation.value;
+        pickupLocation.value = dropoffLocation.value;
+        dropoffLocation.value = temp;
+        
+        // Add rotation animation to the swap button
+        this.style.transform = 'rotate(180deg)';
+        setTimeout(() => {
+            this.style.transform = 'rotate(0deg)';
+        }, 500);
+    });
+}
+
+// Smooth scroll to top
+const topBtn = document.querySelector('.top-btn');
+
+if (topBtn) {
+    topBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Show/hide the button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+            topBtn.style.opacity = '1';
+        } else {
+            topBtn.style.opacity = '0';
+        }
+    });
+}
+
+// Add hover effect to car cards
+const carCards = document.querySelectorAll('.car-card');
+
+carCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+    });
+});
+
+// Mobile menu toggle (for smaller screens)
+const createMobileMenu = () => {
+    const header = document.querySelector('.header');
+    
+    if (header) {
+        // Create mobile menu button
+        const mobileBtn = document.createElement('div');
+        mobileBtn.className = 'mobile-btn';
+        mobileBtn.innerHTML = '<span></span><span></span><span></span>';
+        
+        // Create mobile menu
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'mobile-menu';
+        
+        // Add menu items
+        mobileMenu.innerHTML = `
+            <div class="mobile-search">
+                <input type="text" placeholder="Search something here...">
+                <i class="fa fa-search"></i>
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Cars</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        `;
+        
+        // Append to header
+        header.appendChild(mobileBtn);
+        header.appendChild(mobileMenu);
+        
+        // Toggle mobile menu
+        mobileBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+    }
+};
+
+// Only create mobile menu for screens smaller than 768px
+if (window.innerWidth < 768) {
+    createMobileMenu();
+}
+
+// Add responsive styles for mobile menu
+const addMobileStyles = () => {
+    const style = document.createElement('style');
+    style.textContent = `
+        .mobile-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 101;
+        }
+        
+        .mobile-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #3563E9;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 100;
+            padding: 80px 20px 20px;
+            transform: translateX(-100%);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-search {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .mobile-search input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            background-color: #f6f7f9;
+        }
+        
+        .mobile-search i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #90a3bf;
+        }
+        
+        .mobile-menu nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .mobile-menu nav a {
+            font-size: 18px;
+            font-weight: 500;
+            color: #1a202c;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu nav a:hover {
+            color: #3563E9;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-btn {
+                display: flex;
+            }
+        }
+    `;
+    
+    document.head.appendChild(style);
+};
+
+// Add mobile styles
+addMobileStyles();
+
+// Initialize animations when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate elements when they come into view
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.car-card, .banner, .step, .foot-col');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    // Set initial state for animation
+    const elementsToAnimate = document.querySelectorAll('.car-card, .banner, .step, .foot-col');
+    elementsToAnimate.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'all 0.5s ease';
+    });
+    
+    // Run animation on load and scroll
+    animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+});
+    </script>
+</body>
+</html>

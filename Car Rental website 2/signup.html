@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - MORENT Car Rental</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="car.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="welcome.html"><h1>MORENT</h1></a>
+            </div>
+            <div class="auth-nav">
+                <span>Already have an account?</span>
+                <a href="login.html" class="btn-outline">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-image">
+                    <img src="./img/premium car selection.jpeg" alt="Car Rental">
+                    <div class="image-overlay">
+                        <h2>Join the MORENT Community</h2>
+                        <p>Create an account to access premium cars, exclusive offers, and a seamless rental experience.</p>
+                    </div>
+                </div>
+                <div class="auth-form-container">
+                    <div class="auth-form-header">
+                        <h2>Create an Account</h2>
+                        <p>Fill in your details to get started</p>
+                    </div>
+                    <form class="auth-form" action="./login.html" method="get">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <div class="input-with-icon">
+                                    <i class="fa fa-user"></i>
+                                    <input type="text" id="first-name" placeholder="Enter first name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <div class="input-with-icon">
+                                    <i class="fa fa-user"></i>
+                                    <input type="text" id="last-name" placeholder="Enter last name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-with-icon">
+                                <i class="fa fa-phone"></i>
+                                <input type="tel" id="phone" placeholder="Enter phone number" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-with-icon">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" id="password" placeholder="Create a password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-meter">
+                                    <span class="meter-section"></span>
+                                    <span class="meter-section"></span>
+                                    <span class="meter-section"></span>
+                                    <span class="meter-section"></span>
+                                </div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <div class="input-with-icon">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                            </div>
+                        </div>
+                        <div class="form-terms">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the <a href="terms and condition page.html">Terms & Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-block">Create Account</button>
+                    </form>
+                    <div class="auth-divider">
+                        <span>or sign up with</span>
+                    </div>
+                    <div class="social-auth">
+                        <button class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </button>
+                        <button class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </button>
+                        <button class="social-btn apple">
+                            <i class="fab fa-apple"></i>
+                            <span>Apple</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer footer-simple">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>©2022 MORENT. All rights reserved</p>
+                </div>
+                <div class="links">
+                    <a href="privacy-policy.html">Privacy & Policy</a>
+                    <a href="terms-conditions.html">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle password visibility
+        const togglePassword = document.querySelector('.toggle-password');
+        const passwordInput = document.querySelector('#password');
+        
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Toggle eye icon
+                const eyeIcon = this.querySelector('i');
+                eyeIcon.classList.toggle('fa-eye');
+                eyeIcon.classList.toggle('fa-eye-slash');
+            });
+        }
+        
+        // Password strength meter
+        if (passwordInput) {
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                const meterSections = document.querySelectorAll('.meter-section');
+                const strengthText = document.querySelector('.strength-text');
+                
+                // Reset meter
+                meterSections.forEach(section => {
+                    section.classList.remove('weak', 'medium', 'strong', 'very-strong');
+                });
+                
+                // Calculate strength
+                let strength = 0;
+                
+                if (password.length >= 8) strength++;
+                if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+                if (password.match(/\d/)) strength++;
+                if (password.match(/[^a-zA-Z\d]/)) strength++;
+                
+                // Update meter
+                for (let i = 0; i < strength; i++) {
+                    if (strength === 1) {
+                        meterSections[i].classList.add('weak');
+                        strengthText.textContent = 'Weak';
+                    } else if (strength === 2) {
+                        meterSections[i].classList.add('medium');
+                        strengthText.textContent = 'Medium';
+                    } else if (strength === 3) {
+                        meterSections[i].classList.add('strong');
+                        strengthText.textContent = 'Strong';
+                    } else if (strength === 4) {
+                        meterSections[i].classList.add('very-strong');
+                        strengthText.textContent = 'Very Strong';
+                    }
+                }
+                
+                if (password.length === 0) {
+                    strengthText.textContent = 'Password strength';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

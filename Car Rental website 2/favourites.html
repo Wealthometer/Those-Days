@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites - MORENT Car Rental</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./car.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="./car.html"><h1>MORENT</h1></a>
+            </div>
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search something here">
+            </div>
+            <div class="icons">
+                <a href="./favourites.html" class="icon active"><i class="fa fa-heart"></i></a>
+                <a href="notifications.html" class="icon notification"><i class="fa fa-bell"></i><span class="badge"></span></a>
+                <a href="setting.html" class="icon"><i class="fa fa-cog"></i></a>
+                <a href="#" class="user">
+                    <img src="./img/avatar-1.png" alt="User">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Your Favorites</h1>
+            <p>Cars you've saved for later</p>
+        </div>
+    </section>
+
+    <!-- Favorites Content -->
+    <section class="favorites-content">
+        <div class="container">
+            <div class="favorites-tabs">
+                <button class="tab active">All (5)</button>
+                <button class="tab">Available Now (4)</button>
+                <button class="tab">Unavailable (1)</button>
+            </div>
+            
+            <div class="car-grid">
+                <!-- Car 1 -->
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>Koenigsegg</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">Sport</p>
+                    <div class="car-img">
+                        <img src="./img/Koenigsegg.png" alt="Koenigsegg" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>90L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>2 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$99.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="#" class="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                <!-- Car 2 -->
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>Rolls-Royce</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">Sedan</p>
+                    <div class="car-img">
+                        <img src="./img/Rols-Royce.png" alt="Rolls-Royce" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>70L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>4 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$96.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="#" class="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                <!-- Car 3 -->
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>CR - V</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">SUV</p>
+                    <div class="car-img">
+                        <img src="./img/CR-V 2.png" alt="CR - V" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>6 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$80.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="#" class="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                <!-- Car 4 -->
+                <div class="car-card">
+                    <div class="card-top">
+                        <h3>MG ZS Exclusive</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">Hatchback</p>
+                    <div class="car-img">
+                        <img src="./img/MG ZX Exclusive.png" alt="MG ZS Exclusive" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>5 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$76.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="#" class="btn">Rent Now</a>
+                    </div>
+                </div>
+
+                <!-- Car 5 (Unavailable) -->
+                <div class="car-card unavailable">
+                    <div class="unavailable-badge">Currently Unavailable - 🚫 sold out</div>
+                    <div class="card-top">
+                        <h3>MG ZS Excite</h3>
+                        <div class="fav">
+                            <i class="fa fa-heart active"></i>
+                        </div>
+                    </div>
+                    <p class="type">Hatchback</p>
+                    <div class="car-img">
+                        <img src="./img/MG ZS Excite.png" alt="MG ZS Excite" width="150" height="150">
+                    </div>
+                    <div class="car-info">
+                        <div class="info-item">
+                            <i class="fa fa-gas-pump"></i>
+                            <span>80L</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-cog"></i>
+                            <span>Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa fa-users"></i>
+                            <span>5 People</span>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="price">
+                            <h4>$74.00</h4>
+                            <span>/ day</span>
+                        </div>
+                        <a href="#" class="btn disabled">Unavailable</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="no-favorites" style="display: none;">
+                <div class="empty-state">
+                    <i class="fa fa-heart-broken"></i>
+                    <h3>No Favorites Yet</h3>
+                    <p>You haven't added any cars to your favorites list. Browse our collection and click the heart icon to save cars for later.</p>
+                    <a href="./car.htm" class="btn">Browse Cars</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="foot-col">
+                    <div class="logo">
+                        <h2>MORENT</h2>
+                    </div>
+                    <p>Our vision is to provide convenience and help increase your sales business.</p>
+                </div>
+                <div class="foot-col">
+                    <h3><a href="./about.html">About</a></h3>
+                    <ul>
+                        <li><a href="about.html#how-it-works">How it works</a></li>
+                        <li><a href="about.html#featured">Featured</a></li>
+                        <li><a href="about.html#partnership">Partnership</a></li>
+                        <li><a href="about.html#business-relation">Business Relation</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3><a href="./community.html">Community</a></h3>
+                    <ul>
+                        <li><a href="community.html#events">Events</a></li>
+                        <li><a href="community.html#blog">Blog</a></li>
+                        <li><a href="community.html#podcast">Podcast</a></li>
+                        <li><a href="community.html#invite">Invite a friend</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>©2022 MORENT. All rights reserved</p>
+                </div>
+                <div class="links">
+                    <a href="#">Privacy & Policy</a>
+                    <a href="#">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

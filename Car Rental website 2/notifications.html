@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - MORENT Car Rental</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./car.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>MORENT</h1></a>
+            </div>
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search something here">
+            </div>
+            <div class="icons">
+                <a href="favourites.html" class="icon"><i class="fa fa-heart"></i></a>
+                <a href="notifications.html" class="icon notification active"><i class="fa fa-bell"></i><span class="badge"></span></a>
+                <a href="setting.html" class="icon"><i class="fa fa-cog"></i></a>
+                <a href="#" class="user">
+                    <img src="./img/avatar-1.png" alt="User">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Notifications</h1>
+            <p>Stay updated with your rental activities and offers</p>
+        </div>
+    </section>
+
+    <!-- Notifications Content -->
+    <section class="notifications-content">
+        <div class="container">
+            <div class="notifications-tabs">
+                <button class="tab active">All (5)</button>
+                <button class="tab">Unread (2)</button>
+                <button class="tab">Rental Updates (3)</button>
+                <button class="tab">Promotions (2)</button>
+            </div>
+            
+            <div class="notifications-actions">
+                <button class="btn-small"><i class="fa fa-check-double"></i> Mark All as Read</button>
+                <button class="btn-small"><i class="fa fa-trash"></i> Clear All</button>
+            </div>
+            
+            <div class="notifications-list">
+                <!-- Notification 1 (Unread) -->
+                <div class="notification-item unread">
+                    <div class="notification-icon rental">
+                        <i class="fa fa-car"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Your Rental is Ready</h3>
+                        <p>Your Nissan GT-R is ready for pickup at the Downtown location. Reservation #12345.</p>
+                        <span class="notification-time">2 hours ago</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="action-btn"><i class="fa fa-check"></i></button>
+                        <button class="action-btn"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Notification 2 -->
+                <div class="notification-item">
+                    <div class="notification-icon promo">
+                        <i class="fa fa-tag"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Weekend Special Offer</h3>
+                        <p>Get 15% off on all SUV rentals this weekend. Use code WEEKEND15 at checkout.</p>
+                        <span class="notification-time">Yesterday</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="action-btn"><i class="fa fa-check"></i></button>
+                        <button class="action-btn"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Notification 3 -->
+                <div class="notification-item">
+                    <div class="notification-icon rental">
+                        <i class="fa fa-calendar-check"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Rental Reminder</h3>
+                        <p>Your reservation for the Koenigsegg is scheduled for tomorrow at 10:00 AM.</p>
+                        <span class="notification-time">2 days ago</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="action-btn"><i class="fa fa-check"></i></button>
+                        <button class="action-btn"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Notification 4 (Unread) -->
+                <div class="notification-item unread">
+                    <div class="notification-icon system">
+                        <i class="fa fa-shield-alt"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Security Alert</h3>
+                        <p>We noticed a new login to your account from a new device. If this wasn't you, please contact support.</p>
+                        <span class="notification-time">3 days ago</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="action-btn"><i class="fa fa-check"></i></button>
+                        <button class="action-btn"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Notification 5 -->
+                <div class="notification-item">
+                    <div class="notification-icon promo">
+                        <i class="fa fa-gift"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Birthday Gift</h3>
+                        <p>Happy Birthday! We've added a $50 credit to your account as a birthday gift. Valid for 30 days.</p>
+                        <span class="notification-time">1 week ago</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="action-btn"><i class="fa fa-check"></i></button>
+                        <button class="action-btn"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="notifications-pagination">
+                <button class="pagination-btn"><i class="fa fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="no-notifications" style="display: none;">
+                <div class="empty-state">
+                    <i class="fa fa-bell-slash"></i>
+                    <h3>No Notifications</h3>
+                    <p>You don't have any notifications at the moment. We'll notify you about rental updates, promotions, and important information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Settings -->
+    <section class="notification-settings">
+        <div class="container">
+            <h2>Notification Settings</h2>
+            <div class="settings-container">
+                <div class="settings-group">
+                    <h3>Email Notifications</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Rental Updates</h4>
+                            <p>Receive updates about your current and upcoming rentals</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Promotions and Offers</h4>
+                            <p>Receive special offers, discounts, and promotional updates</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Newsletter</h4>
+                            <p>Receive our monthly newsletter with travel tips and updates</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="settings-group">
+                    <h3>Push Notifications</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Rental Reminders</h4>
+                            <p>Receive reminders about upcoming pickups and returns</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Account Activity</h4>
+                            <p>Receive notifications about account activity and security alerts</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>New Cars Available</h4>
+                            <p>Get notified when new cars are added to our fleet</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-actions">
+                <button class="btn">Save Changes</button>
+                <button class="btn-outline">Reset to Default</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="foot-col">
+                    <div class="logo">
+                        <img src="./img/image 7.png" alt="">
+                    </div>
+                    <p>Our vision is to provide convenience and help increase your sales business.</p>
+                </div>
+                <div class="foot-col">
+                    <h3><a href="./about.html">About</a></h3>
+                    <ul>
+                        <li><a href="about.html#how-it-works">How it works</a></li>
+                        <li><a href="about.html#featured">Featured</a></li>
+                        <li><a href="about.html#partnership">Partnership</a></li>
+                        <li><a href="about.html#business-relation">Business Relation</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3><a href="./community.html">Community</a></h3>
+                    <ul>
+                        <li><a href="community.html#events">Events</a></li>
+                        <li><a href="community.html#blog">Blog</a></li>
+                        <li><a href="community.html#podcast">Podcast</a></li>
+                        <li><a href="community.html#invite">Invite a friend</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>©2022 MORENT. All rights reserved</p>
+                </div>
+                <div class="links">
+                    <a href="#">Privacy & Policy</a>
+                    <a href="#">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

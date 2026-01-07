@@ -1,0 +1,631 @@
+/* Dashboard Styles */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f6f7f9;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e7eb;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar .logo {
+    margin-bottom: 30px;
+}
+
+.sidebar .logo h1 {
+    color: #3563E9;
+    font-size: 24px;
+}
+
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar-section h3 {
+    font-size: 12px;
+    color: #90A3BF;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    color: #596780;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li a i {
+    margin-right: 10px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-menu li.active a {
+    background-color: #3563E9;
+    color: #ffffff;
+}
+
+.sidebar-menu li:not(.active) a:hover {
+    background-color: #f6f7f9;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+.toggle-switch .switch {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li.active .toggle-switch {
+    background-color: #3563E9;
+}
+
+.sidebar-menu li.active .toggle-switch .switch {
+    left: 22px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    color: #596780;
+    text-decoration: none;
+}
+
+.sidebar-footer a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+
+.search-container {
+    position: relative;
+    width: 400px;
+}
+
+.search-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #596780;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-link {
+    position: relative;
+    color: #596780;
+    font-size: 18px;
+}
+
+.icon-link .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 16px;
+    height: 16px;
+    background-color: #FF4423;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dashboard Content Styles */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 18px;
+    color: #1A202C;
+}
+
+.more-options {
+    background: none;
+    border: none;
+    color: #90A3BF;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.view-all {
+    color: #3563E9;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Rental Details Card Styles */
+.rental-details {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.map-container {
+    position: relative;
+}
+
+.rental-map {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.rental-info {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.car-image {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.car-details h3 {
+    font-size: 16px;
+    color: #1A202C;
+    margin-bottom: 5px;
+}
+
+.car-type {
+    font-size: 14px;
+    color: #90A3BF;
+}
+
+.rental-id {
+    margin-left: auto;
+    font-size: 14px;
+    color: #3563E9;
+    font-weight: 600;
+}
+
+.rental-locations {
+    margin-top: 20px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.location-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.pickup-dot {
+    background-color: #3563E9;
+}
+
+.dropoff-dot {
+    background-color: #FF4423;
+}
+
+.location span {
+    font-size: 14px;
+    color: #1A202C;
+    font-weight: 600;
+}
+
+.location-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-left: 22px;
+}
+
+.detail-group {
+    width: 30%;
+}
+
+.detail-group h4 {
+    font-size: 12px;
+    color: #90A3BF;
+    margin-bottom: 8px;
+}
+
+.detail-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f6f7f9;
+    border-radius: 8px;
+}
+
+.detail-input span {
+    font-size: 14px;
+    color: #1A202C;
+}
+
+.rental-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.price-label h4 {
+    font-size: 16px;
+    color: #1A202C;
+    margin-bottom: 5px;
+}
+
+.price-label p {
+    font-size: 12px;
+    color: #90A3BF;
+}
+
+.price-amount {
+    font-size: 24px;
+    color: #1A202C;
+    font-weight: 700;
+}
+
+/* Top Rentals Card Styles */
+.top-rentals {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donut-chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #3563E9 0% 25%,
+        #54A6FF 25% 40%,
+        #5CAFFC 40% 65%,
+        #81D0D9 65% 80%,
+        #A9EAC3 80% 100%
+    );
+    margin-bottom: 30px;
+}
+
+.chart-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-center h3 {
+    font-size: 24px;
+    color: #1A202C;
+    margin-bottom: 5px;
+}
+
+.chart-center p {
+    font-size: 14px;
+    color: #90A3BF;
+}
+
+.chart-legend {
+    width: 100%;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.sport-car {
+    background-color: #3563E9;
+}
+
+.suv {
+    background-color: #54A6FF;
+}
+
+.coupe {
+    background-color: #5CAFFC;
+}
+
+.hatchback {
+    background-color: #81D0D9;
+}
+
+.mpv {
+    background-color: #A9EAC3;
+}
+
+.legend-item span {
+    font-size: 14px;
+    color: #596780;
+}
+
+.legend-value {
+    margin-left: auto;
+    font-weight: 600;
+    color: #1A202C;
+}
+
+/* Recent Transactions Card Styles */
+.recent-transactions {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.transactions-list {
+    margin-top: 20px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-car {
+    width: 100px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.transaction-car img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction-details h4 {
+    font-size: 16px;
+    color: #1A202C;
+    margin-bottom: 5px;
+}
+
+.transaction-date {
+    font-size: 14px;
+    color: #90A3BF;
+    margin-right: 20px;
+}
+
+.transaction-amount {
+    font-size: 16px;
+    color: #1A202C;
+    font-weight: 600;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rental-details {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .top-rentals {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .recent-transactions {
+        grid-column: 1;
+        grid-row: 3;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 80px;
+        padding: 20px 10px;
+    }
+    
+    .sidebar .logo h1 {
+        font-size: 18px;
+    }
+    
+    .sidebar-menu li a span,
+    .sidebar-section h3,
+    .sidebar-footer a span {
+        display: none;
+    }
+    
+    .sidebar-menu li a i {
+        margin-right: 0;
+    }
+    
+    .main-content {
+        margin-left: 80px;
+    }
+    
+    .search-container {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .search-container {
+        width: 200px;
+    }
+    
+    .location-details {
+        flex-direction: column;
+    }
+    
+    .detail-group {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .header-icons {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
