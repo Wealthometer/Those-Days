@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp - Professional Real-time Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login/Signup Modal -->
+    <div id="authModal" class="modal active">
+        <div class="modal-content">
+            <div class="auth-header">
+                <h1><i class="fas fa-comments"></i> ChatApp</h1>
+                <p>Connect with people around the world</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+
+            <div id="loginForm" class="auth-form active">
+                <form id="loginFormElement">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="loginUsername" placeholder="Username or Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">
+                        <span class="btn-text">Login</span>
+                        <div class="loading-spinner"></div>
+                    </button>
+                </form>
+            </div>
+
+            <div id="signupForm" class="auth-form">
+                <form id="signupFormElement">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signupUsername" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">
+                        <span class="btn-text">Create Account</span>
+                        <div class="loading-spinner"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Chat Interface -->
+    <div id="chatApp" class="chat-app">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <span id="currentUsername" class="username"></span>
+                        <span class="status">Online</span>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="logout-btn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fas fa-hashtag"></i> Rooms</h3>
+                <div class="rooms-list">
+                    <div class="room-item active" data-room="general">
+                        <i class="fas fa-hashtag"></i>
+                        <span>general</span>
+                        <div class="unread-count">3</div>
+                    </div>
+                    <div class="room-item" data-room="random">
+                        <i class="fas fa-hashtag"></i>
+                        <span>random</span>
+                    </div>
+                    <div class="room-item" data-room="tech">
+                        <i class="fas fa-hashtag"></i>
+                        <span>tech</span>
+                        <div class="unread-count">1</div>
+                    </div>
+                    <div class="room-item" data-room="ai-chat">
+                        <i class="fas fa-robot"></i>
+                        <span>ai-chat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fas fa-users"></i> Online (<span id="onlineCount">4</span>)</h3>
+                <div id="onlineUsers" class="users-list">
+                    <div class="user-item">
+                        <div class="user-status online"></div>
+                        <span>Alice</span>
+                    </div>
+                    <div class="user-item">
+                        <div class="user-status online"></div>
+                        <span>Bob</span>
+                    </div>
+                    <div class="user-item">
+                        <div class="user-status online"></div>
+                        <span>Charlie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-chat">
+            <div class="chat-header">
+                <div class="room-info">
+                    <h2 id="currentRoomName">
+                        <i class="fas fa-hashtag"></i>
+                        general
+                    </h2>
+                    <p id="roomDescription">4 members online</p>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="action-btn" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="messagesContainer" class="messages-container">
+                <div class="messages-list" id="messagesList">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+                
+                <div id="typingIndicator" class="typing-indicator">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span id="typingText">Alice is typing...</span>
+                </div>
+            </div>
+
+            <div class="message-input-container">
+                <form id="messageForm" class="message-form">
+                    <div class="input-wrapper">
+                        <button type="button" class="attachment-btn" title="Attach file">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off">
+                        <button type="button" class="emoji-btn" title="Add emoji">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                    </div>
+                    <button type="submit" id="sendBtn" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Chat Modal -->
+    <div id="aiChatModal" class="modal">
+        <div class="modal-content ai-chat-content">
+            <div class="ai-chat-header">
+                <h3><i class="fas fa-robot"></i> AI Assistant</h3>
+                <button id="closeAiChat" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="aiMessages" class="ai-messages">
+                <div class="ai-message assistant">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! I'm your AI assistant. How can I help you today?</p>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+            <form id="aiMessageForm" class="ai-message-form">
+                <input type="text" id="aiMessageInput" placeholder="Ask me anything...">
+                <button type="submit" id="aiSendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
