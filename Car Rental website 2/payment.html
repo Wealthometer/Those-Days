@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - MORENT Car Rental</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./car.css">
+    <link rel="stylesheet" href="payment-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="welcome.html"><h1>MORENT</h1></a>
+            </div>
+            <div class="icons">
+                <a href="./favourites.html" class="icon"><i class="far fa-heart"></i></a>
+                <a href="notifications.html" class="icon notification"><i class="far fa-bell"></i><span class="badge">1</span></a>
+                <a href="setting.html" class="icon"><i class="fas fa-cog"></i></a>
+                <a href="#" class="user">
+                    <img src="./img/avatar-1.png" alt="User">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="payment-container">
+        <div class="payment-content">
+            
+            <div class="payment-form-container">
+                
+                <div class="payment-section">
+                    <div class="section-header">
+                        <h2>Billing Info</h2>
+                        <p>Please enter your billing info</p>
+                        <a href="#" class="step-link">Step 1 of 4</a>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Phone number">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" placeholder="Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="town">Town / City</label>
+                            <input type="text" id="town" placeholder="Town or city">
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="payment-section">
+                    <div class="section-header">
+                        <h2>Rental Info</h2>
+                        <p>Please select your rental date</p>
+                        <a href="#" class="step-link">Step 2 of 4</a>
+                    </div>
+                    
+                    <div class="location-group pickup">
+                        <div class="location-dot"></div>
+                        <span>Pick - Up</span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickup-location">Locations</label>
+                            <div class="select-wrapper">
+                                <select id="pickup-location">
+                                    <option value="">Select your city</option>
+                                    <option value="semarang">Semarang</option>
+                                    <option value="jakarta">Jakarta</option>
+                                    <option value="surabaya">Surabaya</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickup-date">Date</label>
+                            <div class="select-wrapper">
+                                <select id="pickup-date">
+                                    <option value="">Select your date</option>
+                                    <option value="20-july">20 July 2022</option>
+                                    <option value="21-july">21 July 2022</option>
+                                    <option value="22-july">22 July 2022</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pickup-time">Time</label>
+                        <div class="select-wrapper">
+                            <select id="pickup-time">
+                                <option value="">Select your time</option>
+                                <option value="07:00">07:00</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="location-group dropoff">
+                        <div class="location-dot"></div>
+                        <span>Drop - Off</span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dropoff-location">Locations</label>
+                            <div class="select-wrapper">
+                                <select id="dropoff-location">
+                                    <option value="">Select your city</option>
+                                    <option value="semarang">Semarang</option>
+                                    <option value="jakarta">Jakarta</option>
+                                    <option value="surabaya">Surabaya</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dropoff-date">Date</label>
+                            <div class="select-wrapper">
+                                <select id="dropoff-date">
+                                    <option value="">Select your date</option>
+                                    <option value="21-july">21 July 2022</option>
+                                    <option value="22-july">22 July 2022</option>
+                                    <option value="23-july">23 July 2022</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dropoff-time">Time</label>
+                        <div class="select-wrapper">
+                            <select id="dropoff-time">
+                                <option value="">Select your time</option>
+                                <option value="01:00">01:00</option>
+                                <option value="02:00">02:00</option>
+                                <option value="03:00">03:00</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="payment-section">
+                    <div class="section-header">
+                        <h2>Payment Method</h2>
+                        <p>Please enter your payment method</p>
+                        <a href="#" class="step-link">Step 3 of 4</a>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method active">
+                            <input type="radio" id="credit-card" name="payment-method" checked>
+                            <label for="credit-card">Credit Card</label>
+                            <div class="card-icons">
+                                <img src="./img/download__5_-removebg-preview.png" alt="Visa" width="50">
+                                <img src="./img/download-removebg-preview (1).png" alt="Mastercard" width="50">
+                            </div>
+                        </div>
+                        
+                        <div class="credit-card-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <input type="text" id="card-number" placeholder="Card number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="expiration-date">Expiration Date</label>
+                                    <input type="text" id="expiration-date" placeholder="MM / YY / YY">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-holder">Card Holder</label>
+                                    <input type="text" id="card-holder" placeholder="Card holder">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvc">CVC</label>
+                                    <input type="text" id="cvc" placeholder="CVC">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="paypal" name="payment-method">
+                            <label for="paypal">PayPal</label>
+                            <img src="./img/download-removebg-preview.png" alt="PayPal" class="payment-logo">
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="bitcoin" name="payment-method">
+                            <label for="bitcoin">Bitcoin</label>
+                            <img src="./img/download__4_-removebg-preview.png" alt="Bitcoin" class="payment-logo">
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="payment-section">
+                    <div class="section-header">
+                        <h2>Confirmation</h2>
+                        <p>We are getting to the end. Just few clicks and your rental is ready!</p>
+                        <a href="#" class="step-link">Step 4 of 4</a>
+                    </div>
+                    
+                    <div class="confirmation-checkboxes">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="marketing">
+                            <label for="marketing">I agree with sending an Marketing and newsletter emails. No spam, promised!</label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms">
+                            <label for="terms">I agree with our <a href="#">terms and conditions</a> and <a href="#">privacy policy</a>.</label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn rent-now-btn">Rent Now</button>
+                    
+                    <div class="security-note">
+                        <i class="fas fa-lock"></i>
+                        <p>All your data are safe</p>
+                    </div>
+                    
+                    <div class="payment-footer">
+                        <p>We are using secure transmission and secure tokens to protect your data. For more details, check our privacy policy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="rental-summary-container">
+                <div class="rental-summary">
+                    <h2>Rental Summary</h2>
+                    <p>Prices may change depending on the length of the rental and the price of your rental car.</p>
+                    
+                    <div class="summary-car">
+                        <img src="./img/Nissan GT-R.png" alt="Nissan GT-R" class="car-image">
+                        <div class="car-info">
+                            <h3>Nissan GT - R</h3>
+                            <div class="car-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>440+ Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-divider"></div>
+                    
+                    <div class="summary-details">
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span class="price">$80.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Tax</span>
+                            <span class="price">$0</span>
+                        </div>
+                        <div class="summary-item promo-code">
+                            <span>Apply promo code</span>
+                            <a href="#" class="apply-link">Apply now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-divider"></div>
+                    
+                    <div class="summary-total">
+                        <div class="total-label">
+                            <h4>Total Rental Price</h4>
+                            <p>Overall price and includes rental discount</p>
+                        </div>
+                        <div class="total-price">$80.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="foot-col">
+                    <div class="logo">
+                        <h2>MORENT</h2>
+                    </div>
+                    <p>Our vision is to provide convenience and help increase your sales business.</p>
+                </div>
+                <div class="foot-col">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">How it works</a></li>
+                        <li><a href="#">Featured</a></li>
+                        <li><a href="#">Partnership</a></li>
+                        <li><a href="#">Business Relation</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Podcast</a></li>
+                        <li><a href="#">Invite a friend</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3>Socials</h3>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>©2022 MORENT. All rights reserved</p>
+                </div>
+                <div class="links">
+                    <a href="privacy-policy.html">Privacy & Policy</a>
+                    <a href="terms and condition page.html">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
