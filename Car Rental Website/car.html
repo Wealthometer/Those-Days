@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarRent - Premium Car Rental Service</title>
+    <link rel="stylesheet" href="./car.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>CarRent</h1>
+            </div>
+            <nav class="nav">
+                <ul class="menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Cars</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="btns">
+                <a href="#" class="btn btn-sm">Sign In</a>
+                <a href="#" class="btn btn-pri">Register</a>
+            </div>
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find the perfect car for your next trip</h1>
+                <p>Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.</p>
+                <div class="search-box">
+                    <form>
+                        <div class="form-group">
+                            <label>Pick-up Location</label>
+                            <input type="text" placeholder="City, Airport, etc">
+                        </div>
+                        <div class="form-group">
+                            <label>Pick-up Date</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Return Date</label>
+                            <input type="date">
+                        </div>
+                        <button type="submit" class="btn btn-pri">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img src="/placeholder.svg?height=400&width=600" alt="Luxury car">
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Cars -->
+    <section class="cars">
+        <div class="container">
+            <div class="sec-head">
+                <h2>Popular Cars</h2>
+                <p>Most popular cars in our fleet</p>
+                <div class="tabs">
+                    <button class="tab active" data-filter="all">All</button>
+                    <button class="tab" data-filter="suv">SUV</button>
+                    <button class="tab" data-filter="sedan">Sedan</button>
+                    <button class="tab" data-filter="luxury">Luxury</button>
+                </div>
+            </div>
+            <div class="car-list">
+                <!-- Car Card 1 -->
+                <div class="car-card" data-type="suv">
+                    <div class="car-img">
+                        <img src="/placeholder.svg?height=200&width=300" alt="SUV Car">
+                        <span class="tag">Popular</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-top">
+                            <h3>Toyota RAV4</h3>
+                            <div class="price">$45<span>/day</span></div>
+                        </div>
+                        <div class="car-feat">
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> 5 Seats</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> Automatic</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> Hybrid</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> 6.1L/100km</div>
+                        </div>
+                        <a href="#" class="btn btn-pri">Rent Now</a>
+                    </div>
+                </div>
+                
+                <!-- Car Card 2 -->
+                <div class="car-card" data-type="sedan">
+                    <div class="car-img">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Sedan Car">
+                    </div>
+                    <div class="car-info">
+                        <div class="car-top">
+                            <h3>Honda Civic</h3>
+                            <div class="price">$35<span>/day</span></div>
+                        </div>
+                        <div class="car-feat">
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> 5 Seats</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> Automatic</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> Gasoline</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> 5.8L/100km</div>
+                        </div>
+                        <a href="#" class="btn btn-pri">Rent Now</a>
+                    </div>
+                </div>
+                
+                <!-- Car Card 3 -->
+                <div class="car-card" data-type="luxury">
+                    <div class="car-img">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Luxury Car">
+                        <span class="tag">Premium</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-top">
+                            <h3>Mercedes-Benz E-Class</h3>
+                            <div class="price">$95<span>/day</span></div>
+                        </div>
+                        <div class="car-feat">
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> 5 Seats</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> Automatic</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> Gasoline</div>
+                            <div class="feat"><img src="/placeholder.svg?height=20&width=20" alt=""> 8.2L/100km</div>
+                        </div>
+                        <a href="#" class="btn btn-pri">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="#" class="btn btn-out">View All Cars</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how">
+        <div class="container">
+            <div class="sec-head">
+                <h2>How It Works</h2>
+                <p>Rent a car in 3 simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-img">
+                        <img src="/placeholder.svg?height=100&width=100" alt="Choose Car">
+                    </div>
+                    <h3>Choose Your Car</h3>
+                    <p>Select from a variety of cars based on your needs and budget.</p>
+                </div>
+                <div class="step">
+                    <div class="step-img">
+                        <img src="/placeholder.svg?height=100&width=100" alt="Book Car">
+                    </div>
+                    <h3>Book Your Car</h3>
+                    <p>Book your car by providing necessary details and making payment.</p>
+                </div>
+                <div class="step">
+                    <div class="step-img">
+                        <img src="/placeholder.svg?height=100&width=100" alt="Pickup Car">
+                    </div>
+                    <h3>Pick Up Your Car</h3>
+                    <p>Pick up your car from the designated location and enjoy your trip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="test">
+        <div class="container">
+            <div class="sec-head">
+                <h2>Testimonials</h2>
+                <p>What our customers say</p>
+            </div>
+            <div class="test-wrap">
+                <div class="test-list">
+                    <div class="test-card active">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p>"The car was in excellent condition and the rental process was smooth. Will definitely use again!"</p>
+                        <div class="user">
+                            <img src="/placeholder.svg?height=50&width=50" alt="User">
+                            <div class="info">
+                                <h4>John Smith</h4>
+                                <span>New York</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-card">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p>"Great service and competitive prices. The car was clean and well-maintained."</p>
+                        <div class="user">
+                            <img src="/placeholder.svg?height=50&width=50" alt="User">
+                            <div class="info">
+                                <h4>Sarah Johnson</h4>
+                                <span>Los Angeles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download -->
+    <section class="app">
+        <div class="container">
+            <div class="app-content">
+                <h2>Download our app to get most out of it</h2>
+                <p>Get exclusive offers, manage your bookings, and find the perfect car - all from your phone.</p>
+                <div class="app-btns">
+                    <a href="#" class="app-btn">
+                        <img src="/placeholder.svg?height=40&width=120" alt="App Store">
+                    </a>
+                    <a href="#" class="app-btn">
+                        <img src="/placeholder.svg?height=40&width=120" alt="Google Play">
+                    </a>
+                </div>
+            </div>
+            <div class="app-img">
+                <img src="/placeholder.svg?height=400&width=300" alt="Mobile App">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="foot-top">
+                <div class="foot-col">
+                    <div class="logo">
+                        <h2>CarRent</h2>
+                    </div>
+                    <p>We offer a wide range of vehicles for all your driving needs. We have the perfect car to meet your needs.</p>
+                    <div class="contact">
+                        <p><strong>Phone:</strong> (123) 456-7890</p>
+                        <p><strong>Email:</strong> info@carrent.com</p>
+                    </div>
+                </div>
+                <div class="foot-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">How We Work</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates.</p>
+                    <form class="news-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit" class="btn btn-pri">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="foot-bot">
+                <p>&copy; 2023 CarRent. All rights reserved.</p>
+                <div class="social">
+                    <a href="#" class="soc-link">FB</a>
+                    <a href="#" class="soc-link">IG</a>
+                    <a href="#" class="soc-link">TW</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js">
+        // Mobile Menu Toggle
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.menu');
+
+if (menuBtn && menu) {
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        
+        // Animate menu button
+        const spans = menuBtn.querySelectorAll('span');
+        spans.forEach(span => span.classList.toggle('active'));
+        
+        if (menu.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+}
+
+// Car Filtering
+const tabs = document.querySelectorAll('.tab');
+const carCards = document.querySelectorAll('.car-card');
+
+if (tabs.length && carCards.length) {
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            tab.classList.add('active');
+            
+            const filter = tab.getAttribute('data-filter');
+            
+            // Show all or filter cars based on type
+            carCards.forEach(card => {
+                const type = card.getAttribute('data-type');
+                
+                if (filter === 'all' || filter === type) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// Testimonial Slider
+const dots = document.querySelectorAll('.dot');
+const testimonials = document.querySelectorAll('.test-card');
+
+if (dots.length && testimonials.length) {
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            // Remove active class from all dots and testimonials
+            dots.forEach(d => d.classList.remove('active'));
+            testimonials.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked dot and corresponding testimonial
+            dot.classList.add('active');
+            testimonials[index].classList.add('active');
+        });
+    });
+    
+    // Auto slide every 5 seconds
+    let currentSlide = 0;
+    
+    function autoSlide() {
+        currentSlide = (currentSlide + 1) % testimonials.length;
+        
+        // Remove active class from all dots and testimonials
+        dots.forEach(d => d.classList.remove('active'));
+        testimonials.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to current dot and testimonial
+        dots[currentSlide].classList.add('active');
+        testimonials[currentSlide].classList.add('active');
+    }
+    
+    // Set interval for auto slide
+    setInterval(autoSlide, 5000);
+}
+
+// Form validation
+const searchForm = document.querySelector('.search-box form');
+
+if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const inputs = searchForm.querySelectorAll('input');
+        let isValid = true;
+        
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.style.borderColor = '#ff4d30';
+            } else {
+                input.style.borderColor = '#ddd';
+            }
+        });
+        
+        if (isValid) {
+            alert('Search submitted successfully! This would normally redirect to search results.');
+        }
+    });
+}
+
+// Newsletter form
+const newsForm = document.querySelector('.news-form');
+
+if (newsForm) {
+    newsForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const emailInput = newsForm.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+        
+        if (!email || !isValidEmail(email)) {
+            emailInput.style.borderColor = '#ff4d30';
+        } else {
+            emailInput.style.borderColor = '';
+            emailInput.value = '';
+            alert('Thank you for subscribing to our newsletter!');
+        }
+    });
+}
+
+// Email validation helper
+function isValidEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+// Smooth scroll for navigation links
+const navLinks = document.querySelectorAll('.menu a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // This would normally scroll to the section
+        // For this demo, just prevent default behavior
+        e.preventDefault();
+        
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove('active'));
+        
+        // Add active class to clicked link
+        link.classList.add('active');
+    });
+});
+    </script>
+</body>
+</html>
