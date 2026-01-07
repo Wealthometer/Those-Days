@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - MORENT Car Rental</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./car.css">
+    <link rel="stylesheet" href="./calender.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="welcome.html"><h1>MORENT</h1></a>
+            </div>
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search something here">
+            </div>
+            <div class="icons">
+                <a href="favourites.html" class="icon"><i class="fa fa-heart"></i></a>
+                <a href="notifications.html" class="icon notification"><i class="fa fa-bell"></i><span class="badge"></span></a>
+                <a href="setting.html" class="icon"><i class="fa fa-cog"></i></a>
+                <a href="#" class="user">
+                    <img src="./img/avatar-1.png" alt="User">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="page-header">
+        <div class="container">
+            <h1>MORENT Community</h1>
+            <p>Join our community and stay connected with fellow car enthusiasts</p>
+        </div>
+    </section>
+
+    
+    <section class="community-section" id="events">
+        <div class="container">
+            <h2>Events</h2>
+            <div class="events-content">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>MORENT Car Show 2023</h3>
+                        <p class="event-location"><i class="fa fa-map-marker-alt"></i> New York City, NY</p>
+                        <p>Join us for our annual car show featuring the latest models and exclusive test drives. Network with car enthusiasts and industry professionals.</p>
+                        <a href="#" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">JUL</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Road Trip Adventure</h3>
+                        <p class="event-location"><i class="fa fa-map-marker-alt"></i> Los Angeles, CA</p>
+                        <p>Embark on an exciting road trip with fellow MORENT members. Explore scenic routes and create unforgettable memories.</p>
+                        <a href="#" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">10</span>
+                        <span class="month">AUG</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Electric Vehicle Expo</h3>
+                        <p class="event-location"><i class="fa fa-map-marker-alt"></i> San Francisco, CA</p>
+                        <p>Discover the future of transportation at our Electric Vehicle Expo. Test drive the latest electric cars and learn about sustainable driving.</p>
+                        <a href="#" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="currentMonth">January 2025</h2>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar-days">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="calendar-dates" id="calendarDates"></div>
+                <div class="event-list" id="eventList">
+                    <h3>Events</h3>
+                    <div id="eventContainer">Select a date to view events.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="community-section" id="blog">
+        <div class="container">
+            <h2>Blog</h2>
+            <div class="blog-content">
+                <div class="blog-posts">
+                    <article class="blog-post">
+                        <div class="post-image">
+                            <img src="./img/blog post1.jpeg" alt="Blog Post 1">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date">June 5, 2023</span>
+                                <span class="post-category">Tips & Tricks</span>
+                            </div>
+                            <h3>10 Essential Tips for a Smooth Car Rental Experience</h3>
+                            <p>Planning your next trip? Make sure your car rental experience is hassle-free with these essential tips that every traveler should know.</p>
+                            <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post">
+                        <div class="post-image">
+                            <img src="./img/blog post2.jpeg" alt="Blog Post 2">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date">May 28, 2023</span>
+                                <span class="post-category">Car Reviews</span>
+                            </div>
+                            <h3>The Top 5 Luxury Cars to Rent for Your Next Business Trip</h3>
+                            <p>Make a statement on your next business trip with these top-of-the-line luxury vehicles that combine style, comfort, and performance.</p>
+                            <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post">
+                        <div class="post-image">
+                            <img src="./img/blog post 3.jpeg" alt="Blog Post 3">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date">May 15, 2023</span>
+                                <span class="post-category">Travel</span>
+                            </div>
+                            <h3>Road Trip Essentials: What to Pack for Your Next Adventure</h3>
+                            <p>Preparing for a road trip? Don't leave home without these essential items that will ensure your journey is comfortable, safe, and enjoyable.</p>
+                            <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Tips & Tricks <span>(12)</span></a></li>
+                            <li><a href="#">Car Reviews <span>(8)</span></a></li>
+                            <li><a href="#">Travel <span>(15)</span></a></li>
+                            <li><a href="#">Industry News <span>(6)</span></a></li>
+                            <li><a href="#">Company Updates <span>(4)</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Popular Posts</h3>
+                        <div class="popular-posts">
+                            <div class="popular-post">
+                                <img src="./img/popular post1.jpeg" alt="Popular Post 1">
+                                <div>
+                                    <h4>How to Save Money on Your Next Car Rental</h4>
+                                    <span>April 20, 2023</span>
+                                </div>
+                            </div>
+                            <div class="popular-post">
+                                <img src="./img/popular post2.jpeg" alt="Popular Post 2">
+                                <div>
+                                    <h4>5 Scenic Routes for Your Summer Road Trip</h4>
+                                    <span>April 12, 2023</span>
+                                </div>
+                            </div>
+                            <div class="popular-post">
+                                <img src="./img/popular post3.jpeg" alt="Popular Post 3">
+                                <div>
+                                    <h4>Electric vs. Hybrid: Which is Right for You?</h4>
+                                    <span>March 28, 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-cta">
+                <h3>Want to Stay Updated?</h3>
+                <p>Subscribe to our newsletter to receive the latest blog posts, tips, and updates directly in your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="community-section" id="podcast">
+        <div class="container">
+            <h2>Podcast</h2>
+            <div class="podcast-intro">
+                <div class="podcast-cover">
+                    <img src="./img/podcast.jpeg" alt="Drive Talk Podcast">
+                </div>
+                <div class="podcast-info">
+                    <h3>Drive Talk: The MORENT Podcast</h3>
+                    <p>Join our hosts as they discuss everything related to cars, travel, and the future of mobility. From interviews with industry experts to tips for car enthusiasts, our podcast covers it all.</p>
+                    <div class="podcast-platforms">
+                        <a href="#" class="platform"><i class="fab fa-spotify"></i> Spotify</a>
+                        <a href="#" class="platform"><i class="fab fa-apple"></i> Apple Podcasts</a>
+                        <a href="#" class="platform"><i class="fab fa-google"></i> Google Podcasts</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="podcast-episodes">
+                <h3>Latest Episodes</h3>
+                <div class="episode">
+                    <div class="episode-number">EP 25</div>
+                    <div class="episode-content">
+                        <h4>The Future of Electric Vehicles</h4>
+                        <p>In this episode, we discuss the rapid evolution of electric vehicles and what it means for the car rental industry and consumers alike.</p>
+                        <div class="episode-meta">
+                            <span><i class="fa fa-calendar"></i> June 1, 2023</span>
+                            <span><i class="fa fa-clock"></i> 45 minutes</span>
+                        </div>
+                        <div class="episode-player">
+                            <audio controls>
+                                <source src="./audio/Jake Bugg - All I Need (Official Video).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="episode">
+                    <div class="episode-number">EP 24</div>
+                    <div class="episode-content">
+                        <h4>Road Trip Stories: Adventures and Lessons</h4>
+                        <p>Listen to exciting road trip stories from our community members and learn valuable lessons from their experiences on the road.</p>
+                        <div class="episode-meta">
+                            <span><i class="fa fa-calendar"></i> May 15, 2023</span>
+                            <span><i class="fa fa-clock"></i> 38 minutes</span>
+                        </div>
+                        <div class="episode-player">
+                            <audio controls>
+                                <source src="./audio/Aloe Blacc - The Man (Official Lyrics Video).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="episode">
+                    <div class="episode-number">EP 23</div>
+                    <div class="episode-content">
+                        <h4>Interview with a Car Designer: Creating the Cars of Tomorrow</h4>
+                        <p>We sit down with a renowned car designer to discuss the creative process behind designing vehicles and the trends shaping the future of car design.</p>
+                        <div class="episode-meta">
+                            <span><i class="fa fa-calendar"></i> May 1, 2023</span>
+                            <span><i class="fa fa-clock"></i> 52 minutes</span>
+                        </div>
+                        <div class="episode-player">
+                            <audio controls>
+                                <source src="./audio/Lil-Durk-All-My-Life-Burna-Boy-Remix-Burna-Explicit-Stereo-Ft-Burna-Boy-J-Cole-(TrendyBeatz.com).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="podcast-suggest">
+                <h3>Suggest a Topic</h3>
+                <p>Have an idea for a podcast episode? We'd love to hear from you! Submit your suggestion below.</p>
+                <form class="suggest-form">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Your Topic Suggestion"></textarea>
+                    <button type="submit" class="btn">Submit Suggestion</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="community-section" id="invite">
+        <div class="container">
+            <h2>Invite a Friend</h2>
+            <div class="invite-content">
+                <div class="invite-info">
+                    <h3>Share the MORENT Experience</h3>
+                    <p>Invite your friends to join MORENT and enjoy exclusive benefits together. For every friend who signs up and completes their first rental, both you and your friend will receive special rewards.</p>
+                    
+                    <div class="rewards">
+                        <h4>Rewards for You and Your Friends</h4>
+                        <ul>
+                            <li><i class="fa fa-check"></i> $25 rental credit for you</li>
+                            <li><i class="fa fa-check"></i> $25 rental credit for your friend</li>
+                            <li><i class="fa fa-check"></i> Priority booking for both</li>
+                            <li><i class="fa fa-check"></i> Special upgrade offers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="how-to-invite">
+                        <h4>How to Invite</h4>
+                        <ol>
+                            <li>Enter your friend's email below</li>
+                            <li>We'll send them an invitation with your referral code</li>
+                            <li>Once they sign up and complete their first rental, you both get rewarded</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="invite-form-container">
+                    <div class="invite-form">
+                        <h3>Send an Invitation</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label>Friend's Email</label>
+                                <input type="email" placeholder="Enter your friend's email">
+                            </div>
+                            <div class="form-group">
+                                <label>Personal Message (Optional)</label>
+                                <textarea placeholder="Add a personal message"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Invitation</button>
+                        </form>
+                    </div>
+                    
+                    <div class="share-options">
+                        <h3>Or Share via</h3>
+                        <div class="social-share">
+                            <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                            <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a href="#" class="social-btn email"><i class="fa fa-envelope"></i> Email</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="referral-stats">
+                <h3>Your Referral Stats</h3>
+                <div class="stats-container">
+                    <div class="stat">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Friends Invited</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Successful Referrals</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$200</span>
+                        <span class="stat-label">Credits Earned</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="foot-col">
+                    <div class="logo">
+                        <h1>MORENT</h1>
+                    </div>
+                    <p>Our vision is to provide convenience and help increase your sales business.</p>
+                </div>
+                <div class="foot-col">
+                    <h3><a href="./about.html">About</a></h3>
+                    <ul>
+                        <li><a href="about.html#how-it-works">How it works</a></li>
+                        <li><a href="about.html#featured">Featured</a></li>
+                        <li><a href="about.html#partnership">Partnership</a></li>
+                        <li><a href="about.html#business-relation">Business Relation</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3><a href="./community.html">Community</a></h3>
+                    <ul>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#podcast">Podcast</a></li>
+                        <li><a href="#invite">Invite a friend</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>©2022 MORENT. All rights reserved</p>
+                </div>
+                <div class="links">
+                    <a href="privacy-policy.html">Privacy & Policy</a>
+                    <a href="terms and condition page.html">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="./calender.js"></script>
+</body>
+</html>
