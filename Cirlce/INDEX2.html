@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="circle.css">
+    <link rel="stylesheet" href="style.css">
+    <title>3D Circle Text Rotation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #673ab7;
+            perspective: 1000px;
+        }
+        .circle {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #35146f;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .char {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--char-index) * 12deg)) translateZ(150px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="circle" data-splitting>
+        I-AM-THE-GREATEST-OF-ALL-TIME
+    </div>
+    <script src="splitting.js"></script>
+    <script>
+        Splitting();
+        
+        let circle = document.querySelector('.circle');
+        let chars = document.querySelectorAll('.char');
+
+        window.addEventListener('mousemove', (e) => {
+            let x = e.clientX / window.innerWidth * 360;
+            let y = e.clientY / window.innerHeight * 360;
+            
+            circle.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        });
+    </script>
+</body>
+</html>
