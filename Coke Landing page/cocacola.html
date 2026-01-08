@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="coke.css">
+    <link rel="stylesheet" href="./swiper-bundle.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="./img/download__6_-removebg-preview.png" alt="" class="logo"></a>
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">What's New</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>
+                    Tatse The Felling
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur laudantium dolores ipsa molestiae omnis magnam modi quibusdam, atque aspernatur recusandae sint, nesciunt amet voluptates, facilis quasi blanditiis.
+                </p>
+                <a href="#">learn More</a>
+            </div>
+        </div>
+
+        <div class="imgBox">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-05_210706-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_082657-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-05_210550-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_082617-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_083410-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_084446-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_084546-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_084416-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_195220-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_084621-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_084407-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_195311-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-06_082645-removebg-preview.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./img/Screenshot_2025-05-05_210534-removebg-preview.png" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+        </div>
+
+        <ul class="sci">
+            <li><a href="#"><img src="./icon/5305153_fb_facebook_facebook logo_icon.png" alt=""></a></li>
+            <li><a href="#"><img src="./icon/5335781_camera_instagram_social media_instagram logo_icon.png" alt=""></a></li>
+            <li><a href="#"><img src="./icon/5305157_connection_linkedin_network_linkedin logo_icon.png" alt=""></a></li>
+        </ul>
+    </section>
+</body>
+<script src="./swiper-bundle.min.js"></script>
+<script>    
+    import Swiper from './swiper-master/src/swiper-bundle.mjs';
+    import './swiper/swiper-bundle.css';
+    var swiper = new Swiper('.swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });</script>
+</html> 
