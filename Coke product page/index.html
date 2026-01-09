@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola - Taste the Feeling</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="coke-logo">
+                <i class="fas fa-wine-bottle"></i>
+            </div>
+            <div class="loading-text">Taste the Feeling</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-wine-bottle"></i>
+                <span>Coca-Cola</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Bubbles Background -->
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="fizz-effect"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Coca-Cola</h1>
+            <p class="hero-subtitle">Taste the Feeling</p>
+            <p class="hero-description">Experience the refreshing taste that has brought people together for over 130 years</p>
+            <button class="cta-button">
+                <span>Explore Products</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="hero-bottle">
+            <i class="fas fa-wine-bottle"></i>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">The Real Thing</h2>
+                    <p class="about-description">
+                        Since 1886, Coca-Cola has been refreshing the world. Our secret formula, 
+                        natural flavors, and effervescent bubbles create the perfect harmony of taste 
+                        that brings people together across the globe.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>Natural Flavors</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-history"></i>
+                            <span>130+ Years Legacy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-globe"></i>
+                            <span>Global Favorite</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="floating-bottle">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-carousel">
+                <div class="carousel-container">
+                    <div class="product-card active" data-product="classic">
+                        <div class="product-icon">
+                            <i class="fas fa-wine-bottle"></i>
+                        </div>
+                        <h3>Coca-Cola Classic</h3>
+                        <p>The original and iconic taste</p>
+                        <div class="product-price">$2.99</div>
+                    </div>
+                    <div class="product-card" data-product="zero">
+                        <div class="product-icon">
+                            <i class="fas fa-wine-bottle"></i>
+                        </div>
+                        <h3>Coca-Cola Zero</h3>
+                        <p>Great taste, zero calories</p>
+                        <div class="product-price">$2.99</div>
+                    </div>
+                    <div class="product-card" data-product="diet">
+                        <div class="product-icon">
+                            <i class="fas fa-wine-bottle"></i>
+                        </div>
+                        <h3>Diet Coca-Cola</h3>
+                        <p>Light and refreshing</p>
+                        <div class="product-price">$2.99</div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-product-icon">
+                    <i class="fas fa-wine-bottle"></i>
+                </div>
+                <h3 id="modal-title">Product Name</h3>
+                <p id="modal-description">Product description goes here...</p>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <strong>Ingredients:</strong>
+                        <span id="modal-ingredients">Carbonated water, sugar, natural flavors...</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Size:</strong>
+                        <span>330ml, 500ml, 1L, 2L</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Calories:</strong>
+                        <span id="modal-calories">140 per 330ml</span>
+                    </div>
+                </div>
+                <button class="buy-now-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    Buy Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p>Ready to taste the feeling? Find us at your nearest store or contact us directly.</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Find a Store</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>1-800-GET-COKE</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@coca-cola.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-wine-bottle"></i>
+                        <span>Coca-Cola</span>
+                    </div>
+                    <p>Refreshing the world, one sip at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#">Coca-Cola Classic</a></li>
+                            <li><a href="#">Coca-Cola Zero</a></li>
+                            <li><a href="#">Diet Coca-Cola</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">News</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Store Locator</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Coca-Cola Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
