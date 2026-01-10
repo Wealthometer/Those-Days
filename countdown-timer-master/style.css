@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:  linear-gradient(315deg, #ffffff, #d7e1ec); 
+}
+
+/* background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+background: linear-gradient(-25deg, #616161 0%, #96b7c4 100%);
+background: linear-gradient(315deg, #ffffff, #d7e1ec);
+background: radial-gradient(circle, #404660, #0d0f18 80%);
+background: linear-gradient(296.91deg, #3f3547 3.73%, #7D81A4 97.68%); 
+background: linear-gradient(45deg, #a7cfdf 0%, #23538a 100%);
+
+background: rgb(247, 202, 201);
+
+background: linear-gradient(135deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%); */
+
+
+.shadow{
+    background-color: rgba(0,0,0,.3);
+}
+
+.timer{
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 500;
+    /* background-color: antiquewhite; */
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    align-items: center;
+    border: 5px solid #6D808C;
+    margin-bottom: 2rem;
+    cursor: pointer;
+
+}
+
+.popup-wrapp{
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 350px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    box-shadow: 2px 0 4px hsl(152,24%,15%,0.1);
+    margin: 2rem 0;
+    transition: .8s ease;
+
+}
+
+.show{
+    top: 50%;
+}
+.start-wrapp{
+    text-align: center;
+}
+
+.start{
+    background-color: #9fb3bf;
+    width:70%;
+    padding: .5rem 0;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+.popup{
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.popup input{
+    border: none;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: .4rem .3rem;
+    margin: 0 .2rem;
+}
+
+.popup input:focus{
+    border-color: rgb(148, 147, 147);
+}
+button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.btn{
+    /* background-color: #6D808C; */
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+   
+    font-weight: 500;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+.allow{
+    cursor: pointer;
+}
+
+
+.reset{
+    border: 3px solid #bfbfbf;
+    color: #bfbfbf;
+}
+
+.play-pause{
+    border: 3px solid #3ca6a6;
+    color: #333;
+}
+
+.play-pause.p{
+    border: 3px solid red;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" data-index="">
+        <div class="timer">
+            <div class="hour" data-index="1">00</div>
+            <span>:</span>
+            <div class="min" data-index="2">00</div>
+            <span>:</span>
+            <div class="sec" data-index="3">00</div>
+        </div>
+        <div class="popup-wrapp ">
+            <div class="popup">
+                <input type="number" data-value="1" value="0" max="99" min="0">
+                 <span>:</span>
+                <input type="number" data-value="2"value="0"  max="59" min="0">
+                <span>:</span>
+                <input type="number"data-value="3" value="0" max="59" min="0">
+            </div>
+            <div class="start-wrapp">
+                <button class="start">Start</button>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn reset">Reset</button>
+            <button class="btn play-pause p">Pause</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
