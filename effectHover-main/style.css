@@ -1,0 +1,47 @@
+body{
+    background-color: #0C0F20;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list{
+    width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 450px;
+    gap: 50px;
+}
+.list .item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.list .item:hover img{
+    transform: scale(1.2);
+}
+.list .item{
+    color: #c7c3c3;
+    font-family: Poppins;
+    position: relative;
+    transition: 0.5s;
+}
+.list .item .content{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 20px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+.list .item:hover .content{
+    opacity: 1;
+    transform: translateY(0);
+}
+.list:hover .item:not(:hover){
+    filter: blur(8px);
+}
