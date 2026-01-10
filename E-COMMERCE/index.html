@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy - E-commerce Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1>ShopEasy</h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#" class="category-link" data-category="all">All Products</a></li>
+            <li><a href="#" class="category-link" data-category="electronics">Electronics</a></li>
+            <li><a href="#" class="category-link" data-category="clothing">Clothing</a></li>
+            <li><a href="#" class="category-link" data-category="home">Home & Kitchen</a></li>
+          </ul>
+        </nav>
+        <div class="cart-container">
+          <button id="cart-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <h2>Welcome to ShopEasy</h2>
+          <p>Discover amazing products at unbeatable prices</p>
+        </div>
+      </section>
+
+      <section class="products-section">
+        <h2 id="products-title">All Products</h2>
+        <div id="products-grid" class="products-grid">
+          <!-- Products will be dynamically inserted here -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart">×</button>
+    </div>
+    <div id="cart-items" class="cart-items">
+      <!-- Cart items will be dynamically inserted here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Checkout</h3>
+        <button id="close-checkout" class="close-modal">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="checkout-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Shipping Address</label>
+            <textarea id="address" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="card">Card Number</label>
+            <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="expiry">Expiry Date</label>
+              <input type="text" id="expiry" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" placeholder="123" required>
+            </div>
+          </div>
+          <div class="order-summary">
+            <h4>Order Summary</h4>
+            <div id="checkout-items">
+              <!-- Checkout items will be dynamically inserted here -->
+            </div>
+            <div class="checkout-total">
+              <span>Total:</span>
+              <span id="checkout-total-price">$0.00</span>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn">Place Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Order Confirmed!</h3>
+        <button class="close-confirmation close-modal">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="confirmation-message">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="success-icon">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <p>Thank you for your order!</p>
+          <p>Your order has been placed successfully.</p>
+          <p>Order ID: <span id="order-id"></span></p>
+        </div>
+        <button class="submit-btn close-confirmation">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Login Modal -->
+  <div id="admin-login-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Admin Login</h3>
+        <button class="close-modal">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label for="admin-username">Username</label>
+            <input type="text" id="admin-username" required>
+          </div>
+          <div class="form-group">
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" required>
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div id="admin-dashboard" class="admin-dashboard">
+    <div class="admin-sidebar">
+      <h3>Admin Panel</h3>
+      <nav>
+        <ul>
+          <li><a href="#" class="admin-nav-link active" data-section="products">Products</a></li>
+          <li><a href="#" class="admin-nav-link" data-section="orders">Orders</a></li>
+          <li><a href="#" id="admin-logout">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="admin-content">
+      <div id="admin-products" class="admin-section active">
+        <h2>Manage Products</h2>
+        <button id="add-product-btn" class="admin-btn">Add New Product</button>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-products-table">
+            <!-- Product rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+      <div id="admin-orders" class="admin-section">
+        <h2>Orders</h2>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-orders-table">
+            <!-- Order rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Form Modal -->
+  <div id="product-form-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="product-form-title">Add New Product</h3>
+        <button class="close-modal">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="product-form">
+          <input type="hidden" id="product-id">
+          <div class="form-group">
+            <label for="product-name">Product Name</label>
+            <input type="text" id="product-name" required>
+          </div>
+          <div class="form-group">
+            <label for="product-category">Category</label>
+            <select id="product-category" required>
+              <option value="electronics">Electronics</option>
+              <option value="clothing">Clothing</option>
+              <option value="home">Home & Kitchen</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="product-price">Price ($)</label>
+            <input type="number" id="product-price" step="0.01" min="0" required>
+          </div>
+          <div class="form-group">
+            <label for="product-image">Image URL</label>
+            <input type="text" id="product-image" required>
+          </div>
+          <div class="form-group">
+            <label for="product-description">Description</label>
+            <textarea id="product-description" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Save Product</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay"></div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>ShopEasy</h3>
+          <p>Your one-stop shop for all your needs.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" id="admin-link">Admin</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info@shopeasy.com</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 ShopEasy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
