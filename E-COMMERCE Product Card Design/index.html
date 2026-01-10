@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="cards"></div>
+            <div class="imgBox">
+                <img src="./img/2.png" alt="shoe" class="shoe">
+            </div>
+            <div class="imgs">
+                <img src="" alt="">
+            </div>
+            <div class="contentBox">
+                <h2>Nike Shoes</h2>
+
+                <div class="size">
+                    <h3>Size :</h3>
+                    <span onclick="adjWidth(`${270}px`)">7</span>
+                    <span onclick="adjWidth(`${275}px`)">8</span>
+                    <span onclick="adjWidth(`${280}px`)">9</span>
+                    <span onclick="adjWidth(`${285}px`)">10</span>
+                </div>
+
+                <div class="color">
+                    <h3>Color :</h3>
+                    <span onclick="imgChange('./img/2.png'); changeColor('#9bdc28')"></span>
+                    <span onclick="imgChange('./img/3.png'); changeColor('#d87093')"></span>
+                    <span onclick="imgChange('./img/1.png'); changeColor('#f0f8ff')"></span>
+                </div>
+
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function imgChange(anything) {
+            document.querySelector('.shoe').src = anything;
+        }
+
+        function changeColor(color) {
+            const sec = document.querySelector('.cards');
+            sec.style.background = color;
+        }
+
+        // function adjWidth(width) {
+        //     const width = document.querySelector('.shoe');
+        //     width.style.width = width;
+        // }
+    </script>
+</body>
+</html>
