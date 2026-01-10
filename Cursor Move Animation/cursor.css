@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #151515;
+    overflow: hidden;
+}
+
+span {
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    border-radius: 4px;
+    background: #0ff;
+    pointer-events: none;
+    transform-origin: 50px;
+    box-shadow: 0 0 10px #0ff
+                0 0 20px #0ff
+                0 0 40px #0ff;
+    animation: anime 10s linear infinite;
+}
+
+@keyframes anime {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
