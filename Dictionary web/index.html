@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global-Word - Multilingual Dictionary</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-globe"></i>
+                    <h1>Global-Word</h1>
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn" data-section="dictionary">
+                        <i class="fas fa-book"></i>
+                        Dictionary
+                    </button>
+                    <button class="nav-btn" data-section="history">
+                        <i class="fas fa-history"></i>
+                        History
+                    </button>
+                    <button class="nav-btn" data-section="favorites">
+                        <i class="fas fa-heart"></i>
+                        Favorites
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Dictionary Section -->
+            <section id="dictionary" class="section active">
+                <div class="search-container">
+                    <div class="language-selector">
+                        <div class="language-pair">
+                            <select id="sourceLanguage" class="language-select">
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ru">Russian</option>
+                                <option value="zh">Chinese</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="ar">Arabic</option>
+                                <option value="hi">Hindi</option>
+                                <option value="sw">Swahili</option>
+                                <option value="yo">Yoruba</option>
+                                <option value="ha">Hausa</option>
+                                <option value="ig">Igbo</option>
+                                <option value="am">Amharic</option>
+                                <option value="zu">Zulu</option>
+                            </select>
+                            <button class="swap-languages" id="swapLanguages">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            <select id="targetLanguage" class="language-select">
+                                <option value="es">Spanish</option>
+                                <option value="en">English</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ru">Russian</option>
+                                <option value="zh">Chinese</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="ar">Arabic</option>
+                                <option value="hi">Hindi</option>
+                                <option value="sw">Swahili</option>
+                                <option value="yo">Yoruba</option>
+                                <option value="ha">Hausa</option>
+                                <option value="ig">Igbo</option>
+                                <option value="am">Amharic</option>
+                                <option value="zu">Zulu</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Enter a word to translate..." autocomplete="off">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="voice-btn" id="voiceBtn">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+
+                    <div class="suggestions" id="suggestions"></div>
+                </div>
+
+                <div class="results-container" id="resultsContainer">
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Searching...</p>
+                    </div>
+                    
+                    <div class="results" id="results"></div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section id="history" class="section">
+                <div class="section-header">
+                    <h2>Search History</h2>
+                    <button class="clear-btn" id="clearHistory">
+                        <i class="fas fa-trash"></i>
+                        Clear All
+                    </button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <div class="empty-state">
+                        <i class="fas fa-history"></i>
+                        <p>No search history yet</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section id="favorites" class="section">
+                <div class="section-header">
+                    <h2>Favorites</h2>
+                    <button class="clear-btn" id="clearFavorites">
+                        <i class="fas fa-trash"></i>
+                        Clear All
+                    </button>
+                </div>
+                <div class="favorites-list" id="favoritesList">
+                    <div class="empty-state">
+                        <i class="fas fa-heart"></i>
+                        <p>No favorites yet</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Audio element for pronunciation -->
+    <audio id="audioPlayer" preload="none"></audio>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
