@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #131313;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+.container .card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0.16px 0.2px 0 #f0f8ff,
+                0.2px 0.2px 0.1px #f0f8ff;
+}
+
+.container .card .cards {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #9bdc28;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.container .card:hover .cards {
+    clip-path: circle(300px at 80% -20%);
+}
+
+.container .card::after {
+    content: 'Nike';
+    position: absolute;
+    top: 44%;
+    left: -20px;
+    font-size: 10em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+}
+
+.container .card .imgBox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    z-index: 10000;
+    width: 100%;
+    height: 150px;
+    transition: 0.5s;
+}
+
+.container .card:hover .imgBox {
+    top: 0%;
+    transform: translateY(12%) translateX(21px) rotate(-27deg);
+}
+
+.container .card .imgBox img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%) rotate(-25deg);
+    /* width: 270px; */
+}
+
+.container .card .imgBox .shoe {
+    width: 270px;
+}
+
+.container .card .contentBox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container .card:hover .contentBox {
+    height: 210px;
+}
+
+.container .card .contentBox h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #f0f8ff;
+}
+
+.container .card .contentBox .size,
+.container .card .contentBox .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card .contentBox .size h3,
+.container .card .contentBox .color h3 {
+    color: #f0f8ff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.container .card .contentBox .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: black;
+    background: #f0f8ff;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: 0.5s;
+    transition: 0.2s;
+}
+
+.container .card .contentBox .size span:hover {
+    background: #1111;
+    color: #f0f8ff;
+}
+
+.container .card .contentBox .color span {
+    width: 20px;
+    height: 20px;
+    background: #9bdc28;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.container .card .contentBox .color span:nth-child(2) {
+    background: #9bdc28;
+}
+
+.container .card .contentBox .color span:nth-child(3) {
+    background: #d87093;
+}
+
+.container .card .contentBox .color span:nth-child(4) {
+    background: #625f60;
+}
+
+.container .card .contentBox a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f0f8ff;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.container .card:hover .contentBox a {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+}
+
+.container .card:hover .contentBox .size {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.container .card:hover .contentBox .color {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.65s;
+}
+
+.container .card .contentBox a:hover {
+    transform: rotate(12deg);
+    scale: 1.2;
+}
