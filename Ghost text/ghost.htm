@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ghost.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine&effect=3d">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Satisfy&display=swap" rel="stylesheet">
+    <title>Ghost👻Text</title>
+</head>
+<body>
+    <section>
+        <h1 id="ghostText"></h1>
+    </section>
+</body>
+<script>
+    let text = "Ghost-Text";
+    let h1 = document.getElementById('ghostText');
+
+    text.split('').forEach((char,index) => {
+        let span = document.createElement('span');
+        span.textContent = char === '  ' ? '\u00A0\u00A0' : char;
+        span.style.transitionDelay = `${(index % 17) * 0.1}s`;
+        h1.appendChild(span);
+    })
+</script>
+</html>
