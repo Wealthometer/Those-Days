@@ -1,0 +1,35 @@
+* {
+    font-family: 'Tangerine', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    background: #1c0101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 5em;
+    text-transform: uppercase;
+    color: red;
+    cursor: default;
+    display: flex;
+}
+
+h1 span {
+    transition: 1.5s;
+    text-shadow: 0 0 25px red;
+}
+
+h1:hover span {
+    filter: blur(20px);
+    opacity: 0;
+    transform: scale(2) translateY(-50%);
+}
