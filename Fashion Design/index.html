@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE FASHION | Premium Designer Collections</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="fashion-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div class="loader-text">LUXE FASHION</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">LUXE<span>FASHION</span></a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <div class="search-toggle">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-toggle" id="cartToggle">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" placeholder="Search for products..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="search-close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-bg">
+                    <img src="/placeholder.svg?height=800&width=1200&text=Fashion+Hero+1" alt="Fashion Collection">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">LUXURY</span>
+                            <span class="title-line">REDEFINED</span>
+                        </h1>
+                        <p class="hero-subtitle">Discover our exclusive collection of premium fashion pieces crafted for the modern individual</p>
+                        <div class="hero-buttons">
+                            <a href="products.html" class="btn btn-primary">Shop Collection</a>
+                            <a href="gallery.html" class="btn btn-outline">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-slide">
+                <div class="hero-bg">
+                    <img src="/placeholder.svg?height=800&width=1200&text=Fashion+Hero+2" alt="Fashion Collection">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">SPRING</span>
+                            <span class="title-line">COLLECTION</span>
+                        </h1>
+                        <p class="hero-subtitle">Fresh designs that capture the essence of contemporary elegance and timeless style</p>
+                        <div class="hero-buttons">
+                            <a href="products.html" class="btn btn-primary">Explore Now</a>
+                            <a href="about.html" class="btn btn-outline">Our Story</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-slide">
+                <div class="hero-bg">
+                    <img src="/placeholder.svg?height=800&width=1200&text=Fashion+Hero+3" alt="Fashion Collection">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">EXCLUSIVE</span>
+                            <span class="title-line">DESIGNS</span>
+                        </h1>
+                        <p class="hero-subtitle">Limited edition pieces that showcase innovative craftsmanship and artistic vision</p>
+                        <div class="hero-buttons">
+                            <a href="products.html" class="btn btn-primary">Shop Limited</a>
+                            <a href="contact.html" class="btn btn-outline">Custom Orders</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-navigation">
+            <button class="hero-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="hero-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <div class="hero-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Categories</h2>
+                <p class="section-subtitle">Explore our curated collections</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card" data-category="women">
+                    <div class="category-image">
+                        <img src="/placeholder.svg?height=400&width=300&text=Women+Fashion" alt="Women's Fashion">
+                        <div class="category-overlay">
+                            <h3>Women's Collection</h3>
+                            <p>Elegant & Contemporary</p>
+                            <a href="products.html?category=women" class="category-link">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="men">
+                    <div class="category-image">
+                        <img src="/placeholder.svg?height=400&width=300&text=Men+Fashion" alt="Men's Fashion">
+                        <div class="category-overlay">
+                            <h3>Men's Collection</h3>
+                            <p>Sophisticated & Modern</p>
+                            <a href="products.html?category=men" class="category-link">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="accessories">
+                    <div class="category-image">
+                        <img src="/placeholder.svg?height=400&width=300&text=Accessories" alt="Accessories">
+                        <div class="category-overlay">
+                            <h3>Accessories</h3>
+                            <p>Premium Details</p>
+                            <a href="products.html?category=accessories" class="category-link">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="shoes">
+                    <div class="category-image">
+                        <img src="/placeholder.svg?height=400&width=300&text=Luxury+Shoes" alt="Luxury Shoes">
+                        <div class="category-overlay">
+                            <h3>Luxury Footwear</h3>
+                            <p>Crafted Excellence</p>
+                            <a href="products.html?category=shoes" class="category-link">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Handpicked selections from our latest collection</p>
+            </div>
+
+            <div class="products-grid" id="featuredProducts">
+                <!-- Products will be loaded dynamically -->
+            </div>
+
+            <div class="section-footer">
+                <a href="products.html" class="btn btn-outline">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story -->
+    <section class="brand-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Our Story</h2>
+                    <p class="story-lead">Founded on the principles of exceptional craftsmanship and timeless design, Luxe Fashion represents the pinnacle of contemporary luxury.</p>
+                    <p>Since our inception, we have been dedicated to creating pieces that transcend seasonal trends, focusing instead on enduring elegance and superior quality. Each garment in our collection is meticulously crafted by skilled artisans who share our passion for perfection.</p>
+                    <div class="story-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="500">0</span>
+                            <span class="stat-label">Unique Designs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="50">0</span>
+                            <span class="stat-label">Countries Served</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="story-image">
+                    <img src="/placeholder.svg?height=600&width=500&text=Brand+Story" alt="Brand Story">
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay in Style</h2>
+                <p>Subscribe to our newsletter and be the first to know about new collections, exclusive offers, and fashion insights.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <a href="index.html">LUXE<span>FASHION</span></a>
+                    </div>
+                    <p>Redefining luxury fashion with timeless elegance and contemporary sophistication.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html?category=women">Women's Fashion</a></li>
+                        <li><a href="products.html?category=men">Men's Fashion</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                        <li><a href="products.html?category=shoes">Footwear</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luxe Fashion. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: $<span id="cartTotal">0.00</span></span>
+            </div>
+            <div class="cart-actions">
+                <a href="cart.html" class="btn btn-outline">View Cart</a>
+                <a href="checkout.html" class="btn btn-primary">Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
