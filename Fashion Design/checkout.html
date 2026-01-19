@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | LUXE FASHION</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">LUXE<span>FASHION</span></a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <div class="search-toggle">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-toggle" id="cartToggle">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Progress -->
+    <section class="checkout-progress">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Shipping</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Review</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Complete</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-layout">
+                <div class="checkout-form">
+                    <form id="checkoutForm">
+                        <!-- Shipping Information -->
+                        <div class="form-section active" id="shippingSection">
+                            <h2>Shipping Information</h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <label for="firstName">First Name</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="lastName" name="lastName" required>
+                                    <label for="lastName">Last Name</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email Address</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="address" name="address" required>
+                                <label for="address">Street Address</label>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="city" name="city" required>
+                                    <label for="city">City</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="state" name="state" required>
+                                    <label for="state">State/Province</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="zipCode" name="zipCode" required>
+                                    <label for="zipCode">ZIP/Postal Code</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <select id="country" name="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="FR">France</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="AU">Australia</option>
+                                </select>
+                                <label for="country">Country</label>
+                            </div>
+
+                            <div class="shipping-options">
+                                <h3>Shipping Method</h3>
+                                <div class="shipping-option">
+                                    <input type="radio" id="standard" name="shipping" value="standard" checked>
+                                    <label for="standard">
+                                        <span class="option-name">Standard Shipping</span>
+                                        <span class="option-time">5-7 business days</span>
+                                        <span class="option-price">Free</span>
+                                    </label>
+                                </div>
+                                <div class="shipping-option">
+                                    <input type="radio" id="express" name="shipping" value="express">
+                                    <label for="express">
+                                        <span class="option-name">Express Shipping</span>
+                                        <span class="option-time">2-3 business days</span>
+                                        <span class="option-price">$25.00</span>
+                                    </label>
+                                </div>
+                                <div class="shipping-option">
+                                    <input type="radio" id="overnight" name="shipping" value="overnight">
+                                    <label for="overnight">
+                                        <span class="option-name">Overnight Shipping</span>
+                                        <span class="option-time">Next business day</span>
+                                        <span class="option-price">$50.00</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary next-step" data-next="paymentSection">
+                                Continue to Payment
+                            </button>
+                        </div>
+
+                        <!-- Payment Information -->
+                        <div class="form-section" id="paymentSection">
+                            <h2>Payment Information</h2>
+                            
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                                    <label for="creditCard">
+                                        <i class="fas fa-credit-card"></i>
+                                        Credit Card
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                    <label for="paypal">
+                                        <i class="fab fa-paypal"></i>
+                                        PayPal
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="applePay" name="paymentMethod" value="applePay">
+                                    <label for="applePay">
+                                        <i class="fab fa-apple-pay"></i>
+                                        Apple Pay
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="credit-card-form" id="creditCardForm">
+                                <div class="form-group">
+                                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                                    <label for="cardNumber">Card Number</label>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                                        <label for="expiryDate">Expiry Date</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="cvv" name="cvv" placeholder="123">
+                                        <label for="cvv">CVV</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="cardName" name="cardName">
+                                    <label for="cardName">Name on Card</label>
+                                </div>
+                            </div>
+
+                            <div class="billing-address">
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="sameAsShipping" name="sameAsShipping" checked>
+                                    <label for="sameAsShipping">Billing address same as shipping</label>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline prev-step" data-prev="shippingSection">
+                                    Back to Shipping
+                                </button>
+                                <button type="button" class="btn btn-primary next-step" data-next="reviewSection">
+                                    Review Order
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Order Review -->
+                        <div class="form-section" id="reviewSection">
+                            <h2>Review Your Order</h2>
+                            
+                            <div class="review-content" id="reviewContent">
+                                <!-- Review content will be populated dynamically -->
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline prev-step" data-prev="paymentSection">
+                                    Back to Payment
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Place Order
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Order Complete -->
+                        <div class="form-section" id="completeSection">
+                            <div class="order-complete">
+                                <div class="success-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h2>Order Complete!</h2>
+                                <p>Thank you for your purchase. Your order has been confirmed.</p>
+                                <div class="order-details">
+                                    <p><strong>Order Number:</strong> <span id="orderNumber"></span></p>
+                                    <p><strong>Estimated Delivery:</strong> <span id="deliveryDate"></span></p>
+                                </div>
+                                <div class="complete-actions">
+                                    <a href="index.html" class="btn btn-outline">Continue Shopping</a>
+                                    <a href="order-tracking.html" class="btn btn-primary">Track Order</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h3>Order Summary</h3>
+                        <div class="summary-items" id="summaryItems">
+                            <!-- Order items will be populated dynamically -->
+                        </div>
+                        <div class="summary-totals">
+                            <div class="total-line">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="total-line">
+                                <span>Shipping:</span>
+                                <span id="shippingCost">Free</span>
+                            </div>
+                            <div class="total-line">
+                                <span>Tax:</span>
+                                <span id="tax">$0.00</span>
+                            </div>
+                            <div class="total-line total">
+                                <span>Total:</span>
+                                <span id="total">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="promo-code">
+                            <input type="text" placeholder="Promo code" id="promoCode">
+                            <button type="button" class="btn btn-outline" id="applyPromo">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="security-badges">
+                        <div class="badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure Checkout</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>SSL Protected</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-undo"></i>
+                            <span>30-Day Returns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <a href="index.html">LUXE<span>FASHION</span></a>
+                    </div>
+                    <p>Redefining luxury fashion with timeless elegance and contemporary sophistication.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html?category=women">Women's Fashion</a></li>
+                        <li><a href="products.html?category=men">Men's Fashion</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                        <li><a href="products.html?category=shoes">Footwear</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luxe Fashion. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
