@@ -1,0 +1,369 @@
+/* Welcome Page Specific Styles */
+
+.welcome-page {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.welcome-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.bg-slide.active {
+  opacity: 1;
+}
+
+.bg-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.welcome-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--secondary-color);
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.welcome-logo {
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.logo-icon {
+  font-size: 4rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.logo-text {
+  font-family: var(--font-secondary);
+  margin: 0;
+}
+
+.logo-main {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.logo-sub {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: var(--accent-color);
+}
+
+.welcome-text {
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.welcome-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.welcome-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+.enter-btn,
+.explore-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.enter-btn {
+  background: var(--accent-color);
+  color: var(--primary-color);
+  border: 2px solid var(--accent-color);
+}
+
+.enter-btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+.explore-btn {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+.explore-btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.welcome-features {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 2s forwards;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.feature i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.welcome-navigation {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 2.5s forwards;
+}
+
+.nav-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background: var(--accent-color);
+}
+
+.welcome-footer {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 3s forwards;
+}
+
+.social-preview {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.social-preview a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-preview a:hover {
+  color: var(--accent-color);
+}
+
+.welcome-footer p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Age Verification Modal */
+.age-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.age-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.age-modal-content {
+  background: var(--secondary-color);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.age-modal-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.age-modal-content p {
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.age-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo-main {
+    font-size: 2.5rem;
+  }
+  
+  .logo-sub {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+  }
+  
+  .welcome-title {
+    font-size: 2rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1rem;
+  }
+  
+  .welcome-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .welcome-features {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .feature {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-content {
+    padding: 0 15px;
+  }
+  
+  .logo-icon {
+    font-size: 3rem;
+  }
+  
+  .logo-main {
+    font-size: 2rem;
+  }
+  
+  .logo-sub {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+  
+  .enter-btn,
+  .explore-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .age-modal-content {
+    padding: 2rem;
+  }
+  
+  .age-buttons {
+    flex-direction: column;
+  }
+}
