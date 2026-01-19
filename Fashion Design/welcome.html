@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to LUXE FASHION</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="welcome-page">
+    <!-- Welcome Screen -->
+    <div class="welcome-container">
+        <div class="welcome-background">
+            <div class="bg-slide active">
+                <img src="/placeholder.svg?height=1080&width=1920&text=Luxury+Fashion+1" alt="Luxury Fashion">
+            </div>
+            <div class="bg-slide">
+                <img src="/placeholder.svg?height=1080&width=1920&text=Luxury+Fashion+2" alt="Luxury Fashion">
+            </div>
+            <div class="bg-slide">
+                <img src="/placeholder.svg?height=1080&width=1920&text=Luxury+Fashion+3" alt="Luxury Fashion">
+            </div>
+        </div>
+
+        <div class="welcome-overlay"></div>
+
+        <div class="welcome-content">
+            <div class="welcome-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h1 class="logo-text">
+                    <span class="logo-main">LUXE</span>
+                    <span class="logo-sub">FASHION</span>
+                </h1>
+            </div>
+
+            <div class="welcome-text">
+                <h2 class="welcome-title">Welcome to Luxury Redefined</h2>
+                <p class="welcome-subtitle">Experience the pinnacle of contemporary fashion with our exclusive collections crafted for the discerning individual.</p>
+            </div>
+
+            <div class="welcome-actions">
+                <button class="btn btn-primary enter-btn" id="enterSite">
+                    <span>Enter Site</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-outline explore-btn" id="exploreBtn">
+                    <span>Explore Collections</span>
+                </button>
+            </div>
+
+            <div class="welcome-features">
+                <div class="feature">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Free Worldwide Shipping</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-medal"></i>
+                    <span>Premium Quality</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-navigation">
+            <div class="nav-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+
+        <div class="welcome-footer">
+            <div class="social-preview">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Luxe Fashion. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Age Verification Modal -->
+    <div class="age-modal" id="ageModal">
+        <div class="age-modal-content">
+            <h3>Age Verification</h3>
+            <p>You must be 18 years or older to enter this site.</p>
+            <div class="age-buttons">
+                <button class="btn btn-primary" id="ageConfirm">I am 18 or older</button>
+                <button class="btn btn-outline" id="ageDecline">I am under 18</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/welcome.js"></script>
+</body>
+</html>
