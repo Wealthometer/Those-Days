@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #242017;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+
+.big-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    z-index: 100;
+    transform: translate(-50% ,-50%);
+    font-size: 70px;
+    text-transform: uppercase;
+    line-height: .8;
+}
+
+.big-title span{
+    color: #f68f53;
+}
+
+
+.image{
+    width: 50vw;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -70px;
+    right: -60px;
+    -webkit-mask-image:url('./img/arrow.png') ;
+    -webkit-mask-repeat: no-repeat;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: .8s ease;
+
+}
+
+.image.show{
+    opacity: 1;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 100vh;
+    width: 100vw;
+}
+
+.side-one{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.side-one div:not(:last-child){
+    margin: 3rem;
+}
+
+.logo p{
+    color: #fff;
+}
+
+.logo span{
+    color: #f68f53;
+}
+
+.motto{
+    display: flex;
+    gap: 4px;
+   color: #fff;
+   height: 25px;
+}
+
+.motto p{
+    border-bottom: 2px solid #f68f53;
+}
+.motto span{
+ opacity: .5;
+}
+
+.text{
+    align-self: center;
+}
+
+.text h3{
+    color: #f68f53;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.text p{
+    color: #fff;
+    font-style: 14px;
+    line-height: 1.5;
+}
+
+button{
+    border: none;
+    background: none;
+    outline: none;
+    color: #fff;
+    border: 1px solid #f68f53;
+    padding: 1.5rem 0;
+    width: 80%;
+    margin-top: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: .8s ease;
+}
+
+button:hover{
+    background-color: #f68f53;
+}
+
+.img{
+    align-self: flex-end;
+    justify-self: center;
+}
+
+.img img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.side-two{
+    position: relative;
+    z-index: 100;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    height: 80%;
+    justify-content: space-between;
+    color: #fff;
+    margin: 2.5rem;
+}
+
+.wrapper div:not(:first-child){
+    align-self: flex-end;
+}
+
+.bars{
+    cursor: pointer;
+    width: 100%;
+    margin-left: 100%;
+}
+
+.nav-menu{
+    position: absolute;
+    height: 100%;
+    width: 400px;
+    background-color: #242017;
+    top: 0;
+    right: -100%;
+    box-shadow: -2px 0 1px rgba(54, 51, 44, .2);
+    transition: .8s ease;
+
+}
+
+.show-menu{
+    right: 0;
+}
+
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100vh;
+}
+
+.nav-list .nav-item{
+    font-weight: 700;
+    font-size: .9rem;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    opacity: .5;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-item:hover{
+    opacity: 1;
+}
+
+.nav-item:hover.nav-item::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f68f53;
+    height: 100%;
+    width: 6px;
+    border-end-end-radius: 3px;
+    border-start-end-radius: 3px;
+}
+
+.media a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin: 0 .5rem;
+    font-weight: bold;
+    transition: .3s ease;
+    display: inline-block;
+    text-transform: capitalize;
+
+}
+
+.media a:hover{
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+.bullets{
+    display: flex;
+}
+
+.bullets span{
+ width: 4px;
+ height: 4px;
+ background-color: #aaa;
+ border-radius: 50%;
+ margin:  0 .25rem;
+}
+
+.bullets span.active{
+    background-color: #fff;
+}
+
