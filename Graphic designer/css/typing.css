@@ -1,0 +1,23 @@
+.typing {
+    display: flex;
+    font-size: 1em;
+    color: #000000;
+    letter-spacing: 0.15em;
+    width: 100%;
+    padding: 50px;
+    text-transform: capitalize;
+}
+
+.cursor1 {
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+    color: #000000;
+    animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
