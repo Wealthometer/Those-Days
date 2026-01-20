@@ -1,0 +1,208 @@
+/* Additional styles for enhanced visual effects */
+
+/* Glow Effect */
+.glow-effect {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 51, 102, 0.3) 0%, rgba(108, 99, 255, 0.2) 50%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+  mix-blend-mode: screen;
+}
+
+/* Liquid Button Effect */
+.liquid-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* 3D Card Effect */
+[data-animation="3d-card"] {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Particle Canvas */
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Animation Canvas */
+.animation-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Morph SVG */
+.morph-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Interactive Canvas */
+.interactive-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Scramble Character */
+.scramble-char {
+  display: inline-block;
+  color: var(--primary-color);
+}
+
+/* Wave Text Animation */
+[data-animation="wave-text"] span {
+  display: inline-block;
+}
+
+/* Availability Status */
+.availability-status {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.status-dot.available {
+  background-color: #00c9a7;
+  box-shadow: 0 0 10px rgba(0, 201, 167, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.status-dot.busy {
+  background-color: var(--primary-color);
+}
+
+.status-message {
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+
+.checkbox-group label {
+  cursor: pointer;
+}
+
+/* Enhanced Background Effects */
+.bg-parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Enhanced Button Styles */
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-submit::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: -1;
+}
+
+.btn-submit:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
