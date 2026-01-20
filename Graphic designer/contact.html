@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Creative Vision</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="./css/addition-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional contact page styles */
+        .contact-page {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .page-header {
+            background: linear-gradient(45deg, rgba(255, 51, 102, 0.05), rgba(108, 99, 255, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form-container {
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+        }
+        
+        .contact-form-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            z-index: -1;
+        }
+        
+        .contact-form-container::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .contact-info {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 201, 167, 0.2) 0%, rgba(0, 201, 167, 0) 70%);
+            top: -50px;
+            left: -50px;
+            z-index: -1;
+            border-radius: 50%;
+        }
+        
+        .contact-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item:hover .contact-icon {
+            background-color: var(--primary-color);
+            color: white;
+            transform: rotate(10deg);
+        }
+        
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            /* width: 1000px;
+            height: 550px;
+            border: 5px solid white;
+            align-items: center;
+            justify-content: center; */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .map-pin {
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            cursor: pointer;
+        }
+        
+        .faq-question h3 {
+            transition: color 0.3s ease;
+        }
+        
+        .faq-item:hover .faq-question h3 {
+            color: var(--primary-color);
+        }
+        
+        .btn-submit {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover::before {
+            transform: scale(1.1);
+        }
+        
+        .contact-social .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-social .social-icon:hover {
+            transform: translateY(-5px) rotate(10deg);
+        }
+        
+        /* Animated background */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="contact-page">
+    <div class="noise-overlay"></div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <div class="loading-screen">
+        <div class="loader">
+            <span class="loader-text">CONTACT</span>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="logo">
+            <a href="index.html">CREATIVE<span>VISION</span></a>
+        </div>
+        <div class="menu-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav-overlay">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-footer">
+                <div class="nav-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header" data-background="particles">
+            <div class="header-content">
+                <h1 class="animate-text">
+                    <span class="text-reveal gradient-text">Get</span>
+                    <span class="text-reveal gradient-text">In Touch</span>
+                </h1>
+                <div class="header-line"></div>
+                <p class="animate-text-p" data-animation="typing">Let's create something amazing together</p>
+            </div>
+            <div class="floating-shapes">
+                <div class="shape shape-1" data-parallax="0.1"></div>
+                <div class="shape shape-2" data-parallax="0.2"></div>
+                <div class="shape shape-3" data-parallax="0.15"></div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="animated-bg" data-animation="canvas"></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="section-title" data-animation="split-text">Let's <span>Connect</span></h2>
+                    <p class="large-text">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+                    <div class="contact-details">
+                        <div class="contact-item fade-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>hello@creativevision.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item fade-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item fade-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Location</h3>
+                                <p>New York City, NY</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h3>Follow Me</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="availability-status fade-in">
+                        <h3>Current Availability</h3>
+                        <div class="status-indicator">
+                            <span class="status-dot available"></span>
+                            <p>Available for new projects</p>
+                        </div>
+                        <p class="status-message">I'm currently accepting new projects starting from June 2025.</p>
+                    </div>
+                </div>
+                <div class="contact-form-container" data-animation="3d-card">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-header">
+                            <h2 data-animation="wave-text">Send a Message</h2>
+                            <p>Fill out the form below and I'll get back to you within 24 hours.</p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Name</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Message</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to my newsletter</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-submit" data-animation="liquid">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="section-header">
+                <h2 class="section-title">Find <span>Me</span></h2>
+                <p>Located in the heart of Nigeria</p>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <!-- <img src="" alt="Map location"> -->
+                     <div class="map-container reveal-element">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.1858177280824!2d-73.7198007!3d41.0365813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2964c7a11b665%3A0x7eb7cc03acc1ecd9!2sPepsiCo!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus" width="100%" height="750" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="map-overlay">
+                        <div class="map-pin">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section" data-background="interactive">
+            <div class="section-header">
+                <h2 class="section-title">Frequently <span>Asked Questions</span></h2>
+                <p>Find answers to common questions about working with me</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your design process like?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>My design process typically involves discovery, research, conceptualization, design development, refinement, and final delivery. I believe in a collaborative approach, keeping clients involved throughout the process to ensure the final product meets their needs and exceeds expectations.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does a typical project take?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Project timelines vary depending on scope and complexity. A simple logo might take 2-3 weeks, while a comprehensive brand identity could take 6-8 weeks. During our initial consultation, I'll provide a more accurate timeline based on your specific project requirements.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What information do you need to start a project?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To get started, I'll need information about your business/project, target audience, competitors, project goals, design preferences, and any existing brand materials. I provide a detailed questionnaire to help gather this information efficiently.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer website design and development?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, I offer website design services and work with trusted development partners to bring those designs to life. Whether you need a simple portfolio site or a more complex e-commerce platform, I can help create a digital presence that aligns with your brand and meets your business objectives.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are your payment terms?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I typically require a 50% deposit to begin work, with the remaining 50% due upon project completion. For larger projects, I offer milestone-based payment schedules. I accept payments via bank transfer, PayPal, or credit card.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with clients internationally?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I work with clients from all over the world. Communication is handled via email, video calls, and project management tools to ensure smooth collaboration regardless of time zones or geographic locations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" data-animation="morph">
+            <div class="cta-content">
+                <h2 data-animation="scramble">Ready to start your project?</h2>
+                <p>Let's create something amazing together</p>
+                <a href="#contact-form" class="btn btn-primary" data-animation="magnetic">Get Started Now</a>
+            </div>
+            <div class="cta-shapes">
+                <div class="cta-shape cta-shape-1"></div>
+                <div class="cta-shape cta-shape-2"></div>
+                <div class="cta-shape cta-shape-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html">CREATIVE<span>VISION</span></a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p>hello@creativevision.com</p>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CreativeVision. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
