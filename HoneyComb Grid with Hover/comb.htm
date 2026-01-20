@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./comb.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+<script>
+    let container = document.querySelector('.container');
+    for (let i = 0; i < 100; i++) {
+        let row  = document.createElement('div');
+        row.classList.add('row');
+        for(let j = 0; j < 75; j++) {
+            let box = document.createElement('div');
+            box.classList.add('box');
+            box.style.filter = `hue-rotate(${i * 36}deg)`;
+            row.appendChild(box);
+        }
+        container.appendChild(row);
+    }
+</script>
+</html>
