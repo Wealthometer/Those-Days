@@ -1,0 +1,46 @@
+body {
+    overflow: hidden;
+    background: aliceblue;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100
+    5;
+}
+
+.row {
+    display: inline-flex;
+    margin-top: -32px;
+    margin-left: -50px;
+}
+
+.row:nth-child(even) {
+    margin-left: 1px;
+}
+
+.row .box {
+    position: relative;
+    width: 100px;
+    height: 110px;
+    background: rgb(237, 244, 250);
+    margin: 2px;
+    transition: 2s;
+    clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+}
+
+.row .box:hover {
+    transition: 0s;
+    background: green;
+}
+
+.row .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255,0.4);
+}
