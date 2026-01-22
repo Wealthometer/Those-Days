@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - MonoWorld</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="dark-theme">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-mono">MONO</span>
+                    <span class="logo-world">WORLD</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-controls">
+                <div class="theme-switch">
+                    <input type="checkbox" id="themeToggle" class="theme-toggle">
+                    <label for="themeToggle" class="theme-label">
+                        <span class="theme-icon sun">☀</span>
+                        <span class="theme-icon moon">☾</span>
+                        <div class="theme-slider"></div>
+                    </label>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <section class="gallery-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">3D Gallery</h1>
+                <p class="page-subtitle">Explore our complete collection of monochromatic 3D masterpieces</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="sculpture">Sculptures</button>
+                <button class="filter-btn" data-filter="architecture">Architecture</button>
+                <button class="filter-btn" data-filter="technology">Technology</button>
+                <button class="filter-btn" data-filter="abstract">Abstract</button>
+            </div>
+            
+            <div class="view-controls">
+                <button class="view-btn active" data-view="grid">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+                    </svg>
+                </button>
+                <button class="view-btn" data-view="list">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-main">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Model Items -->
+                <div class="gallery-item" data-category="sculpture">
+                    <div class="item-preview">
+                        <div class="model-frame">
+                            <iframe 
+                                src="https://sketchfab.com/models/b81008d513954189a063ff901f7abfe4/embed?autostart=0&ui_theme=dark&ui_controls=1&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0&ui_watermark_link=0" 
+                                frameborder="0" 
+                                allowvr 
+                                allowfullscreen 
+                                mozallowfullscreen="true" 
+                                webkitallowfullscreen="true"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="item-overlay">
+                            <button class="view-btn-3d" onclick="openModelViewer('sculpture1')">View in 3D</button>
+                            <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Abstract Sculpture</h3>
+                        <p class="item-artist">By Digital Artist</p>
+                        <div class="item-tags">
+                            <span class="tag">Sculpture</span>
+                            <span class="tag">Abstract</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="architecture">
+                    <div class="item-preview">
+                        <div class="model-frame">
+                            <iframe 
+                                src="https://sketchfab.com/models/dab59ab0d8154c6b99dcf7c9e1b2c2be/embed?autostart=0&ui_theme=dark&ui_controls=1&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0&ui_watermark_link=0" 
+                                frameborder="0" 
+                                allowvr 
+                                allowfullscreen 
+                                mozallowfullscreen="true" 
+                                webkitallowfullscreen="true"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="item-overlay">
+                            <button class="view-btn-3d" onclick="openModelViewer('architecture1')">View in 3D</button>
+                            <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Modern Architecture</h3>
+                        <p class="item-artist">By Arch Studio</p>
+                        <div class="item-tags">
+                            <span class="tag">Architecture</span>
+                            <span class="tag">Modern</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="technology">
+                    <div class="item-preview">
+                        <div class="model-frame">
+                            <iframe 
+                                src="https://sketchfab.com/models/06d5a80a04fc4c5ab552e2b2c1b2c2be/embed?autostart=0&ui_theme=dark&ui_controls=1&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0&ui_watermark_link=0" 
+                                frameborder="0" 
+                                allowvr 
+                                allowfullscreen 
+                                mozallowfullscreen="true" 
+                                webkitallowfullscreen="true"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="item-overlay">
+                            <button class="view-btn-3d" onclick="openModelViewer('tech1')">View in 3D</button>
+                            <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Tech Object</h3>
+                        <p class="item-artist">By Future Labs</p>
+                        <div class="item-tags">
+                            <span class="tag">Technology</span>
+                            <span class="tag">Futuristic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Gallery Items -->
+                <div class="gallery-item" data-category="abstract">
+                    <div class="item-preview">
+                        <div class="model-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🎨</div>
+                                <p>Abstract Form</p>
+                            </div>
+                        </div>
+                        <div class="item-overlay">
+                            <button class="view-btn-3d" onclick="openModelViewer('abstract1')">View in 3D</button>
+                            <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Geometric Flow</h3>
+                        <p class="item-artist">By Abstract Collective</p>
+                        <div class="item-tags">
+                            <span class="tag">Abstract</span>
+                            <span class="tag">Geometric</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="sculpture">
+                    <div class="item-preview">
+                        <div class="model-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🗿</div>
+                                <p>Minimalist Sculpture</p>
+                            </div>
+                        </div>
+                        <div class="item-overlay">
+                            <button class="view-btn-3d" onclick="openModelViewer('sculpture2')">View in 3D</button>
+                            <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Void Space</h3>
+                        <p class="item-artist">By Minimal Studio</p>
+                        <div class="item-tags">
+                            <span class="tag">Sculpture</span>
+                            <span class="tag">Minimal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="architecture">
+                    <div class="item-preview">
+                        <div class="model-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🏗️</div>
+                                <p>Brutalist Structure</p>
+                            </div>
+                        </div>
+                        <div class="item-overlay">
+                            <button class="view-btn-3d" onclick="openModelViewer('architecture2')">View in 3D</button>
+                            <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Concrete Poetry</h3>
+                        <p class="item-artist">By Urban Forms</p>
+                        <div class="item-tags">
+                            <span class="tag">Architecture</span>
+                            <span class="tag">Brutalist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn btn-outline" id="loadMoreBtn">Load More Models</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Viewer Modal -->
+    <div class="modal model-viewer-modal" id="modelViewerModal">
+        <div class="modal-content model-viewer-content">
+            <div class="modal-header">
+                <h2 id="modelViewerTitle">3D Model Viewer</h2>
+                <button class="modal-close" onclick="closeModelViewer()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="model-viewer-frame" id="modelViewerFrame">
+                    <!-- 3D model will be loaded here -->
+                </div>
+                <div class="model-viewer-controls">
+                    <button class="control-btn" onclick="resetModelView()">Reset View</button>
+                    <button class="control-btn" onclick="toggleAutoRotate()">Auto Rotate</button>
+                    <button class="control-btn" onclick="toggleWireframe()">Wireframe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-mono">MONO</span>
+                        <span class="logo-world">WORLD</span>
+                    </div>
+                    <p class="footer-description">
+                        A curated collection of monochromatic 3D art that celebrates the beauty of simplicity.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html?category=sculpture">Sculptures</a></li>
+                        <li><a href="gallery.html?category=architecture">Architecture</a></li>
+                        <li><a href="gallery.html?category=technology">Technology</a></li>
+                        <li><a href="gallery.html?category=abstract">Abstract</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <div class="contact-info">
+                        <p>hello@monoworld.art</p>
+                        <p>+1 (555) 123-4567</p>
+                        <p>New York, NY</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MonoWorld. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>
