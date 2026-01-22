@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - DEVCRAFT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-text">DEVCRAFT</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Page -->
+    <main class="about-page">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-intro">
+                    <h1 class="page-title">About Me</h1>
+                    <p class="page-subtitle">Passionate full-stack developer with a love for creating innovative digital solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Story -->
+        <section class="personal-story">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2>My Journey</h2>
+                        <p>From a curious kid tinkering with HTML to a seasoned full-stack developer, my journey has been driven by an insatiable passion for technology and problem-solving. I believe in the power of code to transform ideas into reality.</p>
+                        <p>With over 5 years of experience in the industry, I've had the privilege of working with startups, enterprises, and everything in between, always pushing the boundaries of what's possible.</p>
+                    </div>
+                    <div class="story-visual">
+                        <div class="profile-card">
+                            <div class="profile-image">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="profile-info">
+                                <h3>Alex Johnson</h3>
+                                <p>Full Stack Developer</p>
+                                <div class="profile-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">5+</span>
+                                        <span class="stat-label">Years</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">50+</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="timeline-section">
+            <div class="container">
+                <h2 class="section-title">My Development Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2019</div>
+                            <h3>Started Programming</h3>
+                            <p>Began my coding journey with HTML, CSS, and JavaScript. Built my first website and fell in love with web development.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <h3>First Internship</h3>
+                            <p>Landed my first internship at a local startup. Learned React and Node.js while working on real-world projects.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2021</div>
+                            <h3>Junior Developer</h3>
+                            <p>Joined a tech company as a junior full-stack developer. Mastered MERN stack and agile development practices.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2022</div>
+                            <h3>Senior Developer</h3>
+                            <p>Promoted to senior developer. Led a team of 5 developers and architected scalable applications.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <h3>Freelance Expert</h3>
+                            <p>Started freelancing and consulting. Helped multiple startups build their MVP and scale their applications.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <h3>Full Stack Architect</h3>
+                            <p>Currently working as a full-stack architect, designing and implementing complex distributed systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend Development</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">React.js</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Vue.js</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percentage">98%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="98"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-percentage">92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="92"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Express.js</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Django</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Database & Tools</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">MongoDB</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">PostgreSQL</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Docker</span>
+                                    <span class="skill-percentage">82%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="82"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">AWS</span>
+                                    <span class="skill-percentage">78%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="78"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="certifications">
+            <div class="container">
+                <h2 class="section-title">Certifications & Achievements</h2>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <h3>AWS Certified Developer</h3>
+                        <p>Amazon Web Services</p>
+                        <span class="cert-year">2023</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h3>Google Cloud Professional</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="cert-year">2023</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3>React Developer Certification</h3>
+                        <p>Meta (Facebook)</p>
+                        <span class="cert-year">2022</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Full Stack Web Development</h3>
+                        <p>FreeCodeCamp</p>
+                        <span class="cert-year">2021</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">DEVCRAFT</div>
+                    <p>Crafting digital excellence, one line of code at a time.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DEVCRAFT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="loader-fix.js"></script>
+</body>
+</html>
