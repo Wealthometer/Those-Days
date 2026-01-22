@@ -1,0 +1,881 @@
+/* Loading Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes letterFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loadingBarProgress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Magnetic Animation */
+.magnetic-link {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Parallax Effect */
+.parallax {
+  transition: transform 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+}
+
+/* Image Hover Effects */
+@keyframes imageReveal {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Button Hover Animation */
+@keyframes buttonHover {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Stagger Animation */
+.stagger-item {
+  opacity: 0;
+}
+
+.stagger-item.animate {
+  animation: fadeInUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Reveal Animation */
+.reveal-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-content {
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+/* Cursor Animation */
+.custom-cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  mix-blend-mode: difference;
+}
+
+/* Page Transition */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: 9999;
+  transform: translateY(100%);
+}
+
+/* Scroll Progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  z-index: 1000;
+}
+
+/* Hover Line Animation */
+.hover-line {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-line::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-line:hover::after {
+  width: 100%;
+}
+
+/* Image Distortion */
+.distortion-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.distortion-img {
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Smooth Scroll */
+html.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s ease infinite;
+}
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Scale Animation */
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scale-in {
+  animation: scale 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Flip Animation */
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.flip {
+  animation: flip 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Slide Animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Zoom Animation */
+@keyframes zoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation: zoom 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Blur Animation */
+@keyframes blur {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.blur-in {
+  animation: blur 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--primary-color);
+  animation: typing 3s steps(30, end) forwards, blink 1s step-end infinite;
+}
+
+/* Floating Animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* Wobble Animation */
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(8px) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-6px) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(4px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+}
+
+.wobble {
+  animation: wobble 1s ease-in-out;
+}
+
+/* Swing Animation */
+@keyframes swing {
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.swing {
+  transform-origin: top center;
+  animation: swing 1s ease-in-out;
+}
+
+/* Jello Animation */
+@keyframes jello {
+  0%,
+  11.1%,
+  100% {
+    transform: none;
+  }
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+}
+
+.jello {
+  animation: jello 1s both;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Ripple Animation */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: relative;
+}
+
+.ripple::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  animation: ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* Hover Lift Animation */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade In Down Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Fade In Up Animation */
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Fade In Left Animation */
+.fade-in-left {
+  animation: fadeInLeft 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Fade In Right Animation */
+.fade-in-right {
+  animation: fadeInRight 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Hover Scale Animation */
+.hover-scale {
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Hover Rotate Animation */
+.hover-rotate {
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-rotate:hover {
+  transform: rotate(5deg);
+}
+
+/* Hover Skew Animation */
+.hover-skew {
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-skew:hover {
+  transform: skew(-5deg);
+}
+
+/* Hover Blur Animation */
+.hover-blur {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-blur:hover {
+  filter: blur(2px);
+}
+
+/* Hover Brightness Animation */
+.hover-brightness {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-brightness:hover {
+  filter: brightness(1.2);
+}
+
+/* Hover Contrast Animation */
+.hover-contrast {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-contrast:hover {
+  filter: contrast(1.2);
+}
+
+/* Hover Grayscale Animation */
+.hover-grayscale {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-grayscale:hover {
+  filter: grayscale(100%);
+}
+
+/* Hover Sepia Animation */
+.hover-sepia {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-sepia:hover {
+  filter: sepia(100%);
+}
+
+/* Hover Invert Animation */
+.hover-invert {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-invert:hover {
+  filter: invert(100%);
+}
+
+/* Hover Shadow Animation */
+.hover-shadow {
+  transition: box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Border Animation */
+.hover-border {
+  transition: border 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-border:hover {
+  border: 1px solid var(--primary-color);
+}
+
+/* Hover Background Animation */
+.hover-background {
+  transition: background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-background:hover {
+  background-color: var(--light-gray);
+}
+
+/* Hover Color Animation */
+.hover-color {
+  transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-color:hover {
+  color: var(--accent-color);
+}
+
+/* Hover Opacity Animation */
+.hover-opacity {
+  transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-opacity:hover {
+  opacity: 0.8;
+}
+
+/* Hover Zoom Animation */
+.hover-zoom {
+  overflow: hidden;
+}
+
+.hover-zoom img {
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* Hover Rotate Animation */
+.hover-rotate-img {
+  overflow: hidden;
+}
+
+.hover-rotate-img img {
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-rotate-img:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* Hover Blur Animation */
+.hover-blur-img {
+  overflow: hidden;
+}
+
+.hover-blur-img img {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-blur-img:hover img {
+  filter: blur(2px);
+}
+
+/* Hover Grayscale Animation */
+.hover-grayscale-img {
+  overflow: hidden;
+}
+
+.hover-grayscale-img img {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-grayscale-img:hover img {
+  filter: grayscale(100%);
+}
+
+/* Hover Sepia Animation */
+.hover-sepia-img {
+  overflow: hidden;
+}
+
+.hover-sepia-img img {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-sepia-img:hover img {
+  filter: sepia(100%);
+}
+
+/* Hover Brightness Animation */
+.hover-brightness-img {
+  overflow: hidden;
+}
+
+.hover-brightness-img img {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-brightness-img:hover img {
+  filter: brightness(1.2);
+}
+
+/* Hover Contrast Animation */
+.hover-contrast-img {
+  overflow: hidden;
+}
+
+.hover-contrast-img img {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-contrast-img:hover img {
+  filter: contrast(1.2);
+}
+
+/* Hover Invert Animation */
+.hover-invert-img {
+  overflow: hidden;
+}
+
+.hover-invert-img img {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-invert-img:hover img {
+  filter: invert(100%);
+}
+
+/* Hover Saturate Animation */
+.hover-saturate-img {
+  overflow: hidden;
+}
+
+.hover-saturate-img img {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-saturate-img:hover img {
+  filter: saturate(2);
+}
+
+/* Hover Hue Rotate Animation */
+.hover-hue-rotate-img {
+  overflow: hidden;
+}
+
+.hover-hue-rotate-img img {
+  transition: filter 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-hue-rotate-img:hover img {
+  filter: hue-rotate(90deg);
+}
