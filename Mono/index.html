@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoWorld - A Black & White 3D Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="dark-theme">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="logo-mono">MONO</span>
+                <span class="logo-world">WORLD</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Loading Experience...</div>
+        </div>
+    </div>
+
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo" playsinline>
+            <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-mono">MONO</span>
+                    <span class="logo-world">WORLD</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-controls">
+                <div class="theme-switch">
+                    <input type="checkbox" id="themeToggle" class="theme-toggle">
+                    <label for="themeToggle" class="theme-label">
+                        <span class="theme-icon sun">☀</span>
+                        <span class="theme-icon moon">☾</span>
+                        <div class="theme-slider"></div>
+                    </label>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line" data-text="MONO">MONO</span>
+                    <span class="title-line" data-text="WORLD">WORLD</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A minimalist journey through black & white 3D art
+                </p>
+                <div class="hero-description">
+                    <p>Experience the pure essence of form, texture, and composition in our curated collection of monochromatic 3D masterpieces.</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="gallery.html" class="btn btn-primary">Explore Gallery</a>
+                    <a href="about.html" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-cube"></div>
+                    <div class="floating-sphere"></div>
+                    <div class="floating-pyramid"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">SCROLL</span>
+        </div>
+    </section>
+
+    <!-- Featured Models Section -->
+    <section class="featured-models" id="featuredModels">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured 3D Models</h2>
+                <p class="section-subtitle">Discover our handpicked collection of monochromatic masterpieces</p>
+            </div>
+
+            <div class="models-grid">
+                <!-- Model 1 -->
+                <div class="model-card" data-model="sculpture">
+                    <div class="model-preview">
+                        <div class="model-frame">
+                            <iframe 
+                                src="https://sketchfab.com/models/b81008d513954189a063ff901f7abfe4/embed?autostart=0&ui_theme=dark&ui_controls=1&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0&ui_watermark_link=0" 
+                                frameborder="0" 
+                                allowvr 
+                                allowfullscreen 
+                                mozallowfullscreen="true" 
+                                webkitallowfullscreen="true"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="model-overlay">
+                            <button class="view-model-btn">View in 3D</button>
+                        </div>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Abstract Sculpture</h3>
+                        <p class="model-description">A minimalist interpretation of form and space</p>
+                        <div class="model-tags">
+                            <span class="tag">Sculpture</span>
+                            <span class="tag">Abstract</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model 2 -->
+                <div class="model-card" data-model="architecture">
+                    <div class="model-preview">
+                        <div class="model-frame">
+                            <iframe 
+                                src="https://sketchfab.com/models/dab59ab0d8154c6b99dcf7c9e1b2c2be/embed?autostart=0&ui_theme=dark&ui_controls=1&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0&ui_watermark_link=0" 
+                                frameborder="0" 
+                                allowvr 
+                                allowfullscreen 
+                                mozallowfullscreen="true" 
+                                webkitallowfullscreen="true"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="model-overlay">
+                            <button class="view-model-btn">View in 3D</button>
+                        </div>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Modern Architecture</h3>
+                        <p class="model-description">Geometric precision in monochrome</p>
+                        <div class="model-tags">
+                            <span class="tag">Architecture</span>
+                            <span class="tag">Modern</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model 3 -->
+                <div class="model-card" data-model="tech">
+                    <div class="model-preview">
+                        <div class="model-frame">
+                            <iframe 
+                                src="https://sketchfab.com/models/06d5a80a04fc4c5ab552e2b2c1b2c2be/embed?autostart=0&ui_theme=dark&ui_controls=1&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0&ui_watermark_link=0" 
+                                frameborder="0" 
+                                allowvr 
+                                allowfullscreen 
+                                mozallowfullscreen="true" 
+                                webkitallowfullscreen="true"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="model-overlay">
+                            <button class="view-model-btn">View in 3D</button>
+                        </div>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Tech Object</h3>
+                        <p class="model-description">Futuristic design in pure monochrome</p>
+                        <div class="model-tags">
+                            <span class="tag">Technology</span>
+                            <span class="tag">Futuristic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="gallery.html" class="btn btn-outline">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2 class="philosophy-title">The Art of Simplicity</h2>
+                    <div class="philosophy-paragraphs">
+                        <p>In a world saturated with color and complexity, MonoWorld strips away the unnecessary to reveal the pure essence of artistic expression.</p>
+                        <p>Through the lens of monochromatic design, we explore how the absence of color can amplify emotion, enhance form, and create profound visual impact.</p>
+                        <p>Each piece in our collection represents a meditation on contrast, shadow, and light—inviting viewers to experience art in its most fundamental state.</p>
+                    </div>
+                    <div class="philosophy-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">3D Models</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="12">0</span>
+                            <span class="stat-label">Artists</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="1000">0</span>
+                            <span class="stat-label">Visitors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy-visual">
+                    <div class="visual-grid">
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Stay Updated</h2>
+                <p class="newsletter-subtitle">Get notified about new 3D models and exhibitions</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </div>
+                    <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-mono">MONO</span>
+                        <span class="logo-world">WORLD</span>
+                    </div>
+                    <p class="footer-description">
+                        A curated collection of monochromatic 3D art that celebrates the beauty of simplicity.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Behance">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#" onclick="showModal('privacyModal')">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html?category=sculpture">Sculptures</a></li>
+                        <li><a href="gallery.html?category=architecture">Architecture</a></li>
+                        <li><a href="gallery.html?category=technology">Technology</a></li>
+                        <li><a href="gallery.html?category=abstract">Abstract</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <div class="contact-info">
+                        <p>hello@monoworld.art</p>
+                        <p>+1 (555) 123-4567</p>
+                        <p>New York, NY</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MonoWorld. All rights reserved.</p>
+                <p>Crafted with passion for minimalist design.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="modal-close" onclick="hideModal('privacyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>At MonoWorld, we respect your privacy and are committed to protecting your personal information.</p>
+                <h3>Information We Collect</h3>
+                <p>We only collect information that you voluntarily provide to us, such as your email address when subscribing to our newsletter.</p>
+                <h3>How We Use Your Information</h3>
+                <p>We use your information solely to provide you with updates about new 3D models and exhibitions.</p>
+                <h3>Data Security</h3>
+                <p>We implement appropriate security measures to protect your personal information.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
