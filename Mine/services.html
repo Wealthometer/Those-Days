@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - DEVCRAFT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-text">DEVCRAFT</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Page -->
+    <main class="services-page">
+        <!-- Hero Section -->
+        <section class="services-hero">
+            <div class="container">
+                <div class="services-intro">
+                    <h1 class="page-title">My Services</h1>
+                    <p class="page-subtitle">Comprehensive digital solutions tailored to your business needs</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Services -->
+        <section class="main-services">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom web applications built with modern technologies and best practices</p>
+                        <ul class="service-features">
+                            <li>Responsive Design</li>
+                            <li>Performance Optimization</li>
+                            <li>SEO Friendly</li>
+                            <li>Cross-browser Compatibility</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>React</span>
+                            <span>Vue.js</span>
+                            <span>Angular</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>API Development</h3>
+                        <p>Robust and scalable backend solutions with comprehensive API design</p>
+                        <ul class="service-features">
+                            <li>RESTful APIs</li>
+                            <li>GraphQL Implementation</li>
+                            <li>Database Design</li>
+                            <li>Security Implementation</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>Node.js</span>
+                            <span>Python</span>
+                            <span>Express</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Development</h3>
+                        <p>Cross-platform mobile applications with native performance</p>
+                        <ul class="service-features">
+                            <li>iOS & Android</li>
+                            <li>Native Performance</li>
+                            <li>Offline Functionality</li>
+                            <li>Push Notifications</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>React Native</span>
+                            <span>Flutter</span>
+                            <span>Ionic</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>User-centered design solutions that enhance user experience</p>
+                        <ul class="service-features">
+                            <li>User Research</li>
+                            <li>Wireframing</li>
+                            <li>Prototyping</li>
+                            <li>Design Systems</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>Figma</span>
+                            <span>Adobe XD</span>
+                            <span>Sketch</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Solutions</h3>
+                        <p>Scalable cloud infrastructure and deployment strategies</p>
+                        <ul class="service-features">
+                            <li>AWS/Azure/GCP</li>
+                            <li>DevOps Implementation</li>
+                            <li>CI/CD Pipelines</li>
+                            <li>Monitoring & Analytics</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>AWS</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Technical Consulting</h3>
+                        <p>Strategic technology guidance and architecture planning</p>
+                        <ul class="service-features">
+                            <li>Technology Assessment</li>
+                            <li>Architecture Design</li>
+                            <li>Code Review</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>Strategy</span>
+                            <span>Planning</span>
+                            <span>Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title">My Development Process</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Discovery & Planning</h3>
+                            <p>Understanding your requirements, goals, and target audience to create a comprehensive project plan.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Design & Prototyping</h3>
+                            <p>Creating wireframes, mockups, and interactive prototypes to visualize the final product.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Development & Testing</h3>
+                            <p>Building the application with clean, maintainable code and thorough testing procedures.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Deployment & Support</h3>
+                            <p>Launching your application and providing ongoing maintenance and support services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Pricing Plans</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Starter</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">2,500</span>
+                                <span class="period">/project</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i>Landing Page Design</li>
+                                <li><i class="fas fa-check"></i>Responsive Layout</li>
+                                <li><i class="fas fa-check"></i>Basic SEO</li>
+                                <li><i class="fas fa-check"></i>Contact Form</li>
+                                <li><i class="fas fa-check"></i>2 Revisions</li>
+                            </ul>
+                        </div>
+                        <button class="pricing-btn">Get Started</button>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Professional</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">7,500</span>
+                                <span class="period">/project</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i>Full Web Application</li>
+                                <li><i class="fas fa-check"></i>Custom Backend</li>
+                                <li><i class="fas fa-check"></i>Database Integration</li>
+                                <li><i class="fas fa-check"></i>Admin Panel</li>
+                                <li><i class="fas fa-check"></i>5 Revisions</li>
+                                <li><i class="fas fa-check"></i>3 Months Support</li>
+                            </ul>
+                        </div>
+                        <button class="pricing-btn">Get Started</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Enterprise</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">15,000</span>
+                                <span class="period">/project</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i>Complex Web Platform</li>
+                                <li><i class="fas fa-check"></i>Microservices Architecture</li>
+                                <li><i class="fas fa-check"></i>Cloud Deployment</li>
+                                <li><i class="fas fa-check"></i>Mobile App</li>
+                                <li><i class="fas fa-check"></i>Unlimited Revisions</li>
+                                <li><i class="fas fa-check"></i>6 Months Support</li>
+                            </ul>
+                        </div>
+                        <button class="pricing-btn">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How long does a typical project take?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Project timelines vary depending on complexity. A simple website takes 2-4 weeks, while complex applications can take 2-6 months. I'll provide a detailed timeline during our initial consultation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you provide ongoing maintenance?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, I offer maintenance packages that include updates, security patches, performance monitoring, and technical support to keep your application running smoothly.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can you work with my existing team?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>I'm experienced in collaborating with existing development teams, designers, and project managers. I can integrate seamlessly into your workflow.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What technologies do you specialize in?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>I specialize in the MERN stack (MongoDB, Express, React, Node.js), but I'm also proficient in Vue.js, Python, Django, PostgreSQL, and various cloud platforms like AWS and Azure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">DEVCRAFT</div>
+                    <p>Crafting digital excellence, one line of code at a time.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DEVCRAFT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="loader-fix.js"></script>
+</body>
+</html>
