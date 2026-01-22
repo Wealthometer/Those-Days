@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethereal Silk Dress | ETHEREAL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/text-effects.css">
+  <script src="js/gsap.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/product.js" defer></script>
+  <script src="js/server.js" defer></script>
+</head>
+<body class="product-page">
+  <div class="noise-overlay"></div>
+  
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo glitch-text" data-text="ETHEREAL">ETHEREAL</div>
+      <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link magnetic-link">Home</a></li>
+        <li><a href="collections.html" class="nav-link magnetic-link">Collections</a></li>
+        <li><a href="about.html" class="nav-link magnetic-link">About</a></li>
+        <li><a href="contact.html" class="nav-link magnetic-link">Contact</a></li>
+      </ul>
+      <div class="cart-icon">
+        <span class="cart-count">0</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="breadcrumb-container">
+      <a href="index.html" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="collections.html" class="breadcrumb-link">Collections</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">Ethereal Silk Dress</span>
+    </div>
+  </div>
+
+  <!-- Product Detail -->
+  <section class="product-detail">
+    <div class="product-gallery">
+      <div class="main-image-container">
+        <div class="image-wrapper">
+          <img src="/placeholder.svg?height=800&width=600" alt="Ethereal Silk Dress" id="main-product-image" class="main-product-image">
+        </div>
+      </div>
+      
+      <div class="thumbnail-gallery">
+        <div class="thumbnail active" data-image="/placeholder.svg?height=800&width=600">
+          <img src="/placeholder.svg?height=100&width=100" alt="Thumbnail 1">
+        </div>
+        <div class="thumbnail" data-image="/placeholder.svg?height=800&width=600&text=View2">
+          <img src="/placeholder.svg?height=100&width=100&text=2" alt="Thumbnail 2">
+        </div>
+        <div class="thumbnail" data-image="/placeholder.svg?height=800&width=600&text=View3">
+          <img src="/placeholder.svg?height=100&width=100&text=3" alt="Thumbnail 3">
+        </div>
+        <div class="thumbnail" data-image="/placeholder.svg?height=800&width=600&text=View4">
+          <img src="/placeholder.svg?height=100&width=100&text=4" alt="Thumbnail 4">
+        </div>
+      </div>
+    </div>
+    
+    <div class="product-info">
+      <h1 class="product-title split-text">Ethereal Silk Dress</h1>
+      <p class="product-price">$299</p>
+      
+      <div class="product-description">
+        <p>This avant-garde silk dress embodies the essence of modern fashion with its innovative design and premium materials. Each detail is meticulously crafted to create a statement piece that transcends seasonal trends.</p>
+        <p>The fluid silhouette drapes elegantly on the body, while architectural elements add structure and dimension. A perfect balance of ethereal lightness and bold design.</p>
+      </div>
+      
+      <div class="product-details">
+        <div class="detail-item">
+          <span class="detail-label">Material:</span>
+          <span class="detail-value">100% Silk</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Care:</span>
+          <span class="detail-value">Dry clean only</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Origin:</span>
+          <span class="detail-value">Made in Italy</span>
+        </div>
+      </div>
+      
+      <div class="product-options">
+        <div class="option-group">
+          <label>Size:</label>
+          <div class="option-buttons">
+            <button class="option-btn">XS</button>
+            <button class="option-btn">S</button>
+            <button class="option-btn">M</button>
+            <button class="option-btn">L</button>
+            <button class="option-btn">XL</button>
+          </div>
+          <a href="#" class="size-guide-link">Size Guide</a>
+        </div>
+        
+        <div class="option-group">
+          <label>Color:</label>
+          <div class="color-options">
+            <button class="color-btn active" style="background-color: #000;"></button>
+            <button class="color-btn" style="background-color: #fff;"></button>
+            <button class="color-btn" style="background-color: #6e7051;"></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-actions">
+        <div class="quantity-selector">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1">
+          <button class="quantity-btn plus">+</button>
+        </div>
+        
+        <button class="add-to-cart-btn" data-id="1" data-name="Ethereal Silk Dress" data-price="299">Add to Cart</button>
+        
+        <button class="wishlist-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Add to Wishlist</span>
+        </button>
+      </div>
+      
+      <div class="product-accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Details</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <ul>
+              <li>Asymmetric silhouette</li>
+              <li>Draped construction</li>
+              <li>Concealed side zip closure</li>
+              <li>Adjustable straps</li>
+              <li>Lined</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Shipping & Returns</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Free standard shipping on all orders over $200.</p>
+            <p>Express shipping available for an additional fee.</p>
+            <p>Returns accepted within 14 days of delivery. Items must be unworn with original tags attached.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related-products">
+    <div class="section-header">
+      <h2 class="section-title reveal-text">You May Also Like</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="related-products-slider">
+      <div class="product-item">
+        <div class="product-image-container">
+          <img src="/placeholder.svg?height=600&width=400" alt="Related Product 1" class="product-image">
+          <div class="product-overlay">
+            <a href="product.html" class="view-product-btn">View Product</a>
+          </div>
+        </div>
+        <div class="product-details">
+          <h3 class="product-title magnetic-text">Avant-Garde Blazer</h3>
+          <p class="product-price">$459</p>
+        </div>
+      </div>
+      
+      <div class="product-item">
+        <div class="product-image-container">
+          <img src="/placeholder.svg?height=600&width=400" alt="Related Product 2" class="product-image">
+          <div class="product-overlay">
+            <a href="product.html" class="view-product-btn">View Product</a>
+          </div>
+        </div>
+        <div class="product-details">
+          <h3 class="product-title magnetic-text">Deconstructed Pants</h3>
+          <p class="product-price">$329</p>
+        </div>
+      </div>
+      
+      <div class="product-item">
+        <div class="product-image-container">
+          <img src="/placeholder.svg?height=600&width=400" alt="Related Product 3" class="product-image">
+          <div class="product-overlay">
+            <a href="product.html" class="view-product-btn">View Product</a>
+          </div>
+        </div>
+        <div class="product-details">
+          <h3 class="product-title magnetic-text">Sculptural Top</h3>
+          <p class="product-price">$219</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recently Viewed -->
+  <section class="recently-viewed">
+    <div class="section-header">
+      <h2 class="section-title reveal-text">Recently Viewed</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="recently-viewed-products">
+      <!-- Will be populated by JavaScript -->
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <button class="close-cart">×</button>
+      </div>
+      
+      <div class="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span class="total-label">Total:</span>
+          <span class="total-amount">$0</span>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Size Guide Modal -->
+  <div class="size-guide-modal">
+    <div class="modal-content">
+      <button class="close-modal">×</button>
+      <div class="modal-body">
+        <h2 class="modal-title">Size Guide</h2>
+        
+        <div class="size-table-container">
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th>Size</th>
+                <th>Bust (cm)</th>
+                <th>Waist (cm)</th>
+                <th>Hips (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>XS</td>
+                <td>82-85</td>
+                <td>63-66</td>
+                <td>89-92</td>
+              </tr>
+              <tr>
+                <td>S</td>
+                <td>86-89</td>
+                <td>67-70</td>
+                <td>93-96</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>90-93</td>
+                <td>71-74</td>
+                <td>97-100</td>
+              </tr>
+              <tr>
+                <td>L</td>
+                <td>94-97</td>
+                <td>75-78</td>
+                <td>101-104</td>
+              </tr>
+              <tr>
+                <td>XL</td>
+                <td>98-103</td>
+                <td>79-84</td>
+                <td>105-110</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="measuring-guide">
+          <h3>How to Measure</h3>
+          <div class="measure-instructions">
+            <div class="measure-item">
+              <h4>Bust</h4>
+              <p>Measure around the fullest part of your bust, keeping the tape parallel to the floor.</p>
+            </div>
+            <div class="measure-item">
+              <h4>Waist</h4>
+              <p>Measure around your natural waistline, keeping the tape comfortably loose.</p>
+            </div>
+            <div class="measure-item">
+              <h4>Hips</h4>
+              <p>Measure around the fullest part of your hips, approximately 8" below your waistline.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="logo-text">ETHEREAL</div>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3 class="footer-heading">Shop</h3>
+          <ul>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+            <li><a href="bestsellers.html">Bestsellers</a></li>
+            <li><a href="sale.html">Sale</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-heading">Info</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="sustainability.html">Sustainability</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-heading">Contact</h3>
+          <ul>
+            <li><a href="mailto:info@ethereal.com">info@ethereal.com</a></li>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li><a href="stores.html">Store Locator</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-social">
+        <a href="#" class="social-link">Instagram</a>
+        <a href="#" class="social-link">Twitter</a>
+        <a href="#" class="social-link">Pinterest</a>
+        <a href="#" class="social-link">YouTube</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 ETHEREAL. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
