@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - MonoWorld</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="dark-theme">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-mono">MONO</span>
+                    <span class="logo-world">WORLD</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link active">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-controls">
+                <div class="theme-switch">
+                    <input type="checkbox" id="themeToggle" class="theme-toggle">
+                    <label for="themeToggle" class="theme-label">
+                        <span class="theme-icon sun">☀</span>
+                        <span class="theme-icon moon">☾</span>
+                        <div class="theme-slider"></div>
+                    </label>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="page-title">About MonoWorld</h1>
+                <p class="page-subtitle">Discovering beauty in the absence of color</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2 class="section-title">Our Mission</h2>
+                    <div class="text-content">
+                        <p class="lead-text">
+                            MonoWorld exists to challenge the conventional understanding of visual art by exploring the profound impact of monochromatic design in three-dimensional space.
+                        </p>
+                        <p>
+                            In a world saturated with color and visual noise, we believe there is extraordinary power in simplicity. Our curated collection of black and white 3D models demonstrates how the absence of color can amplify form, enhance texture, and create emotional depth that transcends traditional artistic boundaries.
+                        </p>
+                        <p>
+                            Through cutting-edge 3D technology and minimalist design principles, we invite viewers to experience art in its purest form—where every shadow, every curve, and every surface tells a story without the distraction of color.
+                        </p>
+                    </div>
+                </div>
+                <div class="mission-visual">
+                    <div class="visual-composition">
+                        <div class="composition-element element-1"></div>
+                        <div class="composition-element element-2"></div>
+                        <div class="composition-element element-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Simplicity</h3>
+                    <p class="value-description">
+                        We believe that true beauty lies in simplicity. By removing the unnecessary, we reveal the essential.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-description">
+                        We push the boundaries of digital art by combining traditional aesthetic principles with modern technology.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Excellence</h3>
+                    <p class="value-description">
+                        Every piece in our collection is carefully curated to meet the highest standards of artistic and technical quality.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Community</h3>
+                    <p class="value-description">
+                        We foster a community of artists, designers, and art enthusiasts who share our passion for minimalist aesthetics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">The creative minds behind MonoWorld</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder">
+                            <div class="placeholder-initials">AJ</div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Alex Johnson</h3>
+                        <p class="member-role">Creative Director</p>
+                        <p class="member-bio">
+                            With over 10 years in digital art curation, Alex brings a unique vision to monochromatic design and 3D artistry.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link">LinkedIn</a>
+                            <a href="#" class="social-link">Behance</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder">
+                            <div class="placeholder-initials">SC</div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Sarah Chen</h3>
+                        <p class="member-role">Technical Lead</p>
+                        <p class="member-bio">
+                            Sarah specializes in 3D modeling and interactive web experiences, ensuring our platform delivers cutting-edge functionality.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link">GitHub</a>
+                            <a href="#" class="social-link">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder">
+                            <div class="placeholder-initials">MR</div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Marcus Rodriguez</h3>
+                        <p class="member-role">Art Curator</p>
+                        <p class="member-bio">
+                            Marcus has an eye for exceptional talent and works directly with artists to bring their monochromatic visions to life.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline">
+        <div class="container">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2022 - The Beginning</h3>
+                        <p class="timeline-description">
+                            MonoWorld was conceived as a passion project to explore the intersection of minimalism and digital art.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2023 - First Collection</h3>
+                        <p class="timeline-description">
+                            We launched our first curated collection featuring 25 monochromatic 3D models from emerging artists.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2024 - Global Recognition</h3>
+                        <p class="timeline-description">
+                            MonoWorld gained international attention, featuring in major design publications and art exhibitions.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Future - Expanding Horizons</h3>
+                        <p class="timeline-description">
+                            We continue to push boundaries with VR experiences and interactive installations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">3D Models</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label">Featured Artists</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50000">0</div>
+                    <div class="stat-label">Monthly Visitors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Join Our Community</h2>
+                <p class="cta-description">
+                    Be part of the monochromatic art movement. Explore our gallery, connect with artists, and discover the beauty of simplicity.
+                </p>
+                <div class="cta-buttons">
+                    <a href="gallery.html" class="btn btn-primary">Explore Gallery</a>
+                    <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-mono">MONO</span>
+                        <span class="logo-world">WORLD</span>
+                    </div>
+                    <p class="footer-description">
+                        A curated collection of monochromatic 3D art that celebrates the beauty of simplicity.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html?category=sculpture">Sculptures</a></li>
+                        <li><a href="gallery.html?category=architecture">Architecture</a></li>
+                        <li><a href="gallery.html?category=technology">Technology</a></li>
+                        <li><a href="gallery.html?category=abstract">Abstract</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <div class="contact-info">
+                        <p>hello@monoworld.art</p>
+                        <p>+1 (555) 123-4567</p>
+                        <p>New York, NY</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MonoWorld. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
