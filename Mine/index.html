@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVCRAFT — The Art of Full Stack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">DEVCRAFT</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">DEVCRAFT</div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Landing Page -->
+    <main class="landing-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg">
+                <canvas id="heroCanvas"></canvas>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">DEVCRAFT</span>
+                        <span class="title-line">THE ART OF</span>
+                        <span class="title-line accent">FULL STACK</span>
+                    </h1>
+                    <p class="hero-subtitle">Crafting digital experiences with precision, passion, and cutting-edge technology</p>
+                    <div class="hero-cta">
+                        <a href="about.html" class="cta-btn primary">Explore My Work</a>
+                        <a href="contact.html" class="cta-btn secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-elements">
+                        <div class="tech-icon" data-tech="react"><i class="fab fa-react"></i></div>
+                        <div class="tech-icon" data-tech="node"><i class="fab fa-node-js"></i></div>
+                        <div class="tech-icon" data-tech="js"><i class="fab fa-js-square"></i></div>
+                        <div class="tech-icon" data-tech="python"><i class="fab fa-python"></i></div>
+                        <div class="tech-icon" data-tech="database"><i class="fas fa-database"></i></div>
+                        <div class="tech-icon" data-tech="code"><i class="fas fa-code"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-text">Scroll to explore</div>
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="quick-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="24">0</div>
+                        <div class="stat-label">Technologies Mastered</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work Preview -->
+        <section class="featured-work">
+            <div class="container">
+                <h2 class="section-title">Featured Work</h2>
+                <div class="work-preview">
+                    <div class="work-item" data-project="ecommerce">
+                        <div class="work-image">
+                            <div class="project-placeholder">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack MERN application with payment integration</p>
+                            <div class="work-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-item" data-project="dashboard">
+                        <div class="work-image">
+                            <div class="project-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Real-time data visualization with interactive charts</p>
+                            <div class="work-tech">
+                                <span>Vue.js</span>
+                                <span>Express</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-item" data-project="mobile">
+                        <div class="work-image">
+                            <div class="project-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3>Mobile App</h3>
+                            <p>Cross-platform mobile application with native features</p>
+                            <div class="work-tech">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>Redux</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-cta">
+                    <a href="projects.html" class="cta-btn primary">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Showcase -->
+        <section class="tech-showcase">
+            <div class="container">
+                <h2 class="section-title">Technology Arsenal</h2>
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h3>Frontend</h3>
+                        <div class="tech-items">
+                            <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
+                            <div class="tech-item"><i class="fa-brands fa-vuejs"></i><span>Vue.js</span></div>
+                            <div class="tech-item"><i class="fab fa-angular"></i><span>Angular</span></div>
+                            <div class="tech-item"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Backend</h3>
+                        <div class="tech-items">
+                            <div class="tech-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                            <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+                            <div class="tech-item"><i class="fas fa-server"></i><span>Express</span></div>
+                            <div class="tech-item"><i class="fas fa-cogs"></i><span>Django</span></div>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Database</h3>
+                        <div class="tech-items">
+                            <div class="tech-item"><i class="fas fa-database"></i><span>MongoDB</span></div>
+                            <div class="tech-item"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+                            <div class="tech-item"><i class="fas fa-fire"></i><span>Firebase</span></div>
+                            <div class="tech-item"><i class="fas fa-table"></i><span>MySQL</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">DEVCRAFT</div>
+                    <p>Crafting digital excellence, one line of code at a time.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DEVCRAFT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="loader-fix.js"></script>
+</body>
+</html>
