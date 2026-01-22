@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETHEREAL | Avant-Garde Fashion</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/text-effects.css">
+  <script src="js/three.min.js" defer></script>
+  <script src="js/gsap.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/server.js" defer></script>
+</head>
+<body>
+  <div class="noise-overlay"></div>
+  
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-text">
+      <span class="letter">E</span>
+      <span class="letter">T</span>
+      <span class="letter">H</span>
+      <span class="letter">E</span>
+      <span class="letter">R</span>
+      <span class="letter">E</span>
+      <span class="letter">A</span>
+      <span class="letter">L</span>
+    </div>
+    <div class="loading-bar-container">
+      <div class="loading-bar"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo glitch-text" data-text="ETHEREAL">ETHEREAL</div>
+      <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link magnetic-link">Home</a></li>
+        <li><a href="collections.html" class="nav-link magnetic-link">Collections</a></li>
+        <li><a href="about.html" class="nav-link magnetic-link">About</a></li>
+        <li><a href="contact.html" class="nav-link magnetic-link">Contact</a></li>
+      </ul>
+      <div class="cart-icon">
+        <span class="cart-count">0</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-canvas-container">
+      <canvas id="hero-canvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="split-text">REDEFINE</span>
+        <span class="liquid-text">FASHION</span>
+      </h1>
+      <p class="hero-subtitle distortion-text">AUTUMN COLLECTION 2025</p>
+      <a href="collections.html" class="cta-button">
+        <span class="button-text">Explore Collection</span>
+        <span class="button-hover"></span>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Featured Collection -->
+  <section class="featured-collection">
+    <div class="section-header">
+      <h2 class="section-title reveal-text">Featured Collection</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="collection-grid">
+      <div class="collection-item" data-index="1">
+        <div class="item-image-container">
+          <div class="item-image-wrapper">
+            <img src="/placeholder.svg?height=600&width=400" alt="Fashion item 1" class="item-image">
+            <div class="item-overlay"></div>
+          </div>
+        </div>
+        <div class="item-details">
+          <h3 class="item-title magnetic-text">Ethereal Silk Dress</h3>
+          <p class="item-price">$299</p>
+          <button class="add-to-cart-btn" data-id="1" data-name="Ethereal Silk Dress" data-price="299">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="collection-item" data-index="2">
+        <div class="item-image-container">
+          <div class="item-image-wrapper">
+            <img src="/placeholder.svg?height=600&width=400" alt="Fashion item 2" class="item-image">
+            <div class="item-overlay"></div>
+          </div>
+        </div>
+        <div class="item-details">
+          <h3 class="item-title magnetic-text">Avant-Garde Blazer</h3>
+          <p class="item-price">$459</p>
+          <button class="add-to-cart-btn" data-id="2" data-name="Avant-Garde Blazer" data-price="459">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="collection-item" data-index="3">
+        <div class="item-image-container">
+          <div class="item-image-wrapper">
+            <img src="/placeholder.svg?height=600&width=400" alt="Fashion item 3" class="item-image">
+            <div class="item-overlay"></div>
+          </div>
+        </div>
+        <div class="item-details">
+          <h3 class="item-title magnetic-text">Deconstructed Pants</h3>
+          <p class="item-price">$329</p>
+          <button class="add-to-cart-btn" data-id="3" data-name="Deconstructed Pants" data-price="329">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lookbook Section -->
+  <section class="lookbook">
+    <div class="lookbook-header">
+      <h2 class="lookbook-title glitch-text" data-text="LOOKBOOK">LOOKBOOK</h2>
+    </div>
+    
+    <div class="lookbook-gallery">
+      <div class="gallery-item large">
+        <div class="gallery-image-container">
+          <img src="/placeholder.svg?height=800&width=600" alt="Lookbook image 1" class="gallery-image">
+          <div class="image-caption">
+            <span class="caption-text">ETHEREAL VISION</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-image-container">
+          <img src="/placeholder.svg?height=600&width=400" alt="Lookbook image 2" class="gallery-image">
+          <div class="image-caption">
+            <span class="caption-text">URBAN DYSTOPIA</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-image-container">
+          <img src="/placeholder.svg?height=600&width=400" alt="Lookbook image 3" class="gallery-image">
+          <div class="image-caption">
+            <span class="caption-text">FUTURE NOSTALGIA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="newsletter-content">
+      <h2 class="newsletter-title reveal-text">Join Our Universe</h2>
+      <p class="newsletter-text">Subscribe to receive exclusive updates, early access to new collections, and special offers.</p>
+      
+      <form class="newsletter-form" id="newsletter-form">
+        <div class="form-group">
+          <input type="email" id="email" name="email" required class="form-input" placeholder="Your email address">
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Subscribe</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </div>
+        <div class="form-message"></div>
+      </form>
+    </div>
+    
+    <div class="newsletter-decoration">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <button class="close-cart">×</button>
+      </div>
+      
+      <div class="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span class="total-label">Total:</span>
+          <span class="total-amount">$0</span>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="logo-text">ETHEREAL</div>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3 class="footer-heading">Shop</h3>
+          <ul>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+            <li><a href="bestsellers.html">Bestsellers</a></li>
+            <li><a href="sale.html">Sale</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-heading">Info</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="sustainability.html">Sustainability</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-heading">Contact</h3>
+          <ul>
+            <li><a href="mailto:info@ethereal.com">info@ethereal.com</a></li>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li><a href="stores.html">Store Locator</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-social">
+        <a href="#" class="social-link">Instagram</a>
+        <a href="#" class="social-link">Twitter</a>
+        <a href="#" class="social-link">Pinterest</a>
+        <a href="#" class="social-link">YouTube</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 ETHEREAL. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
