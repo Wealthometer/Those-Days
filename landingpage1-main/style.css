@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+body{
+    font-family: monospace;
+    margin:0;
+}
+.nav{
+    position: absolute;
+    top:0;
+    left:0;
+    width:80%;
+    padding:0 10%;
+    border-bottom: 1px solid rgba(115, 114, 114, 0.2);
+    display: flex;
+    align-items: center;
+    color:#eee;
+    z-index: 11111111111111111;
+}
+.nav .logo img{
+    width:60px
+}
+.nav ul{
+    padding: 0;
+    margin:0;
+    list-style: none;
+    margin-left:50px;
+    display: flex;
+   align-items: center;
+}
+.nav ul li{
+    padding:0 50px;
+    font-size: 15px;
+}
+.tofixed{
+    position: fixed;
+    top:0;
+    color:#555;
+    background-color: #ddd;
+animation:showfixed 1s ease-in-out 1 forwards
+
+}
+@keyframes showfixed{
+    from{
+        top:-100px;
+    }
+}
+.banner{
+    height:110vh;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+}
+.banner::before{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    filter:brightness(0.5);
+    height:100%;
+    background-image: url(header.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    background-attachment: fixed;
+    z-index: -1;
+    content:'';
+}
+.banner .title{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:#fff;
+    font-size: 20vh;
+    opacity: 0;
+    font-family: 'Great Vibes', cursive;
+    animation:showtitle 3s ease-in-out 5s 1 forwards 
+}
+.banner img{
+    position: absolute;
+    left:50%;
+    bottom:0;
+    transform: translate(-50%,10%);
+    width:50%;
+    filter:brightness(0.5);
+    opacity: 0;
+    animation:totopimg ease-in-out 5s 1 forwards;
+}
+@keyframes totopimg{
+    from{
+        opacity: 0;
+        transform: translate(-50%,20%);
+    }to{
+        transform: translate(-50%,10%);
+        opacity: 1;
+    }
+}
+@keyframes showtitle{
+    from{
+        filter: blur(33px);
+        transform: translate(-50%,-80%);
+    }to{
+        opacity: 1;
+        filter: blur(0px);
+        transform: translate(-50%,-50%);
+    }
+}
+.banner::after{
+    position: absolute;
+    left:0;
+    width:100%;
+    height:10vh;top:100vh;
+    background-image: url(https://livedemo00.template-help.com/wt_prod-20838/images/cloud-2.png);
+    background-size: 100%;
+    content:'';
+    filter:brightness(0.87);
+
+}
+.container{
+    min-height: 1500px;
+    background-color: #ddd;
+}
+.intro{
+    padding:20px;
+    text-align: center;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.intro h2{
+    font-size: 150px;
+    padding:0;
+    margin:30px 0;
+    font-family: 'Great Vibes', cursive;
+}
+.intro div{
+    font-size: 20px;
+}
+.travel{
+    height:100vh;
+    width:80%;
+    padding:150px 10%;
+    background-color: #cfdadb;
+    text-align: center;
+}
+.travel .title{
+    padding-bottom:100px;
+}
+.travel .itemImg{
+    width:25%;
+    float:left;
+}
+.travel .itemImg img{
+    width:90%;
+    padding:5%;
+    height:520px;
+    object-fit: cover;
+}
+.darkshow{
+    width:80%;
+    padding:150px 10%;
+    height:100vh;
+    background:#1f2538;
+    text-align: center;
+    color:#eee;
+}
+.darkshow .title{
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom:80px;
+    width:100%;
+}
+.darkshow .img{
+    width:50%;
+    position: relative;
+    float: left;
+    opacity: 0;
+}
+.darkshow.active .img{
+    animation: showimgdarkshow 1s ease-in-out 1s 1 forwards;
+}
+@keyframes showimgdarkshow{
+    from{
+        opacity: 0;
+        filter: blur(33px);
+        transform: translate(150px);
+    }to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(0);
+    }
+}
+.darkshow .img img{
+   width:50%;
+   height:600px;
+   object-fit: cover;
+}
+.darkshow .list{
+    width:50%;
+    float: left;
+}
+.contactItem{
+    width:36%;
+    background-color: #161924;
+    padding:40px 5%;
+    margin: 0 2% 2% 0;
+    float: left;
+    text-align: left;
+}
+.contactItem .icon{
+    width:max-content;
+    background-color: blueviolet;
+    padding:2px 10px;
+    font-size: small;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.contactItem .titleContact{
+    font-weight: 600;
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+.slug{
+    color:#555;
+}
+.footer{
+    background-color: #161924;
+    width:100%;
+    text-align: center;
+    padding-top: 200px;
+    display: block;
+    color:#eee;
+    overflow: hidden;
+}
+.footer .title{
+    font-family: 'Great Vibes', cursive;
+    font-size: 130px;
+}
+.footer ul{
+    padding: 0;
+    margin:0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:30vh;
+    border-top:1px solid rgba(115, 114, 114, 0.2);
+}
+.footer li{
+    padding:30px 90px;
+    font-size: 30px;
+}
+
+.showtotop, .zoomshow{
+    opacity: 0;
+}
+.active .showtotop{
+    animation:showtop 1s ease-in-out 1 forwards;
+}
+.active .zoomshow{
+    animation:zoomshow 1s ease-in-out 1 forwards;
+}
+@keyframes zoomshow{
+    from{
+       transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes showtop{
+    from{
+        opacity: 0;
+        transform: translate(0,100px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+.delay-02{
+    animation-delay: 0.2s!important;
+}
+.delay-04{
+    animation-delay: 0.4s!important;
+}
+.delay-06{
+    animation-delay: 0.6s!important;
+}
+.delay-08{
+    animation-delay: 0.8s!important;
+}
+.delay-1{
+    animation-delay: 1s!important;
+}
+.delay-12{
+    animation-delay: 1.2s!important;
+}
+.delay-14{
+    animation-delay: 1.4s!important;
+}
+.delay-16{
+    animation-delay: 1.6s!important;
+}
+.delay-18{
+    animation-delay: 1.8s!important;
+}
+.delay-2{
+    animation-delay: 2s!important;
+}
+.delay-12{
+    animation-delay: 1.2s!important;
+}
+.delay-14{
+    animation-delay: 1.4s!important;
+}
+.delay-16{
+    animation-delay: 1.6s!important;
+}
+.delay-18{
+    animation-delay: 1.8s!important;
+}
