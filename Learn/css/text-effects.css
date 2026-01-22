@@ -1,0 +1,384 @@
+/* Glitch Text Effect */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch-text::before {
+  color: #ff00ff;
+  z-index: -1;
+  animation: glitch-anim-1 0.3s infinite;
+}
+
+.glitch-text::after {
+  color: #00ffff;
+  z-index: -2;
+  animation: glitch-anim-2 0.3s infinite;
+}
+
+@keyframes glitch-anim-1 {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(-2px, 2px);
+  }
+}
+
+/* Split Text Effect */
+.split-text {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.split-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  color: var(--primary-color);
+}
+
+.split-text::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  color: var(--primary-color);
+}
+
+/* Liquid Text Effect */
+.liquid-text {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(to right, var(--accent-color), var(--primary-color), var(--accent-color));
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: liquid 3s linear infinite;
+}
+
+@keyframes liquid {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Reveal Text Effect */
+.reveal-text {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.reveal-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  transform: translateX(-100%);
+  animation: reveal 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes reveal {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Distortion Text Effect */
+.distortion-text {
+  position: relative;
+  display: inline-block;
+  animation: distortion 5s infinite;
+}
+
+@keyframes distortion {
+  0%,
+  100% {
+    transform: skewX(0) skewY(0);
+    filter: blur(0);
+  }
+  25% {
+    transform: skewX(3deg) skewY(0);
+    filter: blur(1px);
+  }
+  75% {
+    transform: skewX(-3deg) skewY(0);
+    filter: blur(1px);
+  }
+}
+
+/* Magnetic Text Effect */
+.magnetic-text {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* 3D Text Effect */
+.text-3d {
+  text-shadow:
+    0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Neon Text Effect */
+.neon-text {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #fff,
+    0 0 20px var(--accent-color),
+    0 0 35px var(--accent-color),
+    0 0 40px var(--accent-color),
+    0 0 50px var(--accent-color),
+    0 0 75px var(--accent-color);
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  from {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 15px #fff,
+      0 0 20px var(--accent-color),
+      0 0 35px var(--accent-color),
+      0 0 40px var(--accent-color),
+      0 0 50px var(--accent-color),
+      0 0 75px var(--accent-color);
+  }
+  to {
+    text-shadow:
+      0 0 2.5px #fff,
+      0 0 5px #fff,
+      0 0 7.5px #fff,
+      0 0 10px var(--accent-color),
+      0 0 17.5px var(--accent-color),
+      0 0 20px var(--accent-color),
+      0 0 25px var(--accent-color),
+      0 0 37.5px var(--accent-color);
+  }
+}
+
+/* Fire Text Effect */
+.fire-text {
+  color: #fff;
+  text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #f00;
+  animation: fire 1s ease-in-out infinite alternate;
+}
+
+@keyframes fire {
+  from {
+    text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #f00;
+  }
+  to {
+    text-shadow: 0 -1px 4px #fff, 0 -2px 6px #ff0, 0 -5px 10px #ff8000, 0 -9px 20px #f00;
+  }
+}
+
+/* Ice Text Effect */
+.ice-text {
+  color: #fff;
+  text-shadow: 0 -1px 4px #fff, 0 -2px 10px #0ff, 0 -10px 20px #0ff, 0 -18px 40px #00f;
+  animation: ice 1s ease-in-out infinite alternate;
+}
+
+@keyframes ice {
+  from {
+    text-shadow: 0 -1px 4px #fff, 0 -2px 10px #0ff, 0 -10px 20px #0ff, 0 -18px 40px #00f;
+  }
+  to {
+    text-shadow: 0 -1px 4px #fff, 0 -2px 6px #0ff, 0 -5px 10px #0ff, 0 -9px 20px #00f;
+  }
+}
+
+/* Rainbow Text Effect */
+.rainbow-text {
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Blur Text Effect */
+.blur-text {
+  color: transparent;
+  text-shadow: 0 0 5px var(--primary-color);
+  animation: blur-text 3s infinite alternate;
+}
+
+@keyframes blur-text {
+  0% {
+    text-shadow: 0 0 5px var(--primary-color);
+  }
+  100% {
+    text-shadow: 0 0 10px var(--primary-color);
+  }
+}
+
+/* Typing Text Effect */
+.typing-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--primary-color);
+  animation: typing 3.5s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary-color);
+  }
+}
+
+/* Smoke Text Effect */
+.smoke-text {
+  color: transparent;
+  text-shadow: 0 0 10px var(--primary-color);
+  animation: smoke 5s ease-in-out infinite;
+}
+
+@keyframes smoke {
+  0% {
+    text-shadow: 0 0 10px var(--primary-color);
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 20px var(--primary-color);
+    opacity: 0.5;
+  }
+  100% {
+    text-shadow: 0 0 10px var(--primary-color);
+    opacity: 1;
+  }
+}
+
+/* Flicker Text Effect */
+.flicker-text {
+  animation: flicker 2s linear infinite;
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.33;
+  }
+}
+
+/* Shadow Text Effect */
+.shadow-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Emboss Text Effect */
+.emboss-text {
+  color: var(\
