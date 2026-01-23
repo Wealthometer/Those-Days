@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Mood Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">How are you feeling today?</h1>
+            <p class="subtitle">Track your daily emotions and see your mood patterns</p>
+            <div class="date-display">
+                <span id="current-date"></span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Mood Selection -->
+            <section class="mood-selection">
+                <h2>Select Your Mood</h2>
+                <div class="mood-buttons">
+                    <button class="mood-btn" data-mood="happy" data-color="#FFD700">
+                        <span class="emoji">😊</span>
+                        <span class="mood-label">Happy</span>
+                    </button>
+                    <button class="mood-btn" data-mood="sad" data-color="#87CEEB">
+                        <span class="emoji">😢</span>
+                        <span class="mood-label">Sad</span>
+                    </button>
+                    <button class="mood-btn" data-mood="angry" data-color="#FF6B6B">
+                        <span class="emoji">😡</span>
+                        <span class="mood-label">Angry</span>
+                    </button>
+                    <button class="mood-btn" data-mood="tired" data-color="#DDA0DD">
+                        <span class="emoji">😴</span>
+                        <span class="mood-label">Tired</span>
+                    </button>
+                    <button class="mood-btn" data-mood="excited" data-color="#FF69B4">
+                        <span class="emoji">😍</span>
+                        <span class="mood-label">Excited</span>
+                    </button>
+                </div>
+                
+                <!-- Mood Note -->
+                <div class="mood-note-section">
+                    <textarea 
+                        id="mood-note" 
+                        placeholder="Add a note about your mood (optional)..."
+                        maxlength="200"
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="char-count">0</span>/200
+                    </div>
+                </div>
+
+                <button id="save-mood" class="save-btn" disabled>
+                    <span class="btn-text">Save Today's Mood</span>
+                    <span class="btn-icon">💾</span>
+                </button>
+            </section>
+
+            <!-- Today's Mood Display -->
+            <section class="todays-mood" id="todays-mood" style="display: none;">
+                <h2>Today's Mood</h2>
+                <div class="mood-card">
+                    <div class="mood-display">
+                        <span class="large-emoji" id="today-emoji"></span>
+                        <div class="mood-info">
+                            <h3 id="today-mood-name"></h3>
+                            <p id="today-mood-note"></p>
+                            <small id="today-time"></small>
+                        </div>
+                    </div>
+                    <button id="edit-mood" class="edit-btn">Edit</button>
+                </div>
+            </section>
+
+            <!-- Mood History -->
+            <section class="mood-history">
+                <div class="history-header">
+                    <h2>Mood History</h2>
+                    <div class="history-controls">
+                        <button id="clear-history" class="clear-btn">Clear All</button>
+                        <select id="filter-period" class="filter-select">
+                            <option value="all">All Time</option>
+                            <option value="week">Last 7 Days</option>
+                            <option value="month">Last 30 Days</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mood-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" id="total-entries">0</span>
+                        <span class="stat-label">Total Entries</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-emoji" id="most-common-mood">😊</span>
+                        <span class="stat-label">Most Common</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="streak-count">0</span>
+                        <span class="stat-label">Day Streak</span>
+                    </div>
+                </div>
+
+                <div class="history-list" id="history-list">
+                    <div class="empty-state">
+                        <span class="empty-emoji">📝</span>
+                        <p>No mood entries yet. Start tracking your mood today!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mood Calendar -->
+            <section class="mood-calendar">
+                <h2>Mood Calendar</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month" class="nav-btn">‹</button>
+                        <h3 id="calendar-month"></h3>
+                        <button id="next-month" class="nav-btn">›</button>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                        <!-- Calendar days will be generated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Success Message -->
+        <div class="success-message" id="success-message">
+            <span class="success-icon">✅</span>
+            <span class="success-text">Mood saved successfully!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
