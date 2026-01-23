@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monochrome Studio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ccc;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .hero-content p {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            color: #ccc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 50px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* About Section */
+        .about {
+            background: #111;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .about-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .about-image {
+            height: 400px;
+            background: linear-gradient(45deg, #333, #666);
+            opacity: 0;
+            transform: translateX(50px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #999;
+        }
+
+        /* Services Section */
+        .services {
+            background: #000;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            padding: 40px;
+            background: #222;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card:hover {
+            background: #333;
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .service-card p {
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #111;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #000;
+            text-align: center;
+        }
+
+        .contact-content {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .contact p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #ccc;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #111;
+            padding: 50px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer p {
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: #fff;
+            z-index: 1001;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">MONO</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>MONOCHROME</h1>
+            <p>Minimalist Design Studio</p>
+            <a href="#about" class="cta-button">EXPLORE</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <h2>ABOUT US</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>We are a creative studio specializing in monochrome design solutions. Our approach combines minimalist aesthetics with powerful functionality.</p>
+                <p>Every project is crafted with precision, attention to detail, and a deep understanding of visual hierarchy and user experience.</p>
+                <p>We believe that simplicity is the ultimate sophistication, and our work reflects this philosophy in every pixel.</p>
+            </div>
+            <div class="about-image">
+                [VISUAL ELEMENT]
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <h2>SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Brand Identity</h3>
+                <p>Creating distinctive brand identities that stand out in the monochrome spectrum. From logos to complete visual systems.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Design</h3>
+                <p>Minimalist web experiences that prioritize user experience and clean, functional design principles.</p>
+            </div>
+            <div class="service-card">
+                <h3>Print Design</h3>
+                <p>Elegant print solutions that make a statement through simplicity and sophisticated use of negative space.</p>
+            </div>
+            <div class="service-card">
+                <h3>Art Direction</h3>
+                <p>Comprehensive creative direction for projects that require a cohesive monochromatic visual approach.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats section">
+        <h2>BY THE NUMBERS</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number" data-target="150">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="25">0</div>
+                <div class="stat-label">Awards Won</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <h2>GET IN TOUCH</h2>
+        <div class="contact-content">
+            <p>Ready to create something extraordinary together?</p>
+            <a href="mailto:hello@monochrome.studio" class="contact-button">START A PROJECT</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Monochrome Studio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scroll indicator
+        function updateScrollIndicator() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.querySelector('.scroll-indicator').style.width = scrollPercent + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollIndicator);
+
+        // Hero animations
+        gsap.timeline()
+            .to('.hero-content h1', {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: 'power3.out'
+            })
+            .to('.hero-content p', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power3.out'
+            }, '-=0.8')
+            .to('.cta-button', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.6');
+
+        // Section title animations
+        gsap.utils.toArray('.section h2').forEach(title => {
+            gsap.to(title, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: title,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        // About section animations
+        gsap.to('.about-text', {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.about-content',
+                start: 'top 70%',
+                end: 'bottom 30%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        gsap.to('.about-image', {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.about-content',
+                start: 'top 70%',
+                end: 'bottom 30%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        // Service cards stagger animation
+        gsap.to('.service-card', {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: '.services-grid',
+                start: 'top 70%',
+                end: 'bottom 30%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        // Stats counter animation
+        gsap.to('.stat-item', {
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: 'back.out(1.7)',
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: '.stats-grid',
+                start: 'top 70%',
+                end: 'bottom 30%',
+                toggleActions: 'play none none reverse',
+                onEnter: () => {
+                    // Animate counters
+                    document.querySelectorAll('.stat-number').forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        gsap.to(counter, {
+                            innerHTML: target,
+                            duration: 2,
+                            ease: 'power2.out',
+                            snap: { innerHTML: 1 },
+                            onUpdate: function() {
+                                counter.innerHTML = Math.ceil(counter.innerHTML);
+                            }
+                        });
+                    });
+                }
+            }
+        });
+
+        // Contact section animation
+        gsap.to('.contact-content', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.contact',
+                start: 'top 70%',
+                end: 'bottom 30%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        // Navbar background on scroll
+        ScrollTrigger.create({
+            start: 'top -80',
+            end: 99999,
+            toggleClass: {className: 'scrolled', targets: '.navbar'}
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: {
+                            y: target,
+                            offsetY: 80
+                        },
+                        ease: 'power3.inOut'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero section
+        gsap.to('.hero', {
+            yPercent: -50,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // Service cards hover effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {
+                    scale: 1.02,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
+
+        // Add scrolled class to navbar
+        const style = document.createElement('style');
+        style.textContent = `
+            .navbar.scrolled {
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(20px);
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
