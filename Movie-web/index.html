@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieFlix - Stream Your Favorite Movies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MovieFlix</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for movies...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">My List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Interstellar</h2>
+                <p class="hero-description">
+                    A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn play-btn"><i class="fas fa-play"></i> Play</button>
+                    <button class="btn info-btn"><i class="fas fa-info-circle"></i> More Info</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h3>Trending Now</h3>
+            <div class="movie-row" id="trending">
+                <!-- Movies will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h3>Action Movies</h3>
+            <div class="movie-row" id="action">
+                <!-- Movies will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h3>Comedy</h3>
+            <div class="movie-row" id="comedy">
+                <!-- Movies will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h3>Drama</h3>
+            <div class="movie-row" id="drama">
+                <!-- Movies will be added here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="video-container">
+                    <video id="movie-player" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="movie-details">
+                    <h2 id="modal-title"></h2>
+                    <div class="movie-meta">
+                        <span id="modal-year"></span>
+                        <span id="modal-duration"></span>
+                        <span id="modal-rating"></span>
+                    </div>
+                    <p id="modal-description"></p>
+                    <div class="movie-cast">
+                        <h4>Cast:</h4>
+                        <p id="modal-cast"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About MovieFlix</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Devices</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 MovieFlix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
