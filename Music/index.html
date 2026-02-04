@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundWave - Music Visualizer & Playlist App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <div class="toggle-track">
+            <div class="toggle-thumb">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <span>SoundWave</span>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-item active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </div>
+                <div class="nav-item" data-section="visualizer">
+                    <i class="fas fa-wave-square"></i>
+                    <span>Visualizer</span>
+                </div>
+                <div class="nav-item" data-section="playlists">
+                    <i class="fas fa-list-music"></i>
+                    <span>Playlists</span>
+                </div>
+                <div class="nav-item" data-section="library">
+                    <i class="fas fa-compact-disc"></i>
+                    <span>Library</span>
+                </div>
+            </nav>
+
+            <div class="playlist-section">
+                <h3>Your Playlists</h3>
+                <div class="playlist-list" id="playlistList">
+                    <div class="playlist-item" data-playlist="favorites">
+                        <i class="fas fa-heart"></i>
+                        <span>Favorites</span>
+                        <span class="track-count">12</span>
+                    </div>
+                    <div class="playlist-item" data-playlist="chill">
+                        <i class="fas fa-leaf"></i>
+                        <span>Chill Vibes</span>
+                        <span class="track-count">8</span>
+                    </div>
+                    <div class="playlist-item" data-playlist="workout">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Workout</span>
+                        <span class="track-count">15</span>
+                    </div>
+                </div>
+                <button class="create-playlist-btn" id="createPlaylistBtn">
+                    <i class="fas fa-plus"></i>
+                    Create Playlist
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Home Section -->
+            <div class="content-section active" id="home">
+                <div class="section-header">
+                    <h1>Welcome to SoundWave</h1>
+                    <p>Experience music like never before with real-time visualizations</p>
+                </div>
+
+                <div class="upload-section">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Upload Your Music</h3>
+                            <p>Drag & drop audio files or click to browse</p>
+                            <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+                            <button class="upload-btn" id="uploadBtn">Choose Files</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-section">
+                    <h2>Recently Played</h2>
+                    <div class="track-grid" id="recentTracks">
+                        <!-- Recent tracks will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualizer Section -->
+            <div class="content-section" id="visualizer">
+                <div class="visualizer-container">
+                    <canvas id="visualizerCanvas"></canvas>
+                    <div class="visualizer-controls">
+                        <button class="viz-btn active" data-viz="bars">
+                            <i class="fas fa-chart-bar"></i>
+                            Bars
+                        </button>
+                        <button class="viz-btn" data-viz="wave">
+                            <i class="fas fa-wave-square"></i>
+                            Wave
+                        </button>
+                        <button class="viz-btn" data-viz="circle">
+                            <i class="fas fa-circle"></i>
+                            Circle
+                        </button>
+                        <button class="viz-btn" data-viz="particles">
+                            <i class="fas fa-sparkles"></i>
+                            Particles
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Playlists Section -->
+            <div class="content-section" id="playlists">
+                <div class="section-header">
+                    <h1>Your Playlists</h1>
+                    <button class="create-playlist-btn" id="createPlaylistBtn2">
+                        <i class="fas fa-plus"></i>
+                        New Playlist
+                    </button>
+                </div>
+                <div class="playlist-grid" id="playlistGrid">
+                    <!-- Playlists will be populated here -->
+                </div>
+            </div>
+
+            <!-- Library Section -->
+            <div class="content-section" id="library">
+                <div class="section-header">
+                    <h1>Music Library</h1>
+                    <div class="library-controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search your music..." id="searchInput">
+                        </div>
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="library-content" id="libraryContent">
+                    <!-- Library tracks will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Player -->
+    <div class="floating-player" id="floatingPlayer">
+        <div class="player-track-info">
+            <div class="track-artwork">
+                <img src="/placeholder.svg?height=60&width=60" alt="Track artwork" id="playerArtwork">
+                <div class="artwork-overlay">
+                    <i class="fas fa-music"></i>
+                </div>
+            </div>
+            <div class="track-details">
+                <div class="track-title" id="playerTitle">No track selected</div>
+                <div class="track-artist" id="playerArtist">Unknown Artist</div>
+            </div>
+        </div>
+
+        <div class="player-controls">
+            <button class="control-btn" id="shuffleBtn">
+                <i class="fas fa-random"></i>
+            </button>
+            <button class="control-btn" id="prevBtn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="control-btn play-btn" id="playBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="control-btn" id="nextBtn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+            <button class="control-btn" id="repeatBtn">
+                <i class="fas fa-redo"></i>
+            </button>
+        </div>
+
+        <div class="player-progress">
+            <span class="time-current" id="currentTime">0:00</span>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+                <div class="progress-handle" id="progressHandle"></div>
+            </div>
+            <span class="time-total" id="totalTime">0:00</span>
+        </div>
+
+        <div class="player-volume">
+            <button class="control-btn" id="volumeBtn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <div class="volume-slider" id="volumeSlider">
+                <div class="volume-fill" id="volumeFill"></div>
+                <div class="volume-handle" id="volumeHandle"></div>
+            </div>
+        </div>
+
+        <div class="player-extras">
+            <button class="control-btn" id="visualizerToggle">
+                <i class="fas fa-wave-square"></i>
+            </button>
+            <button class="control-btn" id="fullscreenBtn">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Create Playlist Modal -->
+    <div class="modal" id="createPlaylistModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Playlist</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label>Playlist Name</label>
+                    <input type="text" id="playlistNameInput" placeholder="Enter playlist name...">
+                </div>
+                <div class="input-group">
+                    <label>Description (Optional)</label>
+                    <textarea id="playlistDescInput" placeholder="Add a description..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Choose Icon</label>
+                    <div class="icon-selector">
+                        <button class="icon-btn active" data-icon="fas fa-music">
+                            <i class="fas fa-music"></i>
+                        </button>
+                        <button class="icon-btn" data-icon="fas fa-heart">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="icon-btn" data-icon="fas fa-star">
+                            <i class="fas fa-star"></i>
+                        </button>
+                        <button class="icon-btn" data-icon="fas fa-fire">
+                            <i class="fas fa-fire"></i>
+                        </button>
+                        <button class="icon-btn" data-icon="fas fa-leaf">
+                            <i class="fas fa-leaf"></i>
+                        </button>
+                        <button class="icon-btn" data-icon="fas fa-bolt">
+                            <i class="fas fa-bolt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelBtn">Cancel</button>
+                <button class="btn-primary" id="createBtn">Create Playlist</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
