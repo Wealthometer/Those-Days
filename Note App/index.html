@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Digital Notes App</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1>Digital Notes</h1>
+                <p>Organize your thoughts and ideas</p>
+            </div>
+            <button class="new-note-btn" onclick="showNoteForm()">
+                <span>+</span>
+                New Note
+            </button>
+        </header>
+
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search notes..." oninput="searchNotes(this.value)">
+        </div>
+
+        <div class="note-form" id="noteForm">
+            <div class="form-header">
+                <h3>Create New Note</h3>
+                <button class="close-btn" onclick="hideNoteForm()">×</button>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-input" id="noteTitle" placeholder="Note title...">
+            </div>
+            <div class="form-group">
+                <textarea class="form-input form-textarea" id="noteContent" placeholder="Write your note here..."></textarea>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary" onclick="saveNote()">
+                    <span>💾</span>
+                    Save Note
+                </button>
+                <button class="btn btn-secondary" onclick="hideNoteForm()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+
+        
+        <div class="notes-grid" id="notesGrid">
+            
+        </div>
+
+        
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-icon">📝</div>
+            <h3>No notes yet</h3>
+            <p>Create your first note to get started</p>
+            <button class="btn btn-primary" onclick="showNoteForm()">
+                <span>+</span>
+                Create Note
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
