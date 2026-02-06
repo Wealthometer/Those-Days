@@ -1,0 +1,129 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: cimg/node:20.4
+  # Not working: Job \"build\" has filters configured in the job definition. These filters are incompatible with workflows.
+  # branches:
+  #   only:
+  #     - main
+
+jobs:
+  build:
+    <<: *defaults
+    resource_class: large
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: Restore Node modules
+          keys:
+            - dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - node_modules
+  test:
+    <<: *defaults
+    resource_class: large
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Bundle
+          command: yarn build
+      - run:
+          name: Test
+          command: yarn unit:ci
+      - run:
+          name: Coverage
+          command: yarn coverage
+      - store_artifacts:
+          path: coverage
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - node_modules
+  docs-build:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Build docs
+          command: yarn doc
+      - persist_to_workspace:
+          root: ~/repo
+          paths: [documentation]
+  docs-deploy:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install and configure dependencies
+          command: |
+            yarn add gh-pages@2.0.1 -W
+            git config user.email $GH_EMAIL
+            git config user.name $GH_NAME
+      - add_ssh_keys:
+          fingerprints:
+            - '2c:bd:91:1f:35:54:de:94:22:77:fc:3e:68:f9:6b:2f'
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: ./node_modules/.bin/gh-pages -d documentation/api -e api -m 'Deploy docs [ci skip]'
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
+                - dev
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+                - dev
+      - docs-build:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - main
+                - dev
+      - docs-deploy:
+          requires:
+            - docs-build
+          filters:
+            branches:
+              only: main
