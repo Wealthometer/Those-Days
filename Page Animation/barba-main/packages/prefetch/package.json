@@ -1,0 +1,50 @@
+{
+  "name": "@barba/prefetch",
+  "version": "2.2.0",
+  "description": "Automatically fetch and cache your pages based on the viewport",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/barba-prefetch.js",
+  "umd:main": "dist/barba-prefetch.umd.js",
+  "browser": "dist/barba-prefetch.umd.js",
+  "unpkg": "dist/barba-prefetch.umd.js",
+  "module": "dist/barba-prefetch.mjs",
+  "source": "src/index.ts",
+  "types": "dist/prefetch/src/typings",
+  "mangle": {
+    "regex": "^_"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "page",
+    "transition",
+    "animation",
+    "css",
+    "router",
+    "prefetch"
+  ],
+  "homepage": "https://github.com/barbajs/barba#readme",
+  "bugs": {
+    "url": "https://github.com/barbajs/barba/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/barbajs/barba.git"
+  },
+  "scripts": {
+    "build": "microbundle --name barbaPrefetch",
+    "build:watch": "microbundle watch --name barbaPrefetch",
+    "clear": "rimraf dist",
+    "lint": "tslint src/**",
+    "precommit": "lint-staged",
+    "report": "source-map-explorer --html ./dist/barba-prefetch.umd.js > report.html",
+    "size": "echo '🚀 prefetch' && gzip-size ./dist/barba-prefetch.umd.js",
+    "tag:latest": "npm dist-tag add @barba/prefetch@$npm_package_version latest",
+    "tag:next": "npm dist-tag add @barba/prefetch@$npm_package_version next"
+  },
+  "gitHead": "33c213bc36a0996f6333185dfc695fcd0d37c9d9"
+}
