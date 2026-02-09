@@ -1,0 +1,54 @@
+{
+  "name": "@barba/core",
+  "version": "2.10.3",
+  "description": "Create badass, fluid and smooth transition between your website's pages",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/barba.js",
+  "umd:main": "dist/barba.umd.js",
+  "browser": "dist/barba.umd.js",
+  "unpkg": "dist/barba.umd.js",
+  "module": "dist/barba.mjs",
+  "source": "src/index.ts",
+  "types": "dist/core/src/typings",
+  "mangle": {
+    "regex": "^_"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "page",
+    "transition",
+    "animation",
+    "css",
+    "router",
+    "prefetch"
+  ],
+  "homepage": "https://github.com/barbajs/barba#readme",
+  "bugs": {
+    "url": "https://github.com/barbajs/barba/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/barbajs/barba.git"
+  },
+  "scripts": {
+    "build": "microbundle --name barba --external natives",
+    "build:watch": "microbundle watch --name barba --external natives",
+    "clear": "rimraf dist",
+    "lint": "tslint src/**",
+    "precommit": "lint-staged",
+    "report": "source-map-explorer --html ./dist/barba.umd.js > report.html",
+    "size": "echo '📦 router' && gzip-size ./dist/barba.umd.js",
+    "tag:latest": "npm dist-tag add @barba/core@$npm_package_version latest",
+    "tag:next": "npm dist-tag add @barba/core@$npm_package_version next"
+  },
+  "dependencies": {
+    "is-promise": "^4.0.0",
+    "path-to-regexp": "^6.2.2"
+  },
+  "gitHead": "33c213bc36a0996f6333185dfc695fcd0d37c9d9"
+}
