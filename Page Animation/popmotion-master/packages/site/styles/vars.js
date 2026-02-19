@@ -1,0 +1,81 @@
+import { css } from 'styled-components';
+
+export const verticalGradient = (from, to, start = 0, end = 100) =>
+  `linear-gradient(to bottom, ${from} ${start}%, ${to} ${end}%)`;
+
+// Deprecated - migrate to single `color` export
+export const WHITE = '#fff';
+export const BLACK = '#3d454e';
+export const SUPER_LIGHT_GREY = '#FAFAFA';
+export const LIGHT_GREY = '#f2f2f2';
+
+export const PINK = '#FF1C68';
+export const PINK_BURN = '#DB0068';
+
+export const BLUE = '#09f';
+export const BLUE_BURN = '#064FB5';
+
+export const GREEN = '#14D790';
+const PURPLE = '#9B65DE';
+
+export const BRAND = PINK;
+export const BRAND_BURN = PINK_BURN;
+export const BRAND_GRADIENT = verticalGradient(PINK, PINK_BURN);
+
+export const ACTION = BLUE;
+export const ACTION_BURN = BLUE_BURN;
+export const ACTION_GRADIENT = verticalGradient(BLUE, BLUE_BURN);
+
+export const ENTITY = PURPLE;
+
+export const color = {
+  black: '#252942',
+  blue: '#09f',
+  green: '#14D790',
+  white: '#fff',
+  pink: '#FF00C8',
+  purple: '#A100F6',
+  brand: '#FF1C68',
+  brandBurn: '#960076',
+  orange: '#F30',
+  orangeBurn: '#FF8213',
+  yellow: '#FFE42B',
+  grey: '#5E606C',
+  lightGrey: '#ECECEC',
+  superLightGrey: '#fafafa',
+};
+
+export const font = {
+  body: `
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+  `,
+  code: `
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+  `,
+  bold: `font-weight: 700;`,
+};
+
+export const SKEW = '-5.7deg';
+export const UNSKEW = '5.7deg';
+
+const COL_WIDTH = 15;
+
+export const cols = (num) => `${num * COL_WIDTH}px`;
+
+const breakpoints = {
+  large: cols(72),
+  medium: cols(50),
+  small: cols(26),
+};
+
+export const media = Object.keys(breakpoints).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${breakpoints[label]}) {
+      ${css(...args)};
+    }
+  `;
+
+  return acc;
+}, {});
